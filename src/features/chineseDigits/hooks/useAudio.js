@@ -1,15 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { audioService } from '../../../services/audioService';
 
 export const useAudio = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
+  // Initialize audio service on component mount (warm up Web Speech API)
+  useEffect(() => {
+    audioService.init();
+  }, []);
+
   const play = (text, lang = 'zh-CN') => {
     try {
-      setIsPlaying(true);
-      audioService.speak(text, lang);
-      // Assume audio finishes in ~2 seconds (Web Speech API doesn't give exact end time)
-      setTimeout(() => setIsPlaying(false), 2000);
+      // Don't play if already playing
+      if (isPlaying) {
+        return;
+      }
+
+      // Use callbacks for accurate state management instead of setTimeout
+      audioService.speak(
+        text,
+        lang,
+        // onStart callback
+        () => {
+          setIsPlaying(true);
+        },
+        // onEnd callback
+        () => {
+          setIsPlaying(false);
+        }
+      );
     } catch (error) {
       console.error('Audio error:', error);
       setIsPlaying(false);

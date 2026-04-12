@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, IconButton } from '@mui/material';
+import { Card, CardContent, Typography, Box, IconButton, CircularProgress } from '@mui/material';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -82,20 +82,35 @@ export const DigitCard = ({ digit, chineseChar, pinyin }) => {
 
       {/* Audio button (right) */}
       {isSupported && (
-        <IconButton
-          onClick={() => play(chineseChar, 'zh-CN')}
-          disabled={isPlaying}
-          sx={{
-            color: 'primary.main',
-            padding: '8px',
-            '&:hover': {
-              backgroundColor: 'rgba(25, 118, 210, 0.1)',
-            },
-          }}
-          title="Phát âm"
-        >
-          <VolumeUpIcon sx={{ fontSize: 24 }} />
-        </IconButton>
+        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <IconButton
+            onClick={() => play(chineseChar, 'zh-CN')}
+            disabled={isPlaying}
+            sx={{
+              color: isPlaying ? 'primary.main' : 'primary.main',
+              padding: '8px',
+              transition: 'all 0.2s ease',
+              '&:hover': {
+                backgroundColor: 'rgba(25, 118, 210, 0.1)',
+              },
+              '&:disabled': {
+                backgroundColor: 'rgba(25, 118, 210, 0.08)',
+              },
+            }}
+            title={isPlaying ? 'Đang phát âm...' : 'Phát âm'}
+          >
+            <VolumeUpIcon sx={{ fontSize: 24 }} />
+          </IconButton>
+          {isPlaying && (
+            <CircularProgress
+              size={40}
+              sx={{
+                position: 'absolute',
+                color: 'primary.main',
+              }}
+            />
+          )}
+        </Box>
       )}
     </Card>
   );
