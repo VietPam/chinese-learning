@@ -92,6 +92,7 @@ export const FeatureCard = ({ id, title, description, path, icon, color, borderC
         {/* Button */}
         <Button
           variant="contained"
+          endIcon={<ArrowForwardIcon />}
           sx={{
             backgroundColor: borderColor,
             color: '#fff',
@@ -102,7 +103,6 @@ export const FeatureCard = ({ id, title, description, path, icon, color, borderC
               backgroundColor: borderColor,
               opacity: 0.9,
             },
-            endIcon: <ArrowForwardIcon />,
           }}
         >
           Get Started
