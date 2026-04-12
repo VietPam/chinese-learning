@@ -33,6 +33,7 @@ export const DigitCard = ({ chineseChar, pinyin }) => {
             fontSize: 48,
             fontWeight: 'bold',
             mb: 1,
+            color: '#000',
           }}
         >
           {chineseChar}
@@ -41,7 +42,7 @@ export const DigitCard = ({ chineseChar, pinyin }) => {
           variant="body1"
           sx={{
             fontSize: 18,
-            color: 'text.secondary',
+            color: '#000',
           }}
         >
           {pinyin}
