@@ -1,8 +1,9 @@
-import { Container, Typography, Box, Stack, FormControlLabel, Switch } from '@mui/material';
-import { useState } from 'react';
+import { Container, Typography, Box, Stack, FormControlLabel, Switch, useTheme } from '@mui/material';
+import { useDarkMode } from '../../../hooks/useDarkMode';
 
 export const SettingsPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, toggle } = useDarkMode();
+  const theme = useTheme();
 
   return (
     <Box sx={{ py: 4 }}>
@@ -16,21 +17,23 @@ export const SettingsPage = () => {
           <Box
             sx={{
               p: 2,
-              border: '1px solid #ddd',
+              border: `1px solid ${theme.palette.divider}`,
               borderRadius: 2,
+              backgroundColor: theme.palette.background.paper,
+              transition: 'all 0.3s ease',
             }}
           >
             <FormControlLabel
               control={
                 <Switch
                   checked={darkMode}
-                  onChange={(e) => setDarkMode(e.target.checked)}
+                  onChange={toggle}
                 />
               }
               label="Dark Mode"
             />
-            <Typography variant="body2" sx={{ color: '#666', mt: 1 }}>
-              (Feature coming soon)
+            <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+              Toggle between light and dark mode (auto-saved)
             </Typography>
           </Box>
 
@@ -38,14 +41,16 @@ export const SettingsPage = () => {
           <Box
             sx={{
               p: 2,
-              border: '1px solid #ddd',
+              border: `1px solid ${theme.palette.divider}`,
               borderRadius: 2,
+              backgroundColor: theme.palette.background.paper,
+              transition: 'all 0.3s ease',
             }}
           >
             <Typography sx={{ fontWeight: 'bold', mb: 1 }}>
               Language
             </Typography>
-            <Typography variant="body2" sx={{ color: '#666' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               (Coming soon)
             </Typography>
           </Box>
@@ -54,14 +59,16 @@ export const SettingsPage = () => {
           <Box
             sx={{
               p: 2,
-              border: '1px solid #ddd',
+              border: `1px solid ${theme.palette.divider}`,
               borderRadius: 2,
+              backgroundColor: theme.palette.background.paper,
+              transition: 'all 0.3s ease',
             }}
           >
             <Typography sx={{ fontWeight: 'bold', mb: 1 }}>
               About
             </Typography>
-            <Typography variant="body2" sx={{ color: '#666' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               Learn Chinese Numbers v1.0
             </Typography>
           </Box>

@@ -5,6 +5,9 @@ export const featuresData = [
     description: 'Học 11 chữ số Tiếng Trung (0-10) với phát âm và yêu thích',
     path: '/chinese-digits',
     icon: '📚',
+    color: '#e3f2fd',
+    borderColor: '#1976d2',
+    stats: 'Learned: 8/11 digits',
   },
   {
     id: 'quiz',
@@ -12,6 +15,9 @@ export const featuresData = [
     description: 'Kiểm tra kiến thức của bạn qua các bài tập trắc nghiệm',
     path: '/chinese-digits-quiz',
     icon: '✏️',
+    color: '#fff3e0',
+    borderColor: '#f57c00',
+    stats: 'Not started',
   },
   {
     id: 'settings',
@@ -19,5 +25,8 @@ export const featuresData = [
     description: 'Cài đặt ứng dụng (chế độ tối, ngôn ngữ, v.v.)',
     path: '/settings',
     icon: '⚙️',
+    color: '#f3e5f5',
+    borderColor: '#7b1fa2',
+    stats: 'Configure app',
   },
 ];
