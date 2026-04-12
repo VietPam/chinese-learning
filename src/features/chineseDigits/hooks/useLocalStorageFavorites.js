@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFavorites } from '../store/chineseDigitsSlice';
-import { storageService } from '../../services/storageService';
+import { storageService } from '../../../services/storageService';
 
 export const useLocalStorageFavorites = () => {
   const dispatch = useDispatch();
