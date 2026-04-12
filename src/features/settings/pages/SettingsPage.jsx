@@ -5,10 +5,22 @@ export const SettingsPage = () => {
   const { darkMode, toggle } = useDarkMode();
   const theme = useTheme();
 
+  // Better background for dark mode - slightly lighter for contrast
+  const boxBgColor = theme.palette.mode === 'dark' 
+    ? '#262626'  // Lighter dark for better contrast
+    : theme.palette.background.paper;
+
   return (
     <Box sx={{ py: 4 }}>
       <Container maxWidth="sm">
-        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
+        <Typography 
+          variant="h4" 
+          sx={{ 
+            fontWeight: 'bold', 
+            mb: 3,
+            color: theme.palette.text.primary,
+          }}
+        >
           Settings
         </Typography>
 
@@ -19,7 +31,7 @@ export const SettingsPage = () => {
               p: 2,
               border: `1px solid ${theme.palette.divider}`,
               borderRadius: 2,
-              backgroundColor: theme.palette.background.paper,
+              backgroundColor: boxBgColor,
               transition: 'all 0.3s ease',
             }}
           >
@@ -31,8 +43,21 @@ export const SettingsPage = () => {
                 />
               }
               label="Dark Mode"
+              sx={{
+                color: theme.palette.text.primary,
+                '& .MuiFormControlLabel-label': {
+                  color: theme.palette.text.primary,
+                  fontWeight: 500,
+                },
+              }}
             />
-            <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: theme.palette.text.secondary, 
+                mt: 1 
+              }}
+            >
               Toggle between light and dark mode (auto-saved)
             </Typography>
           </Box>
@@ -43,14 +68,25 @@ export const SettingsPage = () => {
               p: 2,
               border: `1px solid ${theme.palette.divider}`,
               borderRadius: 2,
-              backgroundColor: theme.palette.background.paper,
+              backgroundColor: boxBgColor,
               transition: 'all 0.3s ease',
             }}
           >
-            <Typography sx={{ fontWeight: 'bold', mb: 1 }}>
+            <Typography 
+              sx={{ 
+                fontWeight: 'bold', 
+                mb: 1,
+                color: theme.palette.text.primary,
+              }}
+            >
               Language
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: theme.palette.text.secondary 
+              }}
+            >
               (Coming soon)
             </Typography>
           </Box>
@@ -61,14 +97,25 @@ export const SettingsPage = () => {
               p: 2,
               border: `1px solid ${theme.palette.divider}`,
               borderRadius: 2,
-              backgroundColor: theme.palette.background.paper,
+              backgroundColor: boxBgColor,
               transition: 'all 0.3s ease',
             }}
           >
-            <Typography sx={{ fontWeight: 'bold', mb: 1 }}>
+            <Typography 
+              sx={{ 
+                fontWeight: 'bold', 
+                mb: 1,
+                color: theme.palette.text.primary,
+              }}
+            >
               About
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: theme.palette.text.secondary 
+              }}
+            >
               Learn Chinese Numbers v1.0
             </Typography>
           </Box>
