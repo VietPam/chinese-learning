@@ -7,12 +7,13 @@ import { homeRoutes } from './features/home';
 import { chineseDigitsRoutes } from './features/chineseDigits';
 import { quizRoutes } from './features/quiz';
 import { settingsRoutes } from './features/settings';
+import { flashcardsRoutes } from './features/flashcards';
 import { lightTheme, darkTheme } from './theme/theme';
 import './index.css';
 
 function AppContent() {
   // Combine all routes
-  const allRoutes = [...homeRoutes, ...chineseDigitsRoutes, ...quizRoutes, ...settingsRoutes];
+  const allRoutes = [...homeRoutes, ...chineseDigitsRoutes, ...quizRoutes, ...settingsRoutes, ...flashcardsRoutes];
   const darkMode = useSelector((state) => state.ui.darkMode);
   const theme = darkMode ? darkTheme : lightTheme;
 

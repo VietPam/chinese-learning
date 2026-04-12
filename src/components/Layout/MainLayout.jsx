@@ -5,12 +5,14 @@ import HomeIcon from '@mui/icons-material/Home';
 import SchoolIcon from '@mui/icons-material/School';
 import QuizIcon from '@mui/icons-material/Quiz';
 import SettingsIcon from '@mui/icons-material/Settings';
+import FlashCardIcon from '@mui/icons-material/Style';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 const menuItems = [
   { label: 'Home', path: '/', icon: HomeIcon },
   { label: 'Learning', path: '/chinese-digits', icon: SchoolIcon },
+  { label: 'Flash Cards', path: '/flashcards', icon: FlashCardIcon },
   { label: 'Quiz', path: '/chinese-digits-quiz', icon: QuizIcon },
   { label: 'Settings', path: '/settings', icon: SettingsIcon },
 ];
@@ -194,7 +196,7 @@ export const MainLayout = () => {
           transition: 'background-color 0.3s ease',
         }}
       >
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
           © 2026 Learn Chinese. All rights reserved.
         </Typography>
       </Box>

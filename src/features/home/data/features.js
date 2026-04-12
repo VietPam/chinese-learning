@@ -10,6 +10,16 @@ export const featuresData = [
     stats: 'Learned: 8/11 digits',
   },
   {
+    id: 'flashcards',
+    title: 'Flash Cards',
+    description: 'Ôn tập chữ số với thẻ ghi nhớ và lặp lại ngắt quãng',
+    path: '/flashcards',
+    icon: '🃏',
+    color: '#e8f5e8',
+    borderColor: '#388e3c',
+    stats: 'Practice mode',
+  },
+  {
     id: 'quiz',
     title: 'Quiz',
     description: 'Kiểm tra kiến thức của bạn qua các bài tập trắc nghiệm',

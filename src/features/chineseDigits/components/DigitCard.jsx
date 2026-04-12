@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useAudio } from '../hooks/useAudio';
 import { useFavorites } from '../hooks/useFavorites';
 
-export const DigitCard = ({ digit, chineseChar, pinyin }) => {
+export const DigitCard = ({ digit, chineseChar, pinyin, vietnamese }) => {
   const theme = useTheme();
   const { play, isPlaying, isSupported } = useAudio();
   const { isFavorited, toggleFav } = useFavorites();
@@ -78,6 +78,17 @@ export const DigitCard = ({ digit, chineseChar, pinyin }) => {
           }}
         >
           {pinyin}
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            fontSize: 14,
+            color: theme.palette.text.secondary,
+            mt: 0.5,
+            fontStyle: 'italic',
+          }}
+        >
+          {vietnamese}
         </Typography>
       </CardContent>
 

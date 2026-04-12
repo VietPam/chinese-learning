@@ -14,6 +14,7 @@ export const DigitsList = () => {
             digit={item.digit}
             chineseChar={item.chineseChar}
             pinyin={item.pinyin}
+            vietnamese={item.vietnamese}
           />
         ))}
       </Stack>
