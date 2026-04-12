@@ -38,7 +38,7 @@ export const darkTheme = createTheme({
     },
     text: {
       primary: '#ffffff',
-      secondary: '#b0bec5',
+      secondary: '#e0e0e0',
     },
   },
   typography: {

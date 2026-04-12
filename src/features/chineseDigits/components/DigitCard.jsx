@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, IconButton, CircularProgress } from '@mui/material';
+import { Card, CardContent, Typography, Box, IconButton, CircularProgress, useTheme } from '@mui/material';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -6,6 +6,7 @@ import { useAudio } from '../hooks/useAudio';
 import { useFavorites } from '../hooks/useFavorites';
 
 export const DigitCard = ({ digit, chineseChar, pinyin }) => {
+  const theme = useTheme();
   const { play, isPlaying, isSupported } = useAudio();
   const { isFavorited, toggleFav } = useFavorites();
 
@@ -63,7 +64,7 @@ export const DigitCard = ({ digit, chineseChar, pinyin }) => {
           sx={{
             fontSize: 48,
             fontWeight: 'bold',
-            color: '#000',
+            color: theme.palette.text.primary,
           }}
         >
           {chineseChar}
@@ -72,7 +73,7 @@ export const DigitCard = ({ digit, chineseChar, pinyin }) => {
           variant="body1"
           sx={{
             fontSize: 18,
-            color: '#666',
+            color: theme.palette.text.secondary,
             mt: 1,
           }}
         >
