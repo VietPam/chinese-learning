@@ -56,7 +56,7 @@ export const FeatureCard = ({ id, title, description, path, icon, color, borderC
           sx={{
             fontWeight: 'bold',
             mb: 1,
-            color: isDark ? 'text.primary' : '#000',
+            color: 'text.primary',
           }}
         >
           {title}
@@ -66,7 +66,7 @@ export const FeatureCard = ({ id, title, description, path, icon, color, borderC
         <Typography
           variant="body2"
           sx={{
-            color: isDark ? 'text.secondary' : '#555',
+            color: 'text.secondary',
             mb: 2,
             flex: 1,
           }}
@@ -95,7 +95,7 @@ export const FeatureCard = ({ id, title, description, path, icon, color, borderC
           endIcon={<ArrowForwardIcon />}
           sx={{
             backgroundColor: borderColor,
-            color: '#fff',
+            color: theme.palette.common.white,
             textTransform: 'none',
             fontWeight: 600,
             mt: 'auto',

@@ -80,7 +80,7 @@ export const MainLayout = () => {
             sx={{
               p: 2.5,
               backgroundColor: theme.palette.primary.main,
-              color: '#fff',
+              color: theme.palette.common.white,
               textAlign: 'center',
             }}
           >
@@ -189,7 +189,7 @@ export const MainLayout = () => {
           px: 2,
           mt: 'auto',
           width: '100%',
-          backgroundColor: theme.palette.mode === 'dark' ? '#2a2a2a' : '#f5f5f5',
+          backgroundColor: theme.palette.mode === 'dark' ? '#262626' : theme.palette.grey[100],
           textAlign: 'center',
           transition: 'background-color 0.3s ease',
         }}
