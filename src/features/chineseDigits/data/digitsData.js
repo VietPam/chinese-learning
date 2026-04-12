@@ -1,4 +1,5 @@
 export const digitsData = [
+  { digit: 0, chineseChar: '零', pinyin: 'líng' },
   { digit: 1, chineseChar: '一', pinyin: 'yī' },
   { digit: 2, chineseChar: '二', pinyin: 'èr' },
   { digit: 3, chineseChar: '三', pinyin: 'sān' },

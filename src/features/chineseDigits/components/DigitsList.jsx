@@ -11,6 +11,7 @@ export const DigitsList = () => {
         {digits.map((item) => (
           <DigitCard
             key={item.digit}
+            digit={item.digit}
             chineseChar={item.chineseChar}
             pinyin={item.pinyin}
           />
