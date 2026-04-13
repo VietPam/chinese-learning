@@ -2,14 +2,13 @@ import {
   Box,
   Typography,
   Grid,
-  IconButton,
   useTheme,
   Button,
   CircularProgress,
 } from '@mui/material';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { useAudio } from '../../chineseDigits/hooks/useAudio';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { QuizOption } from './QuizOption';
 
 export const QuizQuestion = ({
@@ -41,44 +40,44 @@ export const QuizQuestion = ({
     }
   };
 
-  const isCorrectAnswer = selectedAnswer?.digit === question.correctDigit;
+  useEffect(() => {
+    setHasAnswered(false);
+  }, [question.questionId]);
 
   return (
     <Box sx={{ width: '100%', px: { xs: 1, sm: 0 } }}>
-      {/* Question Header */}
-      <Box sx={{ textAlign: 'center', mb: { xs: 3, sm: 4 } }}>
-        <Typography variant="h5" sx={{ mb: 2, color: theme.palette.text.primary }}>
-          {question.questionText}
+      {/* Small instruction line, not page title */}
+      <Box sx={{ mb: { xs: 2, sm: 3 }, textAlign: 'center' }}>
+        <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+          Listen and choose the correct Chinese character.
         </Typography>
+      </Box>
 
-        {/* Audio Playback Button */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 2 }}>
-          <Button
-            variant="contained"
-            startIcon={<VolumeUpIcon />}
-            onClick={handlePlayAudio}
-            disabled={isPlaying}
-            sx={{
-              minWidth: 160,
-              backgroundColor: theme.palette.primary.main,
-              color: theme.palette.common.white,
-              '&:hover': {
-                backgroundColor: theme.palette.primary.dark,
-              },
-              '&:disabled': {
-                backgroundColor: theme.palette.primary.light,
-              },
-            }}
-          >
-            {isPlaying ? 'Playing...' : 'Listen'}
-          </Button>
-
-          {isPlaying && (
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CircularProgress size={40} sx={{ color: theme.palette.primary.main }} />
-            </Box>
-          )}
-        </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: { xs: 2, sm: 3 } }}>
+        <Button
+          variant="contained"
+          startIcon={<VolumeUpIcon />}
+          onClick={handlePlayAudio}
+          disabled={isPlaying}
+          fullWidth
+          sx={{
+            maxWidth: 280,
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.common.white,
+            py: 1.5,
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            borderRadius: 3,
+            '&:hover': {
+              backgroundColor: theme.palette.primary.dark,
+            },
+            '&:disabled': {
+              backgroundColor: theme.palette.primary.light,
+            },
+          }}
+        >
+          {isPlaying ? 'Playing...' : 'Listen'}
+        </Button>
       </Box>
 
       {/* Answer Options */}

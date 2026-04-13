@@ -22,7 +22,7 @@ export const QuizProgress = ({ currentQuestionIndex, totalQuestions, sessionStat
         flexDirection: { xs: 'column', sm: 'row' },
         gap: { xs: 1, sm: 0 }
       }}>
-        <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: { xs: 'center', sm: 'left' } }}>
+        <Typography variant="body1" sx={{ fontWeight: 700, textAlign: { xs: 'center', sm: 'left' } }}>
           Question {currentQuestionIndex + 1} of {totalQuestions}
         </Typography>
         <StatsChips stats={stats} />

@@ -1,5 +1,4 @@
-import { Container, Box, Button, Typography, useTheme, IconButton } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Container, Box, Button, Typography, useTheme } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -97,27 +96,6 @@ export const QuizPage = () => {
 
     return (
       <Container maxWidth="md" sx={{ py: 2 }}>
-        {/* Mobile Back Button */}
-        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-          <IconButton
-            onClick={() => {
-              const confirmExit = window.confirm('Are you sure you want to exit the quiz? Your progress will be lost.');
-              if (confirmExit) {
-                dispatch(resetQuiz());
-                setQuizStarted(false);
-                navigate('/');
-              }
-            }}
-            sx={{ mr: 1 }}
-            aria-label="exit quiz"
-          >
-            <ArrowBackIcon />
-          </IconButton>
-          <Typography variant="body2" color="text.secondary">
-            Exit Quiz
-          </Typography>
-        </Box>
-
         <QuizProgress
           currentQuestionIndex={currentQuestionIndex}
           totalQuestions={questions.length}
