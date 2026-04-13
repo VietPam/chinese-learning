@@ -1,10 +1,8 @@
 import {
   Box,
   Typography,
-  Grid,
   useTheme,
   Button,
-  CircularProgress,
 } from '@mui/material';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { useAudio } from '../../chineseDigits/hooks/useAudio';
@@ -83,21 +81,41 @@ export const QuizQuestion = ({
         </Button>
       </Box>
 
-      {/* Answer Options */}
-      <Grid container spacing={{ xs: 1.5, sm: 2 }} sx={{ mb: 3 }}>
+      {/* Answer Options - Square Grid (4 squares in 4 corners) */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridTemplateRows: '1fr 1fr',
+          gap: 0,
+          aspectRatio: '1 / 1',
+          maxWidth: { xs: 320, sm: 420 },
+          mx: 'auto',
+          mb: 3,
+        }}
+      >
         {question.options.map((option, index) => (
-          <QuizOption
+          <Box
             key={index}
-            option={option}
-            selectedAnswer={selectedAnswer}
-            question={question}
-            showResult={showResult}
-            hasAnswered={hasAnswered}
-            onSelect={handleSelectOption}
-            disabled={showResult || hasAnswered}
-          />
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              p: { xs: 0.5, sm: 1 },
+            }}
+          >
+            <QuizOption
+              option={option}
+              selectedAnswer={selectedAnswer}
+              question={question}
+              showResult={showResult}
+              hasAnswered={hasAnswered}
+              onSelect={handleSelectOption}
+              disabled={showResult || hasAnswered}
+            />
+          </Box>
         ))}
-      </Grid>
+      </Box>
 
       {/* Feedback Message */}
       {showResult && (
