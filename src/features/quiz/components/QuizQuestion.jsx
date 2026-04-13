@@ -44,9 +44,9 @@ export const QuizQuestion = ({
   const isCorrectAnswer = selectedAnswer?.digit === question.correctDigit;
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', px: { xs: 1, sm: 0 } }}>
       {/* Question Header */}
-      <Box sx={{ textAlign: 'center', mb: 4 }}>
+      <Box sx={{ textAlign: 'center', mb: { xs: 3, sm: 4 } }}>
         <Typography variant="h5" sx={{ mb: 2, color: theme.palette.text.primary }}>
           {question.questionText}
         </Typography>
@@ -82,7 +82,7 @@ export const QuizQuestion = ({
       </Box>
 
       {/* Answer Options */}
-      <Grid container spacing={2} sx={{ mb: 3 }}>
+      <Grid container spacing={{ xs: 1.5, sm: 2 }} sx={{ mb: 3 }}>
         {question.options.map((option, index) => (
           <QuizOption
             key={index}
@@ -119,16 +119,26 @@ export const QuizQuestion = ({
 
       {/* Submit Button */}
       {!showResult && !hasAnswered && selectedAnswer && (
-        <Box sx={{ textAlign: 'center' }}>
+        <Box sx={{ textAlign: 'center', mt: 3, mb: 2 }}>
           <Button
             variant="contained"
             size="large"
             onClick={handleSubmit}
+            fullWidth
             sx={{
               backgroundColor: theme.palette.primary.main,
               color: theme.palette.common.white,
+              py: 1.5,
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              borderRadius: 3,
+              boxShadow: 2,
               '&:hover': {
                 backgroundColor: theme.palette.primary.dark,
+                boxShadow: 4,
+              },
+              '&:active': {
+                boxShadow: 1,
               },
             }}
           >

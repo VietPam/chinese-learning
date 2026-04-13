@@ -29,14 +29,22 @@ export const QuizStartScreen = ({ onStartQuiz }) => {
           variant="contained"
           size="large"
           onClick={onStartQuiz}
+          fullWidth
           sx={{
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.common.white,
             px: 4,
-            py: 1.5,
-            fontSize: 16,
+            py: 2,
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            borderRadius: 3,
+            boxShadow: 3,
             '&:hover': {
               backgroundColor: theme.palette.primary.dark,
+              boxShadow: 5,
+            },
+            '&:active': {
+              boxShadow: 2,
             },
           }}
         >

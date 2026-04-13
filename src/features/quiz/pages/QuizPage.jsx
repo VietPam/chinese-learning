@@ -1,4 +1,5 @@
-import { Container, Box, Button, Typography, useTheme } from '@mui/material';
+import { Container, Box, Button, Typography, useTheme, IconButton } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -95,7 +96,28 @@ export const QuizPage = () => {
     const currentQuestion = questions[currentQuestionIndex];
 
     return (
-      <Container maxWidth="md" sx={{ py: 4 }}>
+      <Container maxWidth="md" sx={{ py: 2 }}>
+        {/* Mobile Back Button */}
+        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+          <IconButton
+            onClick={() => {
+              const confirmExit = window.confirm('Are you sure you want to exit the quiz? Your progress will be lost.');
+              if (confirmExit) {
+                dispatch(resetQuiz());
+                setQuizStarted(false);
+                navigate('/');
+              }
+            }}
+            sx={{ mr: 1 }}
+            aria-label="exit quiz"
+          >
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography variant="body2" color="text.secondary">
+            Exit Quiz
+          </Typography>
+        </Box>
+
         <QuizProgress
           currentQuestionIndex={currentQuestionIndex}
           totalQuestions={questions.length}
@@ -115,17 +137,27 @@ export const QuizPage = () => {
 
         {/* Next Button */}
         {showResult && (
-          <Box sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: 'center', mt: 3, mb: 2 }}>
             <Button
               variant="contained"
               size="large"
               onClick={handleNextQuestion}
+              fullWidth
               sx={{
                 backgroundColor: theme.palette.primary.main,
                 color: theme.palette.common.white,
+                py: 1.5,
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                borderRadius: 3,
+                boxShadow: 2,
                 minWidth: 200,
                 '&:hover': {
                   backgroundColor: theme.palette.primary.dark,
+                  boxShadow: 4,
+                },
+                '&:active': {
+                  boxShadow: 1,
                 },
               }}
             >

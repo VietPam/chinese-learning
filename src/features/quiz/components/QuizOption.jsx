@@ -31,12 +31,19 @@ export const QuizOption = ({
       >
         <CardActionArea
           onClick={() => !disabled && onSelect(option)}
-          sx={{ p: 2, textAlign: 'center', minHeight: 120, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+          sx={{
+            p: { xs: 1.5, sm: 2 },
+            textAlign: 'center',
+            minHeight: { xs: 100, sm: 120 },
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }}
         >
           <Typography
             variant="h3"
             sx={{
-              fontSize: 48,
+              fontSize: { xs: 36, sm: 48 },
               fontWeight: 'bold',
               color: styling.textColor,
               mb: 1,

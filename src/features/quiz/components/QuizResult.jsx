@@ -174,16 +174,34 @@ export const QuizResult = ({ sessionStats, onRetry, onHome }) => {
       </Grid>
 
       {/* Action Buttons */}
-      <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+      <Box sx={{
+        display: 'flex',
+        gap: 2,
+        justifyContent: 'center',
+        flexDirection: { xs: 'column', sm: 'row' },
+        width: '100%',
+        maxWidth: 400,
+        mx: 'auto'
+      }}>
         <Button
           variant="contained"
           size="large"
           onClick={onRetry}
+          fullWidth
           sx={{
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.common.white,
+            py: 1.5,
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            borderRadius: 3,
+            boxShadow: 2,
             '&:hover': {
               backgroundColor: theme.palette.primary.dark,
+              boxShadow: 4,
+            },
+            '&:active': {
+              boxShadow: 1,
             },
           }}
         >
@@ -193,12 +211,22 @@ export const QuizResult = ({ sessionStats, onRetry, onHome }) => {
           variant="outlined"
           size="large"
           onClick={onHome}
+          fullWidth
           sx={{
             borderColor: theme.palette.primary.main,
             color: theme.palette.primary.main,
+            py: 1.5,
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            borderRadius: 3,
+            borderWidth: 2,
             '&:hover': {
               borderColor: theme.palette.primary.dark,
-              color: theme.palette.primary.dark,
+              borderWidth: 2,
+              backgroundColor: theme.palette.primary.light + '10',
+            },
+            '&:active': {
+              borderWidth: 2,
             },
           }}
         >

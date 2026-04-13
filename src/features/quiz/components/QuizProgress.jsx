@@ -14,8 +14,15 @@ export const QuizProgress = ({ currentQuestionIndex, totalQuestions, sessionStat
   return (
     <Box sx={{ mb: 4 }}>
       {/* Header with Progress */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-        <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        mb: 2,
+        flexDirection: { xs: 'column', sm: 'row' },
+        gap: { xs: 1, sm: 0 }
+      }}>
+        <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: { xs: 'center', sm: 'left' } }}>
           Question {currentQuestionIndex + 1} of {totalQuestions}
         </Typography>
         <StatsChips stats={stats} />
