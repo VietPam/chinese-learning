@@ -53,7 +53,7 @@ describe('HomePage Component', () => {
     renderWithProviders(<HomePage />);
     
     const buttons = screen.getAllByRole('button', { name: /Get Started/i });
-    expect(buttons).toHaveLength(3);
+    expect(buttons).toHaveLength(4);
   });
 
   it('should have proper text contrast - not completely white on white', () => {
