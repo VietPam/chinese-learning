@@ -44,6 +44,9 @@ export const QuizQuestion = ({
     setHasAnswered(false);
   }, [question.questionId]);
 
+  // Calculate if selected answer is correct
+  const isCorrectAnswer = selectedAnswer && selectedAnswer.digit === question.correctDigit;
+
   return (
     <Box sx={{ width: '100%', px: { xs: 1, sm: 0 } }}>
       {/* Small instruction line, not page title */}
