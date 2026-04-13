@@ -1,8 +1,6 @@
 import {
   Box,
   Typography,
-  Card,
-  CardActionArea,
   Grid,
   IconButton,
   useTheme,
@@ -10,10 +8,9 @@ import {
   CircularProgress,
 } from '@mui/material';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CancelIcon from '@mui/icons-material/Cancel';
 import { useAudio } from '../../chineseDigits/hooks/useAudio';
 import { useState } from 'react';
+import { QuizOption } from './QuizOption';
 
 export const QuizQuestion = ({
   question,
@@ -86,90 +83,18 @@ export const QuizQuestion = ({
 
       {/* Answer Options */}
       <Grid container spacing={2} sx={{ mb: 3 }}>
-        {question.options.map((option, index) => {
-          const isSelected = selectedAnswer?.digit === option.digit;
-          const isCorrect = option.digit === question.correctDigit;
-          const showCorrectness = showResult || hasAnswered;
-
-          let backgroundColor = theme.palette.background.paper;
-          let borderColor = theme.palette.divider;
-          let textColor = theme.palette.text.primary;
-
-          if (showCorrectness) {
-            if (isCorrect) {
-              backgroundColor = theme.palette.success.light + '20';
-              borderColor = theme.palette.success.main;
-            } else if (isSelected && !isCorrect) {
-              backgroundColor = theme.palette.error.light + '20';
-              borderColor = theme.palette.error.main;
-            }
-          } else if (isSelected && !showCorrectness) {
-            backgroundColor = theme.palette.primary.light + '20';
-            borderColor = theme.palette.primary.main;
-          }
-
-          return (
-            <Grid item xs={6} key={index}>
-              <Card
-                sx={{
-                  border: `2px solid ${borderColor}`,
-                  backgroundColor,
-                  cursor: !showCorrectness ? 'pointer' : 'default',
-                  transition: 'all 0.2s ease',
-                  position: 'relative',
-                  '&:hover': {
-                    borderColor: !showCorrectness ? theme.palette.primary.main : borderColor,
-                    boxShadow: !showCorrectness ? 2 : 1,
-                  },
-                }}
-              >
-                <CardActionArea
-                  onClick={() => handleSelectOption(option)}
-                  sx={{ p: 2, textAlign: 'center', minHeight: 120, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                >
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      fontSize: 48,
-                      fontWeight: 'bold',
-                      color: textColor,
-                      mb: 1,
-                    }}
-                  >
-                    {option.chineseChar}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-                    {option.pinyin}
-                  </Typography>
-
-                  {/* Result Icon */}
-                  {showCorrectness && isCorrect && (
-                    <CheckCircleIcon
-                      sx={{
-                        position: 'absolute',
-                        top: 8,
-                        right: 8,
-                        color: theme.palette.success.main,
-                        fontSize: 32,
-                      }}
-                    />
-                  )}
-                  {showCorrectness && isSelected && !isCorrect && (
-                    <CancelIcon
-                      sx={{
-                        position: 'absolute',
-                        top: 8,
-                        right: 8,
-                        color: theme.palette.error.main,
-                        fontSize: 32,
-                      }}
-                    />
-                  )}
-                </CardActionArea>
-              </Card>
-            </Grid>
-          );
-        })}
+        {question.options.map((option, index) => (
+          <QuizOption
+            key={index}
+            option={option}
+            selectedAnswer={selectedAnswer}
+            question={question}
+            showResult={showResult}
+            hasAnswered={hasAnswered}
+            onSelect={handleSelectOption}
+            disabled={showResult || hasAnswered}
+          />
+        ))}
       </Grid>
 
       {/* Feedback Message */}

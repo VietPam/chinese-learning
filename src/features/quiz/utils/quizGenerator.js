@@ -1,4 +1,5 @@
 import { digitsData } from '../../chineseDigits/data/digitsData';
+import { shuffleArray } from '../../../utils/arrayUtils';
 
 /**
  * Generate a quiz question: listen to Chinese pronunciation, select correct character
@@ -20,7 +21,7 @@ export const generateQuizQuestion = (currentQuestionIndex) => {
   }
 
   // Shuffle options
-  options = options.sort(() => Math.random() - 0.5);
+  options = shuffleArray(options);
 
   return {
     questionId: currentQuestionIndex,
@@ -96,5 +97,5 @@ export const generateRandomQuiz = (count = 10) => {
   }
 
   // Shuffle the questions
-  return questions.sort(() => Math.random() - 0.5);
+  return shuffleArray(questions);
 };

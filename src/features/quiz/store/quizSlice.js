@@ -15,8 +15,6 @@ const initialState = {
   isSessionComplete: false,
   selectedAnswer: null,
   showResult: false,
-  quizMode: 'timed', // 'timed' or 'unlimited'
-  timeRemaining: 30, // seconds per question
 };
 
 const quizSlice = createSlice({
@@ -70,18 +68,6 @@ const quizSlice = createSlice({
     resetQuiz: (state) => {
       return initialState;
     },
-    decrementTimer: (state) => {
-      state.timeRemaining -= 1;
-      if (state.timeRemaining <= 0) {
-        state.showResult = true;
-      }
-    },
-    resetTimer: (state) => {
-      state.timeRemaining = 30;
-    },
-    setQuizMode: (state, action) => {
-      state.quizMode = action.payload;
-    },
   },
 });
 
@@ -92,9 +78,6 @@ export const {
   nextQuestion,
   endQuiz,
   resetQuiz,
-  decrementTimer,
-  resetTimer,
-  setQuizMode,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

@@ -1,4 +1,4 @@
-import { Container, Typography, Box, Button, LinearProgress, Chip, IconButton, useTheme, useMediaQuery } from '@mui/material';
+import { Container, Typography, Box, Button, useTheme, useMediaQuery } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -6,6 +6,8 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import { FlashCard } from '../components/FlashCard';
+import { FlashCardProgress } from '../components/FlashCardProgress';
+import { useFlashcardXP } from '../hooks/useFlashcardXP';
 import {
   nextCard,
   previousCard,
@@ -16,12 +18,12 @@ import {
   shuffleCards,
   resetProgress,
 } from '../store/flashcardsSlice';
-import { addXP, incrementActivity } from '../../../store/progressSlice';
 
 export const FlashCardPage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const dispatch = useDispatch();
+  const { awardFlashcardXP } = useFlashcardXP();
 
   const {
     cards,
@@ -46,12 +48,10 @@ export const FlashCardPage = () => {
   }, [dispatch, isSessionActive]);
 
   const currentCard = cards[currentIndex];
-  const progress = ((currentIndex + 1) / cards.length) * 100;
 
   const handleCorrect = () => {
     dispatch(markCorrect());
-    dispatch(addXP(10)); // Award 10 XP for correct answer
-    dispatch(incrementActivity('flashcardsReviewed'));
+    awardFlashcardXP(true);
     if (autoAdvance) {
       setTimeout(() => dispatch(nextCard()), 500);
     }
@@ -59,8 +59,7 @@ export const FlashCardPage = () => {
 
   const handleIncorrect = () => {
     dispatch(markIncorrect());
-    dispatch(addXP(2)); // Award 2 XP for incorrect answer (still learning)
-    dispatch(incrementActivity('flashcardsReviewed'));
+    awardFlashcardXP(false);
     if (autoAdvance) {
       setTimeout(() => dispatch(nextCard()), 500);
     }
