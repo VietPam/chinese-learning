@@ -48,7 +48,7 @@ export const FlashCard = ({
         sx={{
           position: 'relative',
           width: '100%',
-          height: 300,
+          height: { xs: 240, sm: 300 },
           cursor: 'pointer',
           transformStyle: 'preserve-3d',
           transition: 'transform 0.6s',
@@ -73,13 +73,13 @@ export const FlashCard = ({
             },
           }}
         >
-          <CardContent sx={{ textAlign: 'center', p: 3 }}>
-            <Typography variant="h3" sx={{ mb: 2, color: theme.palette.text.primary }}>
+          <CardContent sx={{ textAlign: 'center', p: { xs: 2, sm: 3 } }}>
+            <Typography variant="h3" sx={{ mb: 2, color: theme.palette.text.primary, fontSize: { xs: '2.5rem', sm: '3rem' } }}>
               {frontContent}
             </Typography>
             {!showAnswer && (
-              <Typography variant="body2" sx={{ color: theme.palette.text.secondary, mt: 2 }}>
-                Click to reveal answer
+              <Typography variant="body2" sx={{ color: theme.palette.text.secondary, mt: 2, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
+                Click to reveal
               </Typography>
             )}
           </CardContent>
@@ -99,35 +99,36 @@ export const FlashCard = ({
             border: `2px solid ${theme.palette.success.main}`,
           }}
         >
-          <CardContent sx={{ textAlign: 'center', p: 3, flex: 1 }}>
-            <Typography variant="h4" sx={{ mb: 1, color: theme.palette.text.primary }}>
+          <CardContent sx={{ textAlign: 'center', p: { xs: 2, sm: 3 }, flex: 1 }}>
+            <Typography variant="h4" sx={{ mb: 1, color: theme.palette.text.primary, fontSize: { xs: '1.8rem', sm: '2.125rem' } }}>
               {backContent.chinese || backContent}
             </Typography>
             {backContent.pinyin && (
-              <Typography variant="h6" sx={{ color: theme.palette.text.secondary, mb: 1 }}>
+              <Typography variant="h6" sx={{ color: theme.palette.text.secondary, mb: 1, fontSize: { xs: '0.875rem', sm: '1.25rem' } }}>
                 {backContent.pinyin}
               </Typography>
             )}
             {backContent.vietnamese && (
-              <Typography variant="body1" sx={{ color: theme.palette.text.secondary, fontStyle: 'italic' }}>
+              <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontStyle: 'italic', fontSize: { xs: '0.8rem', sm: '1rem' } }}>
                 {backContent.vietnamese}
               </Typography>
             )}
           </CardContent>
 
           {showControls && (
-            <Box sx={{ display: 'flex', justifyContent: 'space-around', p: 2, borderTop: `1px solid ${theme.palette.divider}` }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-around', p: { xs: 1, sm: 2 }, borderTop: `1px solid ${theme.palette.divider}` }}>
               <IconButton
                 onClick={(e) => {
                   e.stopPropagation();
                   handleIncorrect();
                 }}
+                size="small"
                 sx={{
                   color: theme.palette.error.main,
                   '&:hover': { backgroundColor: theme.palette.error.light + '20' }
                 }}
               >
-                <CancelIcon sx={{ fontSize: 32 }} />
+                <CancelIcon sx={{ fontSize: { xs: 24, sm: 32 } }} />
               </IconButton>
 
               <IconButton
@@ -135,12 +136,13 @@ export const FlashCard = ({
                   e.stopPropagation();
                   handleCorrect();
                 }}
+                size="small"
                 sx={{
                   color: theme.palette.success.main,
                   '&:hover': { backgroundColor: theme.palette.success.light + '20' }
                 }}
               >
-                <CheckCircleIcon sx={{ fontSize: 32 }} />
+                <CheckCircleIcon sx={{ fontSize: { xs: 24, sm: 32 } }} />
               </IconButton>
             </Box>
           )}

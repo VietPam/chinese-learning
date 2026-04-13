@@ -45,17 +45,17 @@ export const QuizResult = ({ sessionStats, onRetry, onHome }) => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
+    <Container maxWidth="sm" sx={{ py: { xs: 2, sm: 4 } }}>
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mb: 4 }}>
+      <Box sx={{ textAlign: 'center', mb: { xs: 3, sm: 4 } }}>
         <EmojiEventsIcon
           sx={{
-            fontSize: 64,
+            fontSize: { xs: 48, sm: 64 },
             color: theme.palette.warning.main,
             mb: 2,
           }}
         />
-        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
+        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2, fontSize: { xs: '1.8rem', sm: '2.125rem' } }}>
           Quiz Complete!
         </Typography>
       </Box>
@@ -68,16 +68,16 @@ export const QuizResult = ({ sessionStats, onRetry, onHome }) => {
           mb: 3,
         }}
       >
-        <CardContent sx={{ p: 4 }}>
+        <CardContent sx={{ p: { xs: 2, sm: 4 } }}>
           {/* Rating */}
           <Box sx={{ textAlign: 'center', mb: 3 }}>
-            <Typography variant="h2" sx={{ fontSize: 64, mb: 1 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: 48, sm: 64 }, mb: 1 }}>
               {getEmojiForRating(performance.rating)}
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 1 }}>
+            <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 1, fontSize: { xs: '1.5rem', sm: '2rem' } }}>
               {performance.rating}
             </Typography>
-            <Typography variant="body1" sx={{ color: theme.palette.text.secondary }}>
+            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
               {performance.correctCount} out of {performance.totalQuestions} correct
             </Typography>
           </Box>
@@ -125,49 +125,48 @@ export const QuizResult = ({ sessionStats, onRetry, onHome }) => {
         </CardContent>
       </Card>
 
-      {/* Statistics Grid */}
-      <Grid container spacing={2} sx={{ mb: 3 }}>
+      {/* Statistics Grid - Stack 2x2 on mobile, show all 4 on desktop */}
+      <Grid container spacing={{ xs: 1.5, sm: 2 }} sx={{ mb: 3 }}>
         <Grid item xs={6} sm={3}>
-          <Card sx={{ textAlign: 'center', p: 2 }}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: theme.palette.success.main }}>
+          <Card sx={{ textAlign: 'center', p: { xs: 1.5, sm: 2 } }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', color: theme.palette.success.main, fontSize: { xs: '1.5rem', sm: '1.8rem' } }}>
               {sessionStats.correctAnswers}
             </Typography>
-            <Typography variant="caption" sx={{ color: theme.palette.text.secondary }}>
+            <Typography variant="caption" sx={{ color: theme.palette.text.secondary, fontSize: { xs: '0.7rem', sm: '0.75rem' } }}>
               Correct
             </Typography>
           </Card>
         </Grid>
 
         <Grid item xs={6} sm={3}>
-          <Card sx={{ textAlign: 'center', p: 2 }}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: theme.palette.error.main }}>
+          <Card sx={{ textAlign: 'center', p: { xs: 1.5, sm: 2 } }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', color: theme.palette.error.main, fontSize: { xs: '1.5rem', sm: '1.8rem' } }}>
               {sessionStats.incorrectAnswers}
             </Typography>
-            <Typography variant="caption" sx={{ color: theme.palette.text.secondary }}>
+            <Typography variant="caption" sx={{ color: theme.palette.text.secondary, fontSize: { xs: '0.7rem', sm: '0.75rem' } }}>
               Incorrect
             </Typography>
           </Card>
         </Grid>
 
         <Grid item xs={6} sm={3}>
-          <Card sx={{ textAlign: 'center', p: 2 }}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: theme.palette.info.main }}>
-              {Math.floor(duration / 60)}:
-              {String(duration % 60).padStart(2, '0')}
+          <Card sx={{ textAlign: 'center', p: { xs: 1.5, sm: 2 } }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', color: theme.palette.info.main, fontSize: { xs: '1.5rem', sm: '1.8rem' } }}>
+              {Math.floor(duration / 60)}:{String(duration % 60).padStart(2, '0')}
             </Typography>
-            <Typography variant="caption" sx={{ color: theme.palette.text.secondary }}>
+            <Typography variant="caption" sx={{ color: theme.palette.text.secondary, fontSize: { xs: '0.7rem', sm: '0.75rem' } }}>
               Total Time
             </Typography>
           </Card>
         </Grid>
 
         <Grid item xs={6} sm={3}>
-          <Card sx={{ textAlign: 'center', p: 2 }}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: theme.palette.warning.main }}>
+          <Card sx={{ textAlign: 'center', p: { xs: 1.5, sm: 2 } }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', color: theme.palette.warning.main, fontSize: { xs: '1.5rem', sm: '1.8rem' } }}>
               {avgTimePerQuestion.toFixed(1)}s
             </Typography>
-            <Typography variant="caption" sx={{ color: theme.palette.text.secondary }}>
-              Avg/Question
+            <Typography variant="caption" sx={{ color: theme.palette.text.secondary, fontSize: { xs: '0.7rem', sm: '0.75rem' } }}>
+              Avg/Q
             </Typography>
           </Card>
         </Grid>
@@ -235,14 +234,14 @@ export const QuizResult = ({ sessionStats, onRetry, onHome }) => {
       </Box>
 
       {/* Encouragement Message */}
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
-        <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontStyle: 'italic' }}>
+      <Box sx={{ textAlign: 'center', mt: 4, mb: 3 }}>
+        <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontStyle: 'italic', fontSize: { xs: '0.85rem', sm: '1rem' } }}>
           {performance.percentage === 100
             ? '🎉 Perfect score! You\'re a master!'
             : performance.percentage >= 80
               ? '🌟 Excellent work! Keep practicing!'
               : performance.percentage >= 60
-                ? '💪 Good job! Practice more to improve!'
+                ? '💪 Good job! Practice more!'
                 : '📚 Keep learning! Every practice helps!'}
         </Typography>
       </Box>

@@ -1,4 +1,4 @@
-import { Container, Typography, Box, Button, useTheme, useMediaQuery } from '@mui/material';
+import { Container, Typography, Box, Button, useTheme, useMediaQuery, Chip, IconButton } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -48,6 +48,7 @@ export const FlashCardPage = () => {
   }, [dispatch, isSessionActive]);
 
   const currentCard = cards[currentIndex];
+  const progress = ((currentIndex + 1) / cards.length) * 100;
 
   const handleCorrect = () => {
     dispatch(markCorrect());
@@ -104,53 +105,43 @@ export const FlashCardPage = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
+    <Container maxWidth="sm" sx={{ py: { xs: 2, sm: 4 } }}>
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mb: 4 }}>
-        <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold' }}>
+      <Box sx={{ textAlign: 'center', mb: { xs: 2, sm: 4 } }}>
+        <Typography variant="h5" sx={{ mb: 1, fontWeight: 'bold', fontSize: { xs: '1.5rem', sm: '2rem' } }}>
           Flash Cards
         </Typography>
-        <Typography variant="body1" sx={{ color: theme.palette.text.secondary, mb: 3 }}>
-          Practice Chinese numbers with spaced repetition
+        <Typography variant="body2" sx={{ color: theme.palette.text.secondary, mb: 3, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
+          Practice with spaced repetition
         </Typography>
 
-        {/* Progress Bar */}
-        <Box sx={{ mb: 3 }}>
-          <LinearProgress
-            variant="determinate"
-            value={progress}
-            sx={{
-              height: 8,
-              borderRadius: 4,
-              backgroundColor: theme.palette.grey[300],
-              '& .MuiLinearProgress-bar': {
-                borderRadius: 4,
-                backgroundColor: theme.palette.primary.main,
-              },
-            }}
-          />
-          <Typography variant="body2" sx={{ mt: 1, color: theme.palette.text.secondary }}>
-            Card {currentIndex + 1} of {cards.length}
-          </Typography>
-        </Box>
+        {/* Progress Component */}
+        <FlashCardProgress
+          currentIndex={currentIndex}
+          totalCards={cards.length}
+          sessionStats={sessionStats}
+        />
 
-        {/* Session Stats */}
+        {/* Session Stats - Only show on active session */}
         {isSessionActive && (
-          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 3, flexWrap: 'wrap' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 3, flexWrap: 'wrap' }}>
             <Chip
-              label={`Correct: ${sessionStats.correctAnswers}`}
+              label={`✓ ${sessionStats.correctAnswers}`}
               color="success"
               variant="outlined"
+              size={isMobile ? 'small' : 'medium'}
             />
             <Chip
-              label={`Incorrect: ${sessionStats.incorrectAnswers}`}
+              label={`✗ ${sessionStats.incorrectAnswers}`}
               color="error"
               variant="outlined"
+              size={isMobile ? 'small' : 'medium'}
             />
             <Chip
               label={`Total: ${sessionStats.totalReviewed}`}
               color="primary"
               variant="outlined"
+              size={isMobile ? 'small' : 'medium'}
             />
           </Box>
         )}
@@ -167,21 +158,23 @@ export const FlashCardPage = () => {
         />
       </Box>
 
-      {/* Navigation Controls */}
+      {/* Navigation Controls - Mobile optimized */}
       <Box sx={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 2,
+        gap: { xs: 1, sm: 2 },
         flexWrap: 'wrap',
         mb: 3
       }}>
         <IconButton
           onClick={handlePrevious}
           disabled={currentIndex === 0}
+          size={isMobile ? 'small' : 'medium'}
           sx={{
             backgroundColor: theme.palette.background.paper,
             border: `1px solid ${theme.palette.divider}`,
+            '&:hover': { backgroundColor: theme.palette.action.hover }
           }}
         >
           <NavigateBeforeIcon />
@@ -191,26 +184,30 @@ export const FlashCardPage = () => {
           variant="outlined"
           startIcon={<ShuffleIcon />}
           onClick={handleShuffle}
-          sx={{ minWidth: 120 }}
+          size={isMobile ? 'small' : 'medium'}
+          sx={{ minWidth: { xs: 80, sm: 120 }, fontSize: { xs: '0.75rem', sm: '1rem' } }}
         >
-          Shuffle
+          {isMobile ? 'Shuffle' : 'Shuffle'}
         </Button>
 
         <Button
           variant="outlined"
           startIcon={<RefreshIcon />}
           onClick={handleReset}
-          sx={{ minWidth: 120 }}
+          size={isMobile ? 'small' : 'medium'}
+          sx={{ minWidth: { xs: 80, sm: 120 }, fontSize: { xs: '0.75rem', sm: '1rem' } }}
         >
-          Reset
+          {isMobile ? 'Reset' : 'Reset'}
         </Button>
 
         <IconButton
           onClick={handleNext}
           disabled={currentIndex === cards.length - 1}
+          size={isMobile ? 'small' : 'medium'}
           sx={{
             backgroundColor: theme.palette.background.paper,
             border: `1px solid ${theme.palette.divider}`,
+            '&:hover': { backgroundColor: theme.palette.action.hover }
           }}
         >
           <NavigateNextIcon />
@@ -218,22 +215,20 @@ export const FlashCardPage = () => {
       </Box>
 
       {/* Card Info */}
-      <Box sx={{ textAlign: 'center' }}>
-        <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-          Difficulty: <Chip
+      <Box sx={{ textAlign: 'center', fontSize: { xs: '0.75rem', sm: '1rem' } }}>
+        <Typography variant="body2" sx={{ color: theme.palette.text.secondary, mb: 1 }}>
+          Difficulty:
+          {' '}
+          <Chip
             label={currentCard.difficulty}
             size="small"
-            color={
-              currentCard.difficulty === 'easy' ? 'success' :
-              currentCard.difficulty === 'medium' ? 'warning' : 'error'
-            }
+            color={currentCard.difficulty === 'easy' ? 'success' : currentCard.difficulty === 'medium' ? 'warning' : 'error'}
             variant="outlined"
+            sx={{ ml: 1 }}
           />
         </Typography>
-        <Typography variant="caption" sx={{ color: theme.palette.text.secondary, mt: 1 }}>
-          Reviewed {currentCard.timesReviewed} times •
-          Correct: {currentCard.correctCount} •
-          Incorrect: {currentCard.incorrectCount}
+        <Typography variant="caption" sx={{ color: theme.palette.text.secondary, fontSize: { xs: '0.65rem', sm: '0.75rem' } }}>
+          Reviewed {currentCard.timesReviewed} • ✓ {currentCard.correctCount} • ✗ {currentCard.incorrectCount}
         </Typography>
       </Box>
     </Container>
