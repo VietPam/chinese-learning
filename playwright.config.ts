@@ -8,7 +8,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"], ["html", { open: "never" }]],
   use: {
-    baseURL: "http://127.0.0.1:3100",
+    baseURL: process.env.TEST_BASE_URL ?? "http://127.0.0.1:3100",
     browserName: "chromium",
     isMobile: true,
     hasTouch: true,
@@ -24,7 +24,7 @@ export default defineConfig({
     { name: "mobile-390", use: { viewport: { width: 390, height: 844 } } },
     { name: "mobile-430", use: { viewport: { width: 430, height: 932 } } },
   ],
-  webServer: {
+  webServer: process.env.TEST_BASE_URL ? undefined : {
     command: "npm run start -- --hostname 127.0.0.1 --port 3100",
     url: "http://127.0.0.1:3100",
     reuseExistingServer: false,

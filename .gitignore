@@ -43,3 +43,7 @@ next-env.d.ts
 # browser test artifacts
 /test-results/
 /playwright-report/
+
+# Cloudflare build output
+/.open-next/
+/.wrangler/

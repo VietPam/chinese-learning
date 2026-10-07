@@ -51,7 +51,7 @@ npm run lint
 npm run typecheck
 ```
 
-Nền tảng hiện tại: Next.js 16.4.0, React 19.3.0, Tailwind CSS 4, shadcn/ui (Radix Nova). Quicksand được phục vụ local bằng next/font; CSS theme theo VSTEPUP. Chưa cần biến môi trường để chạy local.
+Nền tảng hiện tại: Next.js 16.3.8, React 19.3.0, Tailwind CSS 4, shadcn/ui (Radix Nova). Quicksand được phục vụ local bằng next/font; CSS theme theo VSTEPUP. Chưa cần biến môi trường để chạy local.
 
 Xem [báo cáo giai đoạn 1](docs/phase-1-report.md).
 
@@ -94,3 +94,17 @@ Xem [báo cáo giai đoạn 5](docs/phase-5-report.md). Browser emulation và ax
 ## Bàn giao
 
 MVP được bàn giao trên nhánh `feat/pinyin-mvp`, chưa merge hoặc deploy. Xem [báo cáo giai đoạn 6](docs/phase-6-report.md) và [trạng thái hosting](docs/deployment.md).
+
+## Cloudflare Workers
+
+Đã bổ sung OpenNext và Wrangler cho Worker `chinese-learning`, custom domain `china.vietpq.com`. Next.js được pin 16.3.8 vì runtime thử nghiệm với 16.4.0 gặp lỗi manifest dù build thành công.
+
+```bash
+npm run build:worker
+npm run preview:worker
+npm run deploy
+```
+
+`wrangler deploy` tự gọi `build:worker` qua cấu hình custom build. Cloudflare Workers Builds có thể giữ build command `npm run build` và deploy command `npx wrangler deploy`; lệnh deploy sẽ tạo lại bundle adapter. Deploy cần quyền Cloudflare, local preview không cần đăng nhập.
+
+Kiểm tra một runtime/URL đã chạy bằng `TEST_BASE_URL=http://localhost:8787 npm run test:e2e` (thêm CHROMIUM_EXECUTABLE_PATH nếu dùng browser hệ thống).
