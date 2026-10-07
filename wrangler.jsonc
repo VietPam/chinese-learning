@@ -3,9 +3,24 @@
   "name": "chinese-learning",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-07",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "build": { "command": "npm run build:worker" },
-  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
-  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "chinese-learning" }],
-  "routes": [{ "pattern": "china.vietpq.com", "custom_domain": true }]
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "chinese-learning"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "china.vietpq.com",
+      "custom_domain": true
+    }
+  ]
 }

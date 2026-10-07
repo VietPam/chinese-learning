@@ -44,3 +44,11 @@ Người dùng đã yêu cầu merge PR #2 và triển khai https://china.vietpq
 - Không cần R2 cho các trang hiện tại không dùng ISR/cache nghiệp vụ.
 
 Wrangler whoami xác nhận môi trường local chưa đăng nhập Cloudflare. Triển khai dự kiến qua kết nối GitHub Workers Builds đang có; kết quả deploy và kiểm tra domain sẽ được xác nhận sau merge, không suy ra từ local build.
+
+## Sửa lỗi build command từ log production
+
+Log người dùng cung cấp cho thấy `npm run build` chỉ tạo `.next`; Wrangler 4.148.0 tự chuyển sang `opennextjs-cloudflare deploy`, bỏ qua custom build và báo thiếu compiled OpenNext config.
+
+Đã sửa: `build` = `opennextjs-cloudflare build`; `build:next` = `next build`; `open-next.config.ts` đặt `buildCommand` = `npm run build:next`. Bỏ custom build trong Wrangler. Cấu hình dashboard giữ nguyên `npm run build` / `npx wrangler deploy`.
+
+Lệnh build phải tạo `.open-next/worker.js`, assets và compiled OpenNext config trước bước deploy. Đây là sửa cấu hình đóng gói, không thay đổi dữ liệu hoặc hành vi học.
