@@ -2,7 +2,7 @@
 
 Web cá nhân dành cho người Việt bắt đầu từ số 0, học nghĩa và Pinyin của 20 câu thường nhắn cho người yêu. Người học xưng “anh”, người nhận là “em”; mục tiêu là nhớ Pinyin để gõ bằng bàn phím tiếng Trung trên điện thoại và chọn chữ Hán phù hợp.
 
-Trạng thái: đã hoàn thành giai đoạn 1–5, nghiệm thu mobile local đạt. Route `/` chạy đầy đủ lượt học 20 câu, lời giải, hoàn thành và học lại; chưa phát hành. Tài liệu cập nhật ngày 2026-10-07. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
+Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 20 câu, lời giải, hoàn thành và học lại. Tài liệu cập nhật ngày 2026-10-07. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
 
 ## Đọc tài liệu
 
@@ -11,6 +11,7 @@ Trạng thái: đã hoàn thành giai đoạn 1–5, nghiệm thu mobile local �
 | [Kế hoạch MVP](docs/mvp-plan.md) | Giai đoạn triển khai, đầu việc, phụ thuộc và điều kiện hoàn thành |
 | [Yêu cầu sản phẩm](docs/product-requirements.md) | Người dùng, mục tiêu, phạm vi và quyết định đã chốt |
 | [Luồng và use case](docs/user-flows.md) | Trạng thái câu hỏi, đúng/sai, tiếp tục và hoàn thành |
+| [Cải tiến mobile](docs/mobile-design-refinement.md) | Khảo sát thumbnail hai trang VSTEP và áp dụng feedback production |
 | [Thiết kế tham chiếu](docs/design-reference.md) | Quy luật VSTEPUP, theme, thành phần và mobile |
 | [Nội dung 20 câu](docs/content.md) | Tiếng Việt, Pinyin, cách gõ, chữ Hán, nghĩa từ và đáp án nhiễu |
 | [Định hướng kỹ thuật](docs/technical-plan.md) | Next.js, shadcn/ui, dữ liệu và quản lý trạng thái |

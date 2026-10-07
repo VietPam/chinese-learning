@@ -1,8 +1,6 @@
 "use client";
 
-import { MessageCircle, Send } from "lucide-react";
 import type { Phrase } from "@/lib/types";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { AnswerOption, type AnswerStatus } from "@/components/answer-option";
@@ -14,18 +12,9 @@ export function QuestionCard({ phrase, options, questionNumber, total, selectedA
 }) {
   const answered = selectedAnswerId !== null;
   const count = questionNumber - 1 + Number(answered);
-  const Icon = phrase.category === "ask" ? MessageCircle : Send;
   return (
     <Card className="gap-5 rounded-3xl border p-[20px] shadow-[0_1px_2px_rgba(36,85,163,0.03)] ring-0">
-      <div className="space-y-3">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <Badge variant="secondary" className="gap-1.5 rounded-lg border border-blue-100 px-2 py-1 text-xs font-semibold">
-            <Icon className="size-3.5" aria-hidden="true" />{phrase.category === "ask" ? "Hỏi em" : "Báo cho em"}
-          </Badge>
-          <p className="text-xs font-semibold text-muted-foreground">Câu <span className="text-primary">{questionNumber}</span>/{total}</p>
-        </div>
-        <Progress value={count * 100 / total} aria-label="Tiến độ lượt học" getValueLabel={() => `${count}/${total} câu đã trả lời`} className="h-1.5 bg-secondary" />
-      </div>
+      <Progress value={count * 100 / total} aria-label="Tiến độ lượt học" getValueLabel={() => `${count}/${total} câu đã trả lời`} className="h-1.5 bg-secondary" />
       <div className="space-y-2 pt-1">
         <p className="text-xs font-medium text-muted-foreground">Câu này nói thế nào?</p>
         <h1 id="question-title" tabIndex={-1} className="scroll-mt-24 text-2xl leading-snug font-bold tracking-tight outline-none">{phrase.vietnamese}</h1>
