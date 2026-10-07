@@ -1,0 +1,44 @@
+"use client";
+
+import { useState } from "react";
+import { phrases } from "@/lib/content";
+import { LearningHeader } from "@/components/learning-header";
+import { QuestionCard } from "@/components/question-card";
+import { SessionComplete } from "@/components/session-complete";
+
+type Scenario = "question" | "correct" | "incorrect" | "long" | "long-feedback" | "complete";
+const scenarios: { id: Scenario; label: string }[] = [
+  { id: "question", label: "Câu hỏi" }, { id: "correct", label: "Đúng" },
+  { id: "incorrect", label: "Sai" }, { id: "long", label: "Câu dài" },
+  { id: "long-feedback", label: "Giải thích dài" }, { id: "complete", label: "Hoàn thành" },
+];
+
+/** Development-only visual fixtures. The complete quiz flow belongs to phase 4. */
+export function DesignPreview() {
+  const [scenario, setScenario] = useState<Scenario>("question");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const phrase = phrases[scenario.startsWith("long") ? 10 : 0];
+  const options = [phrase.distractorIds[0], phrase.id, phrase.distractorIds[1]].map(id => phrases.find(p => p.id === id)!);
+  const selected = selectedId ?? (scenario === "correct" || scenario === "long-feedback" ? phrase.id : scenario === "incorrect" ? phrase.distractorIds[0] : null);
+  function change(next: Scenario) { setScenario(next); setSelectedId(null); window.scrollTo({ top: 0 }); }
+  return (
+    <>
+      <LearningHeader />
+      <main className="safe-bottom space-y-5 px-[16px] pt-6">
+        <div className="px-1">
+          <p className="mb-1 text-lg font-bold">Một câu nhỏ, thêm gần nhau</p>
+          <p className="text-sm leading-6 text-muted-foreground">20 câu nhắn tin cùng người thương.</p>
+        </div>
+        {scenario === "complete" ? <SessionComplete total={20} onRestart={() => change("question")} /> :
+          <QuestionCard phrase={phrase} options={options} questionNumber={scenario.startsWith("long") ? 11 : 1} total={20} selectedAnswerId={selected} onAnswer={setSelectedId} onContinue={() => change("complete")} />}
+        <p className="px-4 text-center text-xs leading-5 text-muted-foreground">Học một chút. Nhớ thêm một câu.</p>
+        <aside aria-label="Công cụ xem trước thiết kế" className="rounded-2xl border border-dashed bg-white p-3">
+          <p className="mb-3 text-xs font-bold text-muted-foreground">PREVIEW GIAO DIỆN · CHỈ DÙNG KHI PHÁT TRIỂN</p>
+          <div className="flex flex-wrap gap-2">
+            {scenarios.map(item => <button type="button" key={item.id} onClick={() => change(item.id)} aria-pressed={scenario === item.id} className="min-h-11 rounded-lg border px-3 text-xs font-semibold aria-pressed:bg-secondary aria-pressed:text-primary">{item.label}</button>)}
+          </div>
+        </aside>
+      </main>
+    </>
+  );
+}
