@@ -105,6 +105,6 @@ npm run preview:worker
 npm run deploy
 ```
 
-`wrangler deploy` tự gọi `build:worker` qua cấu hình custom build. Cloudflare Workers Builds có thể giữ build command `npm run build` và deploy command `npx wrangler deploy`; lệnh deploy sẽ tạo lại bundle adapter. Deploy cần quyền Cloudflare, local preview không cần đăng nhập.
+Cloudflare Workers Builds giữ build command `npm run build` và deploy command `npx wrangler deploy`. `npm run build` tạo bundle OpenNext, bên trong gọi `build:next` để tránh đệ quy. Wrangler tự nhận diện OpenNext khi deploy; không dựa vào custom build của Wrangler. `npm run deploy` cũng build trước rồi deploy. Deploy cần quyền Cloudflare, local preview không cần đăng nhập.
 
 Kiểm tra một runtime/URL đã chạy bằng `TEST_BASE_URL=http://localhost:8787 npm run test:e2e` (thêm CHROMIUM_EXECUTABLE_PATH nếu dùng browser hệ thống).
