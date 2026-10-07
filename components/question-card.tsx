@@ -6,12 +6,12 @@ import { Progress } from "@/components/ui/progress";
 import { AnswerOption, type AnswerStatus } from "@/components/answer-option";
 import { AnswerFeedback } from "@/components/answer-feedback";
 
-export function QuestionCard({ phrase, options, questionNumber, total, selectedAnswerId, onAnswer, onContinue }: {
+export function QuestionCard({ phrase, options, questionNumber, total, selectedAnswerId, answeredCount, onAnswer, onContinue }: {
   phrase: Phrase; options: readonly Phrase[]; questionNumber: number; total: number;
-  selectedAnswerId: string | null; onAnswer?: (id: string) => void; onContinue?: () => void;
+  selectedAnswerId: string | null; answeredCount?: number; onAnswer?: (id: string) => void; onContinue?: () => void;
 }) {
   const answered = selectedAnswerId !== null;
-  const count = questionNumber - 1 + Number(answered);
+  const count = answeredCount ?? questionNumber - 1 + Number(answered);
   return (
     <Card className="gap-5 rounded-3xl border p-[20px] shadow-[0_1px_2px_rgba(36,85,163,0.03)] ring-0">
       <Progress value={count * 100 / total} aria-label="Tiến độ lượt học" getValueLabel={() => `${count}/${total} câu đã trả lời`} className="h-1.5 bg-secondary" />

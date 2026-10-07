@@ -1,5 +1,6 @@
 # Yêu cầu sản phẩm
 
+> Cập nhật 07/10/2026: [Học · Quiz · Luyện gõ](learning-expansion.md) thay thế các mô tả cũ về quiz theo thứ tự, không bỏ qua/quay lại và chưa có luyện gõ.
 ## Người dùng và mục tiêu
 
 Chỉ một người dùng chính: người Việt chưa biết tiếng Trung, dùng điện thoại và đã cài bàn phím tiếng Trung Pinyin. Người dùng muốn nhắn tin text với người yêu là người Việt biết tiếng Trung. Người dùng xưng “anh”.

@@ -1,5 +1,6 @@
 # Checklist nghiệm thu MVP
 
+> Cập nhật 07/10/2026: [Học · Quiz · Luyện gõ](learning-expansion.md) thay thế các mô tả cũ về quiz theo thứ tự, không bỏ qua/quay lại và chưa có luyện gõ.
 Trạng thái: đã nghiệm thu local ngày 2026-10-07 trên Chromium mobile emulation. Chi tiết, ảnh và giới hạn ở [báo cáo giai đoạn 5](phase-5-report.md). Nội dung ngôn ngữ do trợ lý rà soát, chưa kiểm duyệt độc lập.
 
 ## Chức năng
