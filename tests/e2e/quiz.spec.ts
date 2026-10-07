@@ -21,6 +21,7 @@ test("complete a mixed-result session, restart and reload", async ({ page }, tes
 
   for (const [i, phrase] of phrases.entries()) {
     await expect(page.getByRole("heading", { name: phrase.vietnamese, exact: true })).toBeVisible();
+    await expect(page.getByRole("banner")).toContainText(`Câu ${i + 1}/20`);
     await expect(page.getByTestId("answer-feedback")).toHaveCount(0);
     await expect(page.getByRole("button", { name: /Câu tiếp theo|Hoàn thành/ })).toHaveCount(0);
     await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", String(i * 5));

@@ -1,5 +1,7 @@
 # Thiết kế MVP Pinyin theo VSTEPUP
 
+> Cập nhật sau feedback production: [Tinh gọn mobile và tham chiếu cả hai website](mobile-design-refinement.md). Các quyết định mới về header, nhãn và khẩu hiệu thay thế bố cục tương ứng bên dưới.
+
 Khảo sát trực tiếp ngày 2026-10-07 bằng Chromium, viewport desktop 1440×1000 và mobile 390×844. Đây là đặc tả thiết kế trước khi triển khai Next.js + shadcn/ui.
 
 Yêu cầu cập nhật: sản phẩm mobile-first; chỉ thiết kế và kiểm tra giao diện mobile web. Viewport nghiệm thu: 360, 390 và 430px. Quan sát desktop bên dưới chỉ là tư liệu khảo sát VSTEPUP, không phải yêu cầu triển khai hoặc kiểm thử.

@@ -38,10 +38,9 @@ export function PinyinQuiz({ initialSession }: { initialSession: QuizState }) {
 
   return (
     <>
-      <LearningHeader />
-      <main className="safe-bottom space-y-5 px-[16px] pt-6">
+      <LearningHeader questionNumber={state.questionIndex + 1} total={phrases.length} />
+      <main className="safe-bottom space-y-4 px-[16px] pt-4">
         <div className="px-1">
-          <p className="mb-1 text-lg font-bold">Một câu nhỏ, thêm gần nhau</p>
           <p className="text-sm leading-6 text-muted-foreground">20 câu nhắn tin cùng người thương.</p>
         </div>
         <div ref={contentRef}>
@@ -57,7 +56,6 @@ export function PinyinQuiz({ initialSession }: { initialSession: QuizState }) {
               onContinue={continueLearning}
             />}
         </div>
-        <p className="px-4 text-center text-xs leading-5 text-muted-foreground">Học một chút. Nhớ thêm một câu.</p>
       </main>
     </>
   );

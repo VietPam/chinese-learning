@@ -23,15 +23,13 @@ export function DesignPreview() {
   function change(next: Scenario) { setScenario(next); setSelectedId(null); window.scrollTo({ top: 0 }); }
   return (
     <>
-      <LearningHeader />
-      <main className="safe-bottom space-y-5 px-[16px] pt-6">
+      <LearningHeader questionNumber={scenario === "complete" ? 20 : scenario.startsWith("long") ? 11 : 1} total={20} />
+      <main className="safe-bottom space-y-4 px-[16px] pt-4">
         <div className="px-1">
-          <p className="mb-1 text-lg font-bold">Một câu nhỏ, thêm gần nhau</p>
           <p className="text-sm leading-6 text-muted-foreground">20 câu nhắn tin cùng người thương.</p>
         </div>
         {scenario === "complete" ? <SessionComplete total={20} onRestart={() => change("question")} /> :
           <QuestionCard phrase={phrase} options={options} questionNumber={scenario.startsWith("long") ? 11 : 1} total={20} selectedAnswerId={selected} onAnswer={setSelectedId} onContinue={() => change("complete")} />}
-        <p className="px-4 text-center text-xs leading-5 text-muted-foreground">Học một chút. Nhớ thêm một câu.</p>
         <aside aria-label="Công cụ xem trước thiết kế" className="rounded-2xl border border-dashed bg-white p-3">
           <p className="mb-3 text-xs font-bold text-muted-foreground">PREVIEW GIAO DIỆN · CHỈ DÙNG KHI PHÁT TRIỂN</p>
           <div className="flex flex-wrap gap-2">
