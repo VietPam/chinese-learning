@@ -1,5 +1,6 @@
 # Định hướng kỹ thuật
 
+> Cập nhật 07/10/2026: [Học · Quiz · Luyện gõ](learning-expansion.md) thay thế các mô tả cũ về quiz theo thứ tự, không bỏ qua/quay lại và chưa có luyện gõ.
 ## Công nghệ
 
 Người dùng yêu cầu Next.js và shadcn/ui. Phương án triển khai: Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui và dữ liệu tĩnh trong repo. Chọn phiên bản ổn định tương thích tại thời điểm khởi tạo, ghi lockfile và lệnh build thực tế khi đã có code.

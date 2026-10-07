@@ -30,9 +30,9 @@ export function AnswerFeedback({ phrase, correct, isLast = false, onContinue }: 
         </div>
       </section>
       <WordMeaningList words={phrase.words} />
-      <Button type="button" onClick={onContinue} disabled={!onContinue} className="h-auto min-h-12 w-full rounded-[14px] px-4 py-3 text-base font-bold whitespace-normal">
+      {onContinue && <Button type="button" onClick={onContinue} disabled={!onContinue} className="h-auto min-h-12 w-full rounded-[14px] px-4 py-3 text-base font-bold whitespace-normal">
         <span className="min-w-0 break-words">{isLast ? "Hoàn thành" : "Câu tiếp theo"}</span><ArrowRight className="ml-1 size-4" aria-hidden="true" />
-      </Button>
+      </Button>}
     </div>
   );
 }

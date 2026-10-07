@@ -1,5 +1,6 @@
 # Todo
 
+> Cập nhật 07/10/2026: [Học · Quiz · Luyện gõ](learning-expansion.md) thay thế các mô tả cũ về quiz theo thứ tự, không bỏ qua/quay lại và chưa có luyện gõ.
 Kế hoạch chi tiết và thứ tự thực hiện nằm trong [kế hoạch MVP](mvp-plan.md). Các mục dưới là bản tóm tắt.
 
 ## Triển khai MVP

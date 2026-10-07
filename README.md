@@ -8,6 +8,7 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 
 | Tài liệu | Nội dung |
 | --- | --- |
+| [Học · Quiz · Luyện gõ](docs/learning-expansion.md) | Yêu cầu mở rộng, trạng thái và quy tắc chấm chữ Hán |
 | [Kế hoạch MVP](docs/mvp-plan.md) | Giai đoạn triển khai, đầu việc, phụ thuộc và điều kiện hoàn thành |
 | [Yêu cầu sản phẩm](docs/product-requirements.md) | Người dùng, mục tiêu, phạm vi và quyết định đã chốt |
 | [Luồng và use case](docs/user-flows.md) | Trạng thái câu hỏi, đúng/sai, tiếp tục và hoàn thành |
@@ -24,7 +25,7 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 - Next.js và shadcn/ui; VSTEPUP là chuẩn tham chiếu về style.
 - Một câu tiếng Việt, ba đáp án Pinyin, chấm ngay khi chạm.
 - Sau khi trả lời: Pinyin đúng, cách gõ không dấu, chữ Hán và giải nghĩa ngắn.
-- Không đăng nhập, âm thanh, luyện phát âm hay bài tự gõ trong MVP.
+- Không đăng nhập, âm thanh hoặc luyện phát âm. Phần mở rộng hỗ trợ học từ theo câu, quiz xáo câu và luyện gõ chữ Hán.
 
 Tài liệu yêu cầu sản phẩm là nguồn chính về phạm vi. Tài liệu thiết kế phân biệt rõ điều đã quan sát trên VSTEPUP và điều đề xuất cho MVP. Các quyết định kỹ thuật là phương án triển khai, không phải toàn bộ đều do người dùng chỉ định.
 

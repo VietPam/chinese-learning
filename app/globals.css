@@ -66,3 +66,8 @@
 
 /* Keep a solid focus indicator above component utility styles. */
 button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+
+/* Leave room for the three modes, including larger text and the iPhone Home indicator. */
+.learning-main { padding-bottom: calc(7rem + env(safe-area-inset-bottom)); }
+body:has(#hanzi-input:focus) .learning-nav { display: none; }
+#hanzi-input { scroll-margin-block: 100px; }

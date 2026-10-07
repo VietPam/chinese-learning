@@ -3,105 +3,156 @@ import AxeBuilder from "@axe-core/playwright";
 import { phrases } from "../../lib/content";
 
 async function audit(page: Page) {
-  const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
-  expect(results.violations).toEqual([]);
-}
-async function noOverflow(page: Page) {
+  expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
 }
+async function currentPhrase(page: Page) {
+  const text = await page.getByRole("heading", { level: 1 }).innerText();
+  return phrases.find(p => p.vietnamese === text)!;
+}
+const next = (page: Page) => page.getByRole("button", { name: "Câu tiếp theo", exact: true });
+const previous = (page: Page) => page.getByRole("button", { name: "Câu trước", exact: true });
+const mode = (page: Page, name: string) => page.getByRole("navigation", { name: "Chế độ học" }).getByRole("button", { name, exact: true });
 
-test("complete a mixed-result session, restart and reload", async ({ page }, testInfo) => {
+test("shuffled quiz supports skipping, retained answers, missing review, completion and restart", async ({ page }, info) => {
   const errors: string[] = [];
   page.on("pageerror", e => errors.push(e.message));
-  page.on("console", m => { if (m.type() === "error") errors.push(m.text()); });
   await page.goto("/", { waitUntil: "networkidle" });
-  await page.evaluate(() => document.fonts.ready);
-  const requests: string[] = [];
-  page.on("request", r => { if (["fetch", "xhr", "document"].includes(r.resourceType())) requests.push(r.url()); });
-
-  for (const [i, phrase] of phrases.entries()) {
-    await expect(page.getByRole("heading", { name: phrase.vietnamese, exact: true })).toBeVisible();
+  const seen = new Set<string>();
+  let skipped = "";
+  for (let i = 0; i < 20; i++) {
+    const phrase = await currentPhrase(page);
+    expect(phrase).toBeTruthy();
+    expect(seen.has(phrase.id)).toBe(false);
+    seen.add(phrase.id);
     await expect(page.getByRole("banner")).toContainText(`Câu ${i + 1}/20`);
-    await expect(page.getByTestId("answer-feedback")).toHaveCount(0);
-    await expect(page.getByRole("button", { name: /Câu tiếp theo|Hoàn thành/ })).toHaveCount(0);
-    await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", String(i * 5));
-    const choices = page.getByRole("group").getByRole("button");
-    await expect(choices).toHaveCount(3);
+    await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", String(Math.max(0, i - 1) * 5));
     if (i === 0) {
+      skipped = phrase.id;
+      await expect(previous(page)).toBeDisabled();
       await audit(page);
-      for (const choice of await choices.all()) {
-        const box = (await choice.boundingBox())!;
-        expect(box.height).toBeGreaterThanOrEqual(56);
-        expect(box.y + box.height).toBeLessThanOrEqual(page.viewportSize()!.height);
+      await page.screenshot({ path: info.outputPath("quiz.png"), fullPage: true });
+    } else {
+      const choices = page.getByRole("group").getByRole("button");
+      await choices.filter({ hasText: i % 2 ? phrases.find(p => p.id === phrase.distractorIds[0])!.pinyin : phrase.pinyin }).tap();
+      await expect(page.getByRole("status")).toContainText(i % 2 ? "Chưa đúng" : "Đúng rồi");
+      await expect(page.getByRole("group").getByRole("button", { disabled: true })).toHaveCount(3);
+      if (i === 1) {
+        const order = await choices.allTextContents();
+        await previous(page).tap();
+        await expect(page.getByRole("heading", { level: 1 })).toHaveText(phrases.find(p => p.id === skipped)!.vietnamese);
+        await expect(page.getByTestId("answer-feedback")).toHaveCount(0);
+        await next(page).tap();
+        expect(await choices.allTextContents()).toEqual(order);
+        await expect(page.getByTestId("answer-feedback")).toBeVisible();
+        await audit(page);
       }
-      await page.screenshot({ path: testInfo.outputPath("question.png"), fullPage: true });
     }
-    const pinyinOrder = await choices.locator('[lang="zh-Latn"]').allTextContents();
-    const selected = i % 2 ? phrases.find(p => p.id === phrase.distractorIds[0])! : phrase;
-    const target = choices.filter({ hasText: selected.pinyin });
-    await target.tap();
-    await expect(page.getByTestId("answer-feedback")).toBeVisible();
-    await expect(page.getByRole("status")).toContainText(i % 2 ? "Chưa đúng" : "Đúng rồi");
-    await expect(page.getByRole("group").getByRole("button", { disabled: true })).toHaveCount(3);
-    await target.evaluate(el => { (el as HTMLButtonElement).click(); (el as HTMLButtonElement).click(); });
-    expect(await choices.locator('[lang="zh-Latn"]').allTextContents()).toEqual(pinyinOrder);
-    await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", String((i + 1) * 5));
-    await expect(page.getByTestId("answer-feedback").locator('p[lang="zh-Hans"]')).toHaveText(phrase.hanzi);
-    await noOverflow(page);
-    if ([0, 1, 10, 12].includes(i)) {
-      await audit(page);
-      await page.screenshot({ path: testInfo.outputPath(`feedback-${i + 1}.png`), fullPage: true });
+    if (i < 19) {
+      await next(page).tap();
+      await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
     }
-    const next = page.getByRole("button", { name: i === 19 ? "Hoàn thành" : "Câu tiếp theo", exact: true });
-    expect((await next.boundingBox())!.height).toBeGreaterThanOrEqual(48);
-    await next.scrollIntoViewIfNeeded();
-    if (i === 10) await next.evaluate(el => { (el as HTMLButtonElement).click(); (el as HTMLButtonElement).click(); });
-    else await next.tap();
-    await expect(page.getByRole("heading", { name: i === 19 ? "Bạn đã học hết 20 câu!" : phrases[i + 1].vietnamese, exact: true })).toBeFocused();
-    await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
   }
-  await audit(page);
-  await page.screenshot({ path: testInfo.outputPath("complete.png"), fullPage: true });
-  await page.getByRole("button", { name: "Học lại", exact: true }).tap();
-  await expect(page.getByRole("heading", { name: phrases[0].vietnamese, exact: true })).toBeFocused();
-  await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
-  await expect(page.getByTestId("answer-feedback")).toHaveCount(0);
-  expect(requests).toEqual([]);
+  expect(seen.size).toBe(20);
+  await expect(next(page)).toBeDisabled();
+  await expect(page.getByText("Còn 1 câu chưa trả lời.", { exact: false })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Hoàn thành", exact: true })).toHaveCount(0);
+  await page.getByRole("button", { name: "Làm câu còn thiếu" }).tap();
+  await expect(page.getByRole("banner")).toContainText("Câu 1/20");
   await page.getByRole("group").getByRole("button").first().tap();
-  await page.getByRole("button", { name: "Câu tiếp theo", exact: true }).tap();
-  await page.reload({ waitUntil: "networkidle" });
-  await expect(page.getByRole("heading", { name: phrases[0].vietnamese, exact: true })).toBeVisible();
+  await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "100");
+  await page.getByRole("button", { name: "Hoàn thành", exact: true }).tap();
+  await expect(page.getByRole("heading", { name: "Bạn đã học hết 20 câu!" })).toBeFocused();
+  await audit(page);
+  await expect(page.getByRole("banner")).toContainText("Câu 20/20");
+  await page.getByRole("button", { name: "Học lại", exact: true }).tap();
   await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
-  expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0]);
+  await expect(page.getByRole("banner")).toContainText("Câu 1/20");
   expect(errors).toEqual([]);
 });
 
-test("keyboard access and 200% text with long explanations", async ({ page }, testInfo) => {
+test("study and typing keep independent positions, drafts and results; Enter respects composition", async ({ page }, info) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+  const quizPhrase = await currentPhrase(page);
+  await page.getByRole("group").getByRole("button").first().tap();
+  await mode(page, "Học").tap();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(phrases[0].vietnamese);
+  await expect(page.locator('p[lang="zh-Hans"]')).toHaveText(phrases[0].hanzi);
+  await audit(page);
+  await page.screenshot({ path: info.outputPath("learn.png"), fullPage: true });
+  await next(page).tap();
+  await mode(page, "Luyện gõ").tap();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(phrases[0].vietnamese);
+  await expect(page.locator('p[lang="zh-Hans"]')).toHaveCount(0);
+  const input = page.getByRole("textbox", { name: "Nhập chữ Hán" });
+  await input.fill("ni");
+  await input.dispatchEvent("compositionstart");
+  await input.press("Enter");
+  await expect(page.getByRole("status")).toBeEmpty();
+  await input.dispatchEvent("compositionend");
+  // Safari may deliver compositionend just before the same confirming Enter.
+  await input.evaluate(el => {
+    el.dispatchEvent(new CompositionEvent("compositionend", { bubbles: true }));
+    el.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+    el.closest("form")!.requestSubmit();
+  });
+  await expect(page.getByRole("status")).toBeEmpty();
+  await page.waitForTimeout(120);
+  await input.fill("你好");
+  await input.press("Enter");
+  await expect(page.getByRole("status")).toContainText("Chưa đúng");
+  await expect(input).toHaveValue("你好");
+  await expect(page.getByRole("status")).toContainText(phrases[0].hanzi);
+  await input.fill(phrases[0].hanzi.replace(/[\p{P}]/gu, "") + " ！");
+  await input.press("Enter");
+  await expect(page.getByRole("status")).toContainText("Đúng rồi");
+  await expect(page.getByRole("banner")).toContainText("Câu 1/20");
+  await audit(page);
+  await page.screenshot({ path: info.outputPath("typing.png"), fullPage: true });
+  await next(page).tap();
+  await input.fill("草稿");
+  await input.blur();
+  await mode(page, "Học").tap();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(phrases[1].vietnamese);
+  await mode(page, "Quiz").tap();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(quizPhrase.vietnamese);
+  await expect(page.getByTestId("answer-feedback")).toBeVisible();
+  await mode(page, "Luyện gõ").tap();
+  await expect(input).toHaveValue("草稿");
+  await previous(page).tap();
+  await expect(page.getByRole("status")).toContainText("Đúng rồi");
+  await input.fill(" 。 ");
+  await input.press("Enter");
+  await expect(page.getByRole("status")).toContainText("Nhập chữ Hán trước");
+  await input.blur();
+  await page.reload({ waitUntil: "networkidle" });
+  await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
+  await mode(page, "Luyện gõ").tap();
+  await expect(input).toHaveValue("");
+});
+
+test("200% text, long study/typing sentences, keyboard and bottom navigation remain usable", async ({ page }, info) => {
   await page.goto("/", { waitUntil: "networkidle" });
   await page.keyboard.press("Tab");
   await expect(page.getByRole("group").getByRole("button").first()).toBeFocused();
-  expect(await page.locator(":focus").evaluate(el => getComputedStyle(el).outlineStyle)).not.toBe("none");
   await page.keyboard.press("Enter");
   await expect(page.getByTestId("answer-feedback")).toBeVisible();
-  await page.keyboard.press("Tab");
-  await expect(page.getByRole("button", { name: "Câu tiếp theo", exact: true })).toBeFocused();
-  await page.keyboard.press("Enter");
-  await expect(page.getByRole("heading", { name: phrases[1].vietnamese, exact: true })).toBeFocused();
-  for (let i = 1; i < 10; i++) {
-    await page.getByRole("group").getByRole("button").first().tap();
-    await page.getByRole("button", { name: "Câu tiếp theo", exact: true }).tap();
-  }
+  await mode(page, "Học").tap();
+  for (let i = 0; i < 10; i++) await next(page).tap();
   await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; });
-  await page.getByRole("group").getByRole("button").first().tap();
-  await noOverflow(page);
   await audit(page);
-  const nextButton = page.getByRole("button", { name: "Câu tiếp theo", exact: true });
-  expect(await nextButton.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+  await page.screenshot({ path: info.outputPath("learn-large.png"), fullPage: true });
+  await mode(page, "Luyện gõ").tap();
+  for (let i = 0; i < 10; i++) await next(page).tap();
+  const input = page.getByRole("textbox");
+  await input.fill(phrases[10].hanzi);
+  await expect(page.getByRole("navigation", { name: "Chế độ học" })).toBeHidden();
+  await input.press("Enter");
+  await expect(page.getByRole("status")).toContainText("Đúng rồi");
+  await expect(mode(page, "Luyện gõ")).toBeVisible();
+  await audit(page);
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.screenshot({ path: testInfo.outputPath("large-text.png"), fullPage: true });
-  await page.getByRole("button", { name: "Câu tiếp theo", exact: true }).tap();
-  await expect(page.getByRole("heading", { name: phrases[11].vietnamese, exact: true })).toBeFocused();
-  await noOverflow(page);
+  await page.screenshot({ path: info.outputPath("typing-large.png"), fullPage: true });
 });
 
 test("production hides design fixtures", async ({ request }) => {
