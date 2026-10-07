@@ -1,0 +1,46 @@
+"use client";
+
+import { MessageCircle, Send } from "lucide-react";
+import type { Phrase } from "@/lib/types";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { AnswerOption, type AnswerStatus } from "@/components/answer-option";
+import { AnswerFeedback } from "@/components/answer-feedback";
+
+export function QuestionCard({ phrase, options, questionNumber, total, selectedAnswerId, onAnswer, onContinue }: {
+  phrase: Phrase; options: readonly Phrase[]; questionNumber: number; total: number;
+  selectedAnswerId: string | null; onAnswer?: (id: string) => void; onContinue?: () => void;
+}) {
+  const answered = selectedAnswerId !== null;
+  const count = questionNumber - 1 + Number(answered);
+  const Icon = phrase.category === "ask" ? MessageCircle : Send;
+  return (
+    <Card className="gap-5 rounded-3xl border p-[20px] shadow-[0_1px_2px_rgba(36,85,163,0.03)] ring-0">
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <Badge variant="secondary" className="gap-1.5 rounded-lg border border-blue-100 px-2 py-1 text-xs font-semibold">
+            <Icon className="size-3.5" aria-hidden="true" />{phrase.category === "ask" ? "Hỏi em" : "Báo cho em"}
+          </Badge>
+          <p className="text-xs font-semibold text-muted-foreground">Câu <span className="text-primary">{questionNumber}</span>/{total}</p>
+        </div>
+        <Progress value={count * 100 / total} aria-label="Tiến độ lượt học" getValueLabel={() => `${count}/${total} câu đã trả lời`} className="h-1.5 bg-secondary" />
+      </div>
+      <div className="space-y-2 pt-1">
+        <p className="text-xs font-medium text-muted-foreground">Câu này nói thế nào?</p>
+        <h1 id="question-title" tabIndex={-1} className="scroll-mt-24 text-2xl leading-snug font-bold tracking-tight outline-none">{phrase.vietnamese}</h1>
+      </div>
+      <p role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {answered ? `${selectedAnswerId === phrase.id ? "Đúng rồi." : "Chưa đúng."} Câu đúng: ${phrase.pinyin}.` : ""}
+      </p>
+      <div role="group" aria-labelledby="question-title" className="space-y-3">
+        {options.map((option, index) => {
+          const status: AnswerStatus = !answered ? "idle" : option.id === phrase.id ? "correct" : option.id === selectedAnswerId ? "incorrect" : "neutral";
+          return <AnswerOption key={option.id} label={String.fromCharCode(65 + index)} pinyin={option.pinyin} status={status} disabled={answered || !onAnswer} onSelect={() => onAnswer?.(option.id)} />;
+        })}
+      </div>
+      {answered ? <AnswerFeedback phrase={phrase} correct={selectedAnswerId === phrase.id} isLast={questionNumber === total} onContinue={onContinue} /> :
+        <p className="text-center text-xs leading-5 text-muted-foreground">Chọn một đáp án để xem nghĩa từng từ.</p>}
+    </Card>
+  );
+}
