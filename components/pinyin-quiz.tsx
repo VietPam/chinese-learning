@@ -9,7 +9,7 @@ import { QuestionCard } from "@/components/question-card";
 import { SessionComplete } from "@/components/session-complete";
 import { StudyCard } from "@/components/study-card";
 import { TypingCard } from "@/components/typing-card";
-import { LearningNavigation, SentenceNavigation, type LearningMode } from "@/components/learning-navigation";
+import { LearningNavigation, type LearningMode } from "@/components/learning-navigation";
 import { Button } from "@/components/ui/button";
 
 const phraseById = new Map(phrases.map(phrase => [phrase.id, phrase]));
@@ -51,19 +51,17 @@ export function PinyinQuiz({ initialSession }: { initialSession: QuizState }) {
     dispatch({ type: "RESET", session: createQuizSession(crypto.randomUUID()) });
   }
   return <>
-    <LearningHeader questionNumber={mode === "quiz" && state.isComplete ? phrases.length : index + 1} total={phrases.length} />
-    <main className="learning-main space-y-4 px-4 pt-4">
-      <p className="px-1 text-sm leading-6 text-muted-foreground">{mode === "learn" ? "Đọc câu, làm quen từng từ." : mode === "typing" ? "Nhìn Pinyin, tập chọn đúng chữ Hán." : "20 câu nhắn tin cùng người thương."}</p>
+    <LearningHeader questionNumber={mode === "quiz" && state.isComplete ? phrases.length : index + 1} total={phrases.length} onPrevious={() => move(-1)} onNext={() => move(1)} complete={mode === "quiz" && state.isComplete} />
+    <main className="learning-main space-y-3 px-3 pt-3">
       <div ref={contentRef} className="space-y-4">
         {mode === "quiz" ? state.isComplete ? <SessionComplete total={phrases.length} onRestart={restart} /> :
           <QuestionCard phrase={question} options={state.optionIdsByQuestion[index].map(id => phraseById.get(id)!)} questionNumber={mode === "quiz" && state.isComplete ? phrases.length : index + 1} total={phrases.length}
             selectedAnswerId={state.selectedAnswerId} answeredCount={progress.answered} onAnswer={answerId => dispatch({ type: "ANSWER", ...context, answerId })} /> :
           mode === "learn" ? <StudyCard phrase={question} /> :
             <TypingCard key={question.id} phrase={question} attempt={attempts[question.id] ?? emptyAttempt} onChange={attempt => setAttempts(previous => ({ ...previous, [question.id]: attempt }))} />}
-        {!(mode === "quiz" && state.isComplete) && <SentenceNavigation index={index} total={phrases.length} onPrevious={() => move(-1)} onNext={() => move(1)} />}
         {mode === "quiz" && !state.isComplete && (index === phrases.length - 1 || missing === 0) &&
           <section aria-label="Kết thúc lượt quiz" className="space-y-3 rounded-2xl border bg-white p-4">
-            <p className="text-sm leading-6 text-muted-foreground">{missing ? `Còn ${missing} câu chưa trả lời. Quay lại để hoàn thành lượt học nhé.` : "Bạn đã trả lời đủ 20 câu."}</p>
+            <p className="text-sm leading-6 text-muted-foreground">{missing ? `Còn ${missing} câu chưa trả lời.` : "Bạn đã trả lời đủ 20 câu."}</p>
             <Button className="h-auto min-h-12 w-full whitespace-normal py-3" onClick={finishOrReview}>{missing ? "Làm câu còn thiếu" : "Hoàn thành"}</Button>
           </section>}
       </div>

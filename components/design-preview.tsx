@@ -24,10 +24,7 @@ export function DesignPreview() {
   return (
     <>
       <LearningHeader questionNumber={scenario === "complete" ? 20 : scenario.startsWith("long") ? 11 : 1} total={20} />
-      <main className="safe-bottom space-y-4 px-[16px] pt-4">
-        <div className="px-1">
-          <p className="text-sm leading-6 text-muted-foreground">20 câu nhắn tin cùng người thương.</p>
-        </div>
+      <main className="safe-bottom space-y-3 px-3 pt-3">
         {scenario === "complete" ? <SessionComplete total={20} onRestart={() => change("question")} /> :
           <QuestionCard phrase={phrase} options={options} questionNumber={scenario.startsWith("long") ? 11 : 1} total={20} selectedAnswerId={selected} onAnswer={setSelectedId} onContinue={() => change("complete")} />}
         <aside aria-label="Công cụ xem trước thiết kế" className="rounded-2xl border border-dashed bg-white p-3">

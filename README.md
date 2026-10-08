@@ -8,6 +8,7 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 
 | Tài liệu | Nội dung |
 | --- | --- |
+| [Bố cục tinh gọn](docs/compact-layout.md) | Điều hướng gọn, giảm mô tả và khoảng trống theo feedback mới |
 | [Học · Quiz · Luyện gõ](docs/learning-expansion.md) | Yêu cầu mở rộng, trạng thái và quy tắc chấm chữ Hán |
 | [Kế hoạch MVP](docs/mvp-plan.md) | Giai đoạn triển khai, đầu việc, phụ thuộc và điều kiện hoàn thành |
 | [Yêu cầu sản phẩm](docs/product-requirements.md) | Người dùng, mục tiêu, phạm vi và quyết định đã chốt |

@@ -1,19 +1,18 @@
-import { MessagesSquare } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export function LearningHeader({ questionNumber, total }: { questionNumber: number; total: number }) {
-  return (
-    <header className="sticky top-0 z-10 border-b bg-white/95 px-4 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
-      <div className="flex min-h-16 items-center justify-between gap-x-3 gap-y-2 flex-wrap py-3">
-        <div className="flex items-center gap-2.5">
-          <span className="flex size-[36px] shrink-0 items-center justify-center rounded-xl border border-blue-100 bg-secondary text-primary">
-            <MessagesSquare className="size-5" aria-hidden="true" />
-          </span>
-          <span className="text-base font-bold tracking-tight">Pinyin <span className="text-primary">mỗi ngày</span></span>
-        </div>
-        <p className="ml-auto shrink-0 text-xs font-semibold tabular-nums text-muted-foreground">
-          Câu <span className="text-primary">{questionNumber}</span>/{total}
-        </p>
-      </div>
-    </header>
-  );
+export function LearningHeader({ questionNumber, total, onPrevious, onNext, complete = false }: {
+  questionNumber: number; total: number; onPrevious?: () => void; onNext?: () => void; complete?: boolean;
+}) {
+  return <header className="sticky top-0 z-10 border-b bg-white/95 px-3 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
+    <div className="flex min-h-[52px] items-center justify-between gap-2 py-1">
+      <Button variant="ghost" size="icon" aria-label="Câu trước" className="size-[44px] shrink-0 rounded-xl" disabled={complete || questionNumber === 1 || !onPrevious} onClick={onPrevious}>
+        <ArrowLeft className="size-5" aria-hidden="true" />
+      </Button>
+      <p className="text-sm font-semibold tabular-nums text-muted-foreground">Câu <span className="text-primary">{questionNumber}</span>/{total}</p>
+      <Button variant="ghost" size="icon" aria-label="Câu tiếp theo" className="size-[44px] shrink-0 rounded-xl" disabled={complete || questionNumber === total || !onNext} onClick={onNext}>
+        <ArrowRight className="size-5" aria-hidden="true" />
+      </Button>
+    </div>
+  </header>;
 }

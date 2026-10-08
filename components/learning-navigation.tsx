@@ -1,6 +1,3 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 export type LearningMode = "learn" | "quiz" | "typing";
 const modes: { id: LearningMode; label: string; color: string }[] = [
   { id: "learn", label: "Học", color: "text-emerald-700 bg-emerald-50" },
@@ -28,10 +25,4 @@ export function LearningNavigation({ mode, onChange }: { mode: LearningMode; onC
       <span>{item.label}</span>
     </button>)}
   </nav>;
-}
-export function SentenceNavigation({ index, total, onPrevious, onNext }: { index: number; total: number; onPrevious: () => void; onNext: () => void }) {
-  return <div className="grid grid-cols-2 gap-3" aria-label="Chuyển câu">
-    <Button variant="outline" className="h-auto min-h-12 whitespace-normal rounded-2xl py-3" disabled={index === 0} onClick={onPrevious}><ArrowLeft className="size-4 shrink-0" aria-hidden="true" /><span>Câu trước</span></Button>
-    <Button variant="outline" className="h-auto min-h-12 whitespace-normal rounded-2xl py-3" disabled={index === total - 1} onClick={onNext}><span>Câu tiếp theo</span><ArrowRight className="size-4 shrink-0" aria-hidden="true" /></Button>
-  </div>;
 }
