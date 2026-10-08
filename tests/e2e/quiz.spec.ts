@@ -80,6 +80,13 @@ test("study and typing keep independent positions, drafts and results; Enter res
   await expect(page.locator('p[lang="zh-Hans"]')).toHaveText(phrases[0].hanzi);
   await audit(page);
   await page.screenshot({ path: info.outputPath("learn.png"), fullPage: true });
+  const viewport = page.viewportSize()!;
+  await page.setViewportSize({ width: viewport.width, height: 640 });
+  const table = await page.getByRole("table").boundingBox();
+  const bottomBar = await page.getByRole("navigation", { name: "Chế độ học" }).boundingBox();
+  expect(table!.y + table!.height).toBeLessThanOrEqual(bottomBar!.y);
+  await page.screenshot({ path: info.outputPath("learn-short-viewport.png"), fullPage: true });
+  await page.setViewportSize(viewport);
   await next(page).tap();
   await mode(page, "Luyện gõ").tap();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(phrases[0].vietnamese);
@@ -133,6 +140,8 @@ test("study and typing keep independent positions, drafts and results; Enter res
 
 test("200% text, long study/typing sentences, keyboard and bottom navigation remain usable", async ({ page }, info) => {
   await page.goto("/", { waitUntil: "networkidle" });
+  await page.keyboard.press("Tab");
+  await expect(next(page)).toBeFocused();
   await page.keyboard.press("Tab");
   await expect(page.getByRole("group").getByRole("button").first()).toBeFocused();
   await page.keyboard.press("Enter");
