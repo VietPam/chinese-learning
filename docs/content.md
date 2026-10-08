@@ -1,10 +1,10 @@
-# Nội dung 20 câu
+# Nội dung 22 câu
 
 Bộ nội dung đề xuất cho MVP, dựa trên tình huống người dùng đã chọn. Đây là nội dung biên soạn, chưa có xác nhận kiểm duyệt độc lập từ người dạy tiếng Trung. Rà soát lại trước khi phát hành.
 
 ## Quy ước
 
-- ID `p01`–`p10`: Hỏi em; `p11`–`p20`: Báo cho em.
+- ID `p01`–`p10`: Hỏi em; `p11`–`p20`: Báo cho em. Bổ sung `p21`: câu người yêu nói với anh; `p22`: anh nói “không hiểu”.
 - Pinyin viết có dấu thanh; trợ từ thanh nhẹ như ma, le, de không có dấu. Không thêm dấu câu vào lựa chọn để tránh tạo gợi ý ngoài ý nghĩa.
 - Chữ Hán giản thể; câu hỏi có dấu hỏi, thông báo có dấu chấm.
 - `wǒ` là người nói, `nǐ` là người được nói tới. “Anh/em” là bản dịch phù hợp ngữ cảnh, không phải nghĩa cố định theo giới tính.
@@ -37,6 +37,8 @@ Bộ nội dung đề xuất cho MVP, dựa trên tình huống người dùng �
 | p18 | Anh ăn cơm rồi. | wǒ chīfàn le | `wo chifan le` | 我吃饭了。 |
 | p19 | Anh nhớ em. | wǒ xiǎng nǐ | `wo xiang ni` | 我想你。 |
 | p20 | Anh đi ngủ đây. | wǒ qù shuìjiào le | `wo qu shuijiao le` | 我去睡觉了。 |
+| p21 | Được thôi, vậy anh chú ý an toàn nhé. | hǎo a nà nǐ zhùyì ānquán | `hao a na ni zhuyi anquan` | 好啊，那你注意安全。 |
+| p22 | Anh không hiểu. | wǒ bù dǒng | `wo bu dong` | 我不懂。 |
 
 ## Nghĩa từ và lựa chọn nhiễu
 
@@ -218,6 +220,25 @@ Mỗi bộ đáp án gồm câu chính và hai ID nhiễu bên dưới. Thứ t�
 - le / 了: ở đây báo chuyển sang hành động mới.
 
 Đáp án nhiễu: `p17`, `p18`.
+
+### p21 — Được thôi, vậy anh chú ý an toàn nhé.
+
+- hǎo / 好: được, đồng ý.
+- a / 啊: trợ từ làm giọng nói thân mật hơn.
+- nà / 那: vậy, thế thì.
+- nǐ / 你: anh (người yêu đang nói với anh).
+- zhùyì / 注意: chú ý.
+- ānquán / 安全: an toàn.
+
+Đáp án nhiễu: `p19`, `p22`.
+
+### p22 — Anh không hiểu.
+
+- wǒ / 我: anh (người nói).
+- bù / 不: không.
+- dǒng / 懂: hiểu.
+
+Đáp án nhiễu: `p15`, `p19`.
 
 ## Ghi chú biên tập
 

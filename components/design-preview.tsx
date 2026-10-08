@@ -23,10 +23,10 @@ export function DesignPreview() {
   function change(next: Scenario) { setScenario(next); setSelectedId(null); window.scrollTo({ top: 0 }); }
   return (
     <>
-      <LearningHeader questionNumber={scenario === "complete" ? 20 : scenario.startsWith("long") ? 11 : 1} total={20} />
+      <LearningHeader questionNumber={scenario === "complete" ? phrases.length : scenario.startsWith("long") ? 11 : 1} total={phrases.length} />
       <main className="safe-bottom space-y-3 px-3 pt-3">
-        {scenario === "complete" ? <SessionComplete total={20} onRestart={() => change("question")} /> :
-          <QuestionCard phrase={phrase} options={options} questionNumber={scenario.startsWith("long") ? 11 : 1} total={20} selectedAnswerId={selected} onAnswer={setSelectedId} onContinue={() => change("complete")} />}
+        {scenario === "complete" ? <SessionComplete total={phrases.length} onRestart={() => change("question")} /> :
+          <QuestionCard phrase={phrase} options={options} questionNumber={scenario.startsWith("long") ? 11 : 1} total={phrases.length} selectedAnswerId={selected} onAnswer={setSelectedId} onContinue={() => change("complete")} />}
         <aside aria-label="Công cụ xem trước thiết kế" className="rounded-2xl border border-dashed bg-white p-3">
           <p className="mb-3 text-xs font-bold text-muted-foreground">PREVIEW GIAO DIỆN · CHỈ DÙNG KHI PHÁT TRIỂN</p>
           <div className="flex flex-wrap gap-2">

@@ -54,11 +54,11 @@ test("rejects stale events, duplicate next, invalid answers and old session acti
 });
 test("complete only after all answers, including skipped questions, and reset fresh", () => {
   let s = createQuizSession("a");
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < phrases.length; i++) {
     if (i !== 3) s = answer(s);
     s = action(s, "NEXT");
   }
-  assert.equal(getQuizProgress(s).answered, 19);
+  assert.equal(getQuizProgress(s).answered, phrases.length - 1);
   assert.equal(action(s, "COMPLETE"), s);
   s = action(s, "MISSING");
   assert.equal(s.questionIndex, 3);

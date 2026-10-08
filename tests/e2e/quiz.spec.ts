@@ -20,13 +20,13 @@ test("shuffled quiz supports skipping, retained answers, missing review, complet
   await page.goto("/", { waitUntil: "networkidle" });
   const seen = new Set<string>();
   let skipped = "";
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < phrases.length; i++) {
     const phrase = await currentPhrase(page);
     expect(phrase).toBeTruthy();
     expect(seen.has(phrase.id)).toBe(false);
     seen.add(phrase.id);
-    await expect(page.getByRole("banner")).toContainText(`Câu ${i + 1}/20`);
-    await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", String(Math.max(0, i - 1) * 5));
+    await expect(page.getByRole("banner")).toContainText(`Câu ${i + 1}/${phrases.length}`);
+    await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", String(Math.max(0, i - 1) * 100 / phrases.length));
     if (i === 0) {
       skipped = phrase.id;
       await expect(previous(page)).toBeDisabled();
@@ -48,26 +48,26 @@ test("shuffled quiz supports skipping, retained answers, missing review, complet
         await audit(page);
       }
     }
-    if (i < 19) {
+    if (i < phrases.length - 1) {
       await next(page).tap();
       await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
     }
   }
-  expect(seen.size).toBe(20);
+  expect(seen.size).toBe(phrases.length);
   await expect(next(page)).toBeDisabled();
   await expect(page.getByText("Còn 1 câu chưa trả lời.", { exact: false })).toBeVisible();
   await expect(page.getByRole("button", { name: "Hoàn thành", exact: true })).toHaveCount(0);
   await page.getByRole("button", { name: "Làm câu còn thiếu" }).tap();
-  await expect(page.getByRole("banner")).toContainText("Câu 1/20");
+  await expect(page.getByRole("banner")).toContainText(`Câu 1/${phrases.length}`);
   await page.getByRole("group").getByRole("button").first().tap();
   await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "100");
   await page.getByRole("button", { name: "Hoàn thành", exact: true }).tap();
-  await expect(page.getByRole("heading", { name: "Bạn đã học hết 20 câu!" })).toBeFocused();
+  await expect(page.getByRole("heading", { name: `Bạn đã học hết ${phrases.length} câu!` })).toBeFocused();
   await audit(page);
-  await expect(page.getByRole("banner")).toContainText("Câu 20/20");
+  await expect(page.getByRole("banner")).toContainText(`Câu ${phrases.length}/${phrases.length}`);
   await page.getByRole("button", { name: "Học lại", exact: true }).tap();
   await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
-  await expect(page.getByRole("banner")).toContainText("Câu 1/20");
+  await expect(page.getByRole("banner")).toContainText(`Câu 1/${phrases.length}`);
   expect(errors).toEqual([]);
 });
 
@@ -113,7 +113,7 @@ test("study and typing keep independent positions, drafts and results; Enter res
   await input.fill(phrases[0].hanzi.replace(/[\p{P}]/gu, "") + " ！");
   await input.press("Enter");
   await expect(page.getByRole("status")).toContainText("Đúng rồi");
-  await expect(page.getByRole("banner")).toContainText("Câu 1/20");
+  await expect(page.getByRole("banner")).toContainText(`Câu 1/${phrases.length}`);
   await audit(page);
   await page.screenshot({ path: info.outputPath("typing.png"), fullPage: true });
   await next(page).tap();

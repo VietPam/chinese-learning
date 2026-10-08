@@ -61,7 +61,7 @@ export function PinyinQuiz({ initialSession }: { initialSession: QuizState }) {
             <TypingCard key={question.id} phrase={question} attempt={attempts[question.id] ?? emptyAttempt} onChange={attempt => setAttempts(previous => ({ ...previous, [question.id]: attempt }))} />}
         {mode === "quiz" && !state.isComplete && (index === phrases.length - 1 || missing === 0) &&
           <section aria-label="Kết thúc lượt quiz" className="space-y-3 rounded-2xl border bg-white p-4">
-            <p className="text-sm leading-6 text-muted-foreground">{missing ? `Còn ${missing} câu chưa trả lời.` : "Bạn đã trả lời đủ 20 câu."}</p>
+            <p className="text-sm leading-6 text-muted-foreground">{missing ? `Còn ${missing} câu chưa trả lời.` : `Bạn đã trả lời đủ ${phrases.length} câu.`}</p>
             <Button className="h-auto min-h-12 w-full whitespace-normal py-3" onClick={finishOrReview}>{missing ? "Làm câu còn thiếu" : "Hoàn thành"}</Button>
           </section>}
       </div>
