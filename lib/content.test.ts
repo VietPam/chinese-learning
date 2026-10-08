@@ -3,9 +3,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { phrases } from "./content.ts";
 
-test("20 distinct phrases have complete explanations and unambiguous option strings", () => {
-  assert.equal(phrases.length, 20);
-  assert.equal(new Set(phrases.map(p => p.id)).size, 20);
+test("22 distinct phrases have complete explanations and unambiguous option strings", () => {
+  assert.equal(phrases.length, 22);
+  assert.equal(new Set(phrases.map(p => p.id)).size, 22);
   for (const [index, phrase] of phrases.entries()) {
     assert.equal(phrase.id, `p${String(index + 1).padStart(2, "0")}`);
     assert.equal(phrase.category, index < 10 ? "ask" : "update");
@@ -15,7 +15,7 @@ test("20 distinct phrases have complete explanations and unambiguous option stri
     assert.equal(phrase.keyboardInput, phrase.pinyin.normalize("NFD").replace(/\p{M}/gu, ""));
     assert.ok(phrase.words.length > 0);
     assert.equal(phrase.words.map(w => w.pinyin).join(" "), phrase.pinyin);
-    assert.equal(phrase.words.map(w => w.hanzi).join(""), phrase.hanzi.replace(/[。？]/gu, ""));
+    assert.equal(phrase.words.map(w => w.hanzi).join(""), phrase.hanzi.replace(/\p{P}/gu, ""));
     assert.ok(phrase.words.every(w => w.meaning.trim().length > 0));
     const ids = [phrase.id, ...phrase.distractorIds];
     assert.equal(ids.length, 3);

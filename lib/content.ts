@@ -666,5 +666,79 @@ export const phrases: readonly Phrase[] = [
       "p17",
       "p18"
     ]
+  },
+  {
+    "id": "p21",
+    "category": "update",
+    "vietnamese": "Được thôi, vậy anh chú ý an toàn nhé.",
+    "pinyin": "hǎo a nà nǐ zhùyì ānquán",
+    "keyboardInput": "hao a na ni zhuyi anquan",
+    "hanzi": "好啊，那你注意安全。",
+    "words": [
+      {
+        "pinyin": "hǎo",
+        "hanzi": "好",
+        "meaning": "được, đồng ý."
+      },
+      {
+        "pinyin": "a",
+        "hanzi": "啊",
+        "meaning": "trợ từ làm giọng nói thân mật hơn."
+      },
+      {
+        "pinyin": "nà",
+        "hanzi": "那",
+        "meaning": "vậy, thế thì."
+      },
+      {
+        "pinyin": "nǐ",
+        "hanzi": "你",
+        "meaning": "anh (người yêu đang nói với anh)."
+      },
+      {
+        "pinyin": "zhùyì",
+        "hanzi": "注意",
+        "meaning": "chú ý."
+      },
+      {
+        "pinyin": "ānquán",
+        "hanzi": "安全",
+        "meaning": "an toàn."
+      }
+    ],
+    "distractorIds": [
+      "p19",
+      "p22"
+    ],
+    "note": "Câu người yêu nói với anh; nǐ (你) ở đây là “anh”."
+  },
+  {
+    "id": "p22",
+    "category": "update",
+    "vietnamese": "Anh không hiểu.",
+    "pinyin": "wǒ bù dǒng",
+    "keyboardInput": "wo bu dong",
+    "hanzi": "我不懂。",
+    "words": [
+      {
+        "pinyin": "wǒ",
+        "hanzi": "我",
+        "meaning": "anh (người nói)."
+      },
+      {
+        "pinyin": "bù",
+        "hanzi": "不",
+        "meaning": "không."
+      },
+      {
+        "pinyin": "dǒng",
+        "hanzi": "懂",
+        "meaning": "hiểu."
+      }
+    ],
+    "distractorIds": [
+      "p15",
+      "p19"
+    ]
   }
 ];

@@ -11,7 +11,7 @@ const quicksand = localFont({
 
 export const metadata: Metadata = {
   title: "Pinyin mỗi ngày",
-  description: "Học Pinyin qua 20 câu nhắn tin quen thuộc mỗi ngày.",
+  description: "Học Pinyin qua những câu nhắn tin quen thuộc mỗi ngày.",
 };
 
 export const viewport: Viewport = {
