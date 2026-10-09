@@ -24,11 +24,18 @@ def main():
     args = parser.parse_args()
     content = (ROOT / "lib/content.ts").read_text()
     phrases = json.loads(content.split("export const phrases: readonly Phrase[] = ", 1)[1].strip().removesuffix(";"))
+    # Dedupe repeated vocabulary by both Hanzi and pronunciation.
+    words = {f'word:{w["hanzi"]}:{w["pinyin"]}': w for phrase in phrases for w in phrase["words"]}
+    phrases += [{"id": key, "hanzi": word["hanzi"], "pinyin": word["pinyin"]} for key, word in words.items()]
     old = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
     entries, pending = {}, []
     for phrase in phrases:
-        key = digest(json.dumps([phrase["hanzi"], REPO, REVISION, VOICE, SPEED, (ROOT / "scripts/audio-requirements.txt").read_text(), 1], ensure_ascii=False).encode())[:16]
-        src = f'/audio/{phrase["id"]}-{key}.mp3'
+        identity = [phrase["hanzi"], REPO, REVISION, VOICE, SPEED, (ROOT / "scripts/audio-requirements.txt").read_text(), 1]
+        if "pinyin" in phrase and phrase["id"].startswith("word:"):
+            identity += [phrase["pinyin"], "word-v1"]
+        key = digest(json.dumps(identity, ensure_ascii=False).encode())[:16]
+        prefix = "word" if phrase["id"].startswith("word:") else phrase["id"]
+        src = f'/audio/{prefix}-{key}.mp3'
         previous = old.get(phrase["id"], {})
         target = ROOT / "public" / src.lstrip("/")
         if not args.force and previous.get("src") == src and previous.get("text") == phrase["hanzi"] and target.exists() and digest(target.read_bytes()) == previous.get("sha256"):

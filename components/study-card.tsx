@@ -13,7 +13,7 @@ export function StudyCard({ phrase }: { phrase: Phrase }) {
       <p lang="zh-Hans" className="hanzi break-words text-2xl leading-relaxed">{phrase.hanzi}</p>
       <p className="text-xs leading-5 text-muted-foreground">Gõ: <span lang="zh-Latn" className="font-semibold text-foreground">{phrase.keyboardInput}</span></p>
     </div>
-    <WordMeaningList words={phrase.words} />
+    <WordMeaningList key={phrase.id} words={phrase.words} withAudio />
     {phrase.note && <p className="text-sm leading-6 text-muted-foreground">{phrase.note}</p>}
   </section>;
 }

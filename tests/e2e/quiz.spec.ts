@@ -172,11 +172,23 @@ test("study audio plays on demand, stops on navigation, and handles a failed dow
   await page.goto("/", { waitUntil: "networkidle" });
   await expect(page.locator("audio")).toHaveCount(0);
   await mode(page, "Học").tap();
-  const recording = page.locator("audio");
+  const recording = page.locator('audio[data-audio-id^="p"]');
   expect(await recording.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
   expect(await recording.evaluate(el => (el as HTMLAudioElement).readyState)).toBe(0); // preload=none
   await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
   await expect.poll(() => recording.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  const wordButtons = page.getByRole("table").getByRole("button");
+  await expect(wordButtons).toHaveCount(phrases[0].words.length);
+  const wordAudio = page.getByRole("table").locator("audio");
+  await wordButtons.nth(0).tap();
+  await expect.poll(() => wordAudio.nth(0).evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  expect(await recording.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  await wordButtons.nth(1).tap();
+  await expect.poll(() => wordAudio.nth(1).evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  expect(await wordAudio.nth(0).evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
+  await expect.poll(() => recording.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  expect(await wordAudio.nth(1).evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
   const oldAudio = await recording.elementHandle();
   await next(page).tap();
   expect(await oldAudio!.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
@@ -193,9 +205,9 @@ test("study audio plays on demand, stops on navigation, and handles a failed dow
   await next(page).tap();
   await page.route("**/audio/*.mp3", route => route.abort());
   await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
-  await expect(page.getByRole("status")).toContainText("Lỗi tải. Thử lại.");
+  await expect(recording.locator("..").getByRole("status")).toContainText("Lỗi tải. Thử lại.");
   await page.unroute("**/audio/*.mp3");
   await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
   await expect.poll(() => recording.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
-  await expect(page.getByRole("status")).toBeEmpty();
+  await expect(recording.locator("..").getByRole("status")).toBeEmpty();
 });

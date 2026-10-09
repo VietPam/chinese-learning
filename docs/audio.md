@@ -28,3 +28,11 @@ Bản nội dung mới có thể deploy trước commit audio; lúc đó câu ch
 ## Kiểm chứng và giới hạn
 
 Kiểm tra file không rỗng, có tín hiệu, thời lượng hợp lý; manifest đúng toàn bộ câu. E2E kiểm tra không autoplay, phát file thật, dừng khi đổi câu/mục, lỗi tải và thử lại, cùng luồng mobile/chữ lớn hiện có. Chưa coi đây là kiểm duyệt phát âm của giáo viên hoặc kiểm thử âm thanh trên iPhone thật. Người học có thể nghe thử câu 1, 21, 22 ngay trên web để đánh giá giọng.
+
+## Nghe từ trong bảng (09/10/2026)
+
+Theo ảnh feedback, thêm nút loa 44px ở cuối mỗi hàng từ vựng, chỉ trong Học. Bảng Quiz giữ ba cột. Dùng cùng Kokoro v1.1-zh / zm_010; hiện có 27 từ/cụm riêng và 22 câu (49 recordings). Khóa từ gồm chữ Hán và Pinyin để phân biệt cách đọc, tái sử dụng từ lặp giữa các câu. Generator/workflow hiện có tự phát hiện và tạo thêm recording từ.
+
+Nút từ có tên truy cập `Nghe từ …`; chỉ một recording được phát tại một thời điểm, bao gồm cả câu và từ. Đổi câu/mục dừng toàn bộ audio đang phát. Không preload hàng loạt file. Khi tải lỗi, từng nút có trạng thái thử lại riêng.
+
+Đã kiểm tra đầu ra frontend của các trợ từ 了/的/吗/啊 dùng thanh nhẹ và 路上 dùng shang thanh nhẹ theo nội dung; việc kiểm tra này không thay thế thẩm định âm thanh của người nói tiếng Trung.
