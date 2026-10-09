@@ -740,5 +740,24 @@ export const phrases: readonly Phrase[] = [
       "p15",
       "p19"
     ]
+  },
+  {
+    "id": "p23",
+    "category": "update",
+    "vietnamese": "Tiếp tục.",
+    "pinyin": "jìxù",
+    "keyboardInput": "jixu",
+    "hanzi": "继续。",
+    "words": [
+      {
+        "pinyin": "jìxù",
+        "hanzi": "继续",
+        "meaning": "tiếp tục."
+      }
+    ],
+    "distractorIds": [
+      "p19",
+      "p22"
+    ]
   }
 ];

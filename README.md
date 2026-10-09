@@ -1,8 +1,8 @@
 # Học Pinyin để nhắn tin
 
-Web cá nhân dành cho người Việt bắt đầu từ số 0, học nghĩa và Pinyin của 22 câu thường nhắn cho người yêu. Người học xưng “anh”, người nhận là “em”; mục tiêu là nhớ Pinyin để gõ bằng bàn phím tiếng Trung trên điện thoại và chọn chữ Hán phù hợp.
+Web cá nhân dành cho người Việt bắt đầu từ số 0, học nghĩa và Pinyin của 23 câu thường nhắn cho người yêu. Người học xưng “anh”, người nhận là “em”; mục tiêu là nhớ Pinyin để gõ bằng bàn phím tiếng Trung trên điện thoại và chọn chữ Hán phù hợp.
 
-Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 22 câu, lời giải, hoàn thành và học lại. Tài liệu cập nhật ngày 2026-10-07. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
+Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 23 câu, lời giải, hoàn thành và học lại. Tài liệu cập nhật ngày 2026-10-07. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
 
 ## Đọc tài liệu
 
@@ -16,7 +16,7 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 | [Luồng và use case](docs/user-flows.md) | Trạng thái câu hỏi, đúng/sai, tiếp tục và hoàn thành |
 | [Cải tiến mobile](docs/mobile-design-refinement.md) | Khảo sát thumbnail hai trang VSTEP và áp dụng feedback production |
 | [Thiết kế tham chiếu](docs/design-reference.md) | Quy luật VSTEPUP, theme, thành phần và mobile |
-| [Nội dung 22 câu](docs/content.md) | Tiếng Việt, Pinyin, cách gõ, chữ Hán, nghĩa từ và đáp án nhiễu |
+| [Nội dung 23 câu](docs/content.md) | Tiếng Việt, Pinyin, cách gõ, chữ Hán, nghĩa từ và đáp án nhiễu |
 | [Định hướng kỹ thuật](docs/technical-plan.md) | Next.js, shadcn/ui, dữ liệu và quản lý trạng thái |
 | [Nghiệm thu mobile](docs/acceptance.md) | Checklist chức năng, nội dung và giao diện |
 | [Todo](docs/todo.md) | Trình tự triển khai và tính năng cân nhắc sau MVP |
@@ -63,7 +63,7 @@ Giai đoạn 2 dùng Node test runner để kiểm tra TypeScript, không thêm 
 
 ## Xem giao diện giai đoạn 3
 
-Chạy `npm run dev`, mở http://localhost:3000/design-preview trên viewport điện thoại. Thanh công cụ cuối trang cho phép xem câu hỏi, đúng, sai, câu dài, giải thích dài và hoàn thành; chọn đáp án cũng mở lời giải mẫu. Nút tiếp trong preview đưa đến màn hoàn thành mẫu, không chạy lượt 22 câu. Đây là công cụ review component, chưa phải luồng quiz hoàn chỉnh.
+Chạy `npm run dev`, mở http://localhost:3000/design-preview trên viewport điện thoại. Thanh công cụ cuối trang cho phép xem câu hỏi, đúng, sai, câu dài, giải thích dài và hoàn thành; chọn đáp án cũng mở lời giải mẫu. Nút tiếp trong preview đưa đến màn hoàn thành mẫu, không chạy lượt 23 câu. Đây là công cụ review component, chưa phải luồng quiz hoàn chỉnh.
 
 Route preview trả 404 ở production. Xem [báo cáo giai đoạn 3](docs/phase-3-report.md) và ảnh mobile trong tài liệu.
 
@@ -77,7 +77,7 @@ Xem [báo cáo giai đoạn 4](docs/phase-4-report.md).
 
 ## Nghiệm thu mobile tự động
 
-Bộ E2E trong `tests/e2e/quiz.spec.ts` chạy trên bản production; cấu hình chỉ có mobile 360×800, 390×844, 430×932, touch và reduced motion. Có kiểm tra axe tự động, chữ lớn 200%, bàn phím, luồng 22 câu, học lại/reload và ẩn preview.
+Bộ E2E trong `tests/e2e/quiz.spec.ts` chạy trên bản production; cấu hình chỉ có mobile 360×800, 390×844, 430×932, touch và reduced motion. Có kiểm tra axe tự động, chữ lớn 200%, bàn phím, luồng 23 câu, học lại/reload và ẩn preview.
 
 ```bash
 npx playwright install chromium

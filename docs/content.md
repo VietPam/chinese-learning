@@ -1,10 +1,10 @@
-# Nội dung 22 câu
+# Nội dung 23 câu
 
 Bộ nội dung đề xuất cho MVP, dựa trên tình huống người dùng đã chọn. Đây là nội dung biên soạn, chưa có xác nhận kiểm duyệt độc lập từ người dạy tiếng Trung. Rà soát lại trước khi phát hành.
 
 ## Quy ước
 
-- ID `p01`–`p10`: Hỏi em; `p11`–`p20`: Báo cho em. Bổ sung `p21`: câu người yêu nói với anh; `p22`: anh nói “không hiểu”.
+- ID `p01`–`p10`: Hỏi em; `p11`–`p20`: Báo cho em. Bổ sung `p21`: câu người yêu nói với anh; `p22`: anh nói “không hiểu”; `p23`: “tiếp tục”.
 - Pinyin viết có dấu thanh; trợ từ thanh nhẹ như ma, le, de không có dấu. Không thêm dấu câu vào lựa chọn để tránh tạo gợi ý ngoài ý nghĩa.
 - Chữ Hán giản thể; câu hỏi có dấu hỏi, thông báo có dấu chấm.
 - `wǒ` là người nói, `nǐ` là người được nói tới. “Anh/em” là bản dịch phù hợp ngữ cảnh, không phải nghĩa cố định theo giới tính.
@@ -39,6 +39,7 @@ Bộ nội dung đề xuất cho MVP, dựa trên tình huống người dùng �
 | p20 | Anh đi ngủ đây. | wǒ qù shuìjiào le | `wo qu shuijiao le` | 我去睡觉了。 |
 | p21 | Được thôi, vậy anh chú ý an toàn nhé. | hǎo a nà nǐ zhùyì ānquán | `hao a na ni zhuyi anquan` | 好啊，那你注意安全。 |
 | p22 | Anh không hiểu. | wǒ bù dǒng | `wo bu dong` | 我不懂。 |
+| p23 | Tiếp tục. | jìxù | `jixu` | 继续。 |
 
 ## Nghĩa từ và lựa chọn nhiễu
 
@@ -239,6 +240,12 @@ Mỗi bộ đáp án gồm câu chính và hai ID nhiễu bên dưới. Thứ t�
 - dǒng / 懂: hiểu.
 
 Đáp án nhiễu: `p15`, `p19`.
+
+### p23 — Tiếp tục.
+
+- jìxù / 继续: tiếp tục.
+
+Đáp án nhiễu: `p19`, `p22`.
 
 ## Ghi chú biên tập
 

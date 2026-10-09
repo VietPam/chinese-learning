@@ -3,9 +3,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { phrases } from "./content.ts";
 
-test("22 distinct phrases have complete explanations and unambiguous option strings", () => {
-  assert.equal(phrases.length, 22);
-  assert.equal(new Set(phrases.map(p => p.id)).size, 22);
+test("23 distinct phrases have complete explanations and unambiguous option strings", () => {
+  assert.equal(phrases.length, 23);
+  assert.equal(new Set(phrases.map(p => p.id)).size, 23);
   for (const [index, phrase] of phrases.entries()) {
     assert.equal(phrase.id, `p${String(index + 1).padStart(2, "0")}`);
     assert.equal(phrase.category, index < 10 ? "ask" : "update");
