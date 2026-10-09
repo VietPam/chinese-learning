@@ -130,5 +130,167 @@
     "src": "/audio/p22-4ce355a2d3fe012c.mp3",
     "sha256": "104d2c36de98cf562c30f6e0577bc73bb2ee862b6c2bb31d8e1722766cdeb663",
     "duration": 1.7
+  },
+  "word:上班:shàngbān": {
+    "text": "上班",
+    "src": "/audio/word-45537b5556702524.mp3",
+    "sha256": "3ca6e28e322840e5ed623cf2261254fbccf956c0df732c161d9c7ee63b13def9",
+    "duration": 1.025
+  },
+  "word:下班:xiàbān": {
+    "text": "下班",
+    "src": "/audio/word-f19dcdf2a2358dbb.mp3",
+    "sha256": "9f4286106b75f3beb5079ba2a3c533eddd04f6c66a7f1bdb39bd5d7347463e17",
+    "duration": 1.1
+  },
+  "word:不:bù": {
+    "text": "不",
+    "src": "/audio/word-2594c4e43d9ad390.mp3",
+    "sha256": "41f498297bb662bb6da65e76c94a14d0b4225fd289d00aeb3929aa08893434ce",
+    "duration": 0.75
+  },
+  "word:了:le": {
+    "text": "了",
+    "src": "/audio/word-433904df07be127e.mp3",
+    "sha256": "7b2b815f87152f0c5e631528a638942a886c87c97818578982a218e4bfdfd7c3",
+    "duration": 0.775
+  },
+  "word:你:nǐ": {
+    "text": "你",
+    "src": "/audio/word-599cfb01eb8e4cce.mp3",
+    "sha256": "dd2105ce90e892d8b65fe6a7c35ddb711d9b158319310a0d500f3cc36bf659a4",
+    "duration": 0.7
+  },
+  "word:到:dào": {
+    "text": "到",
+    "src": "/audio/word-797c8b340aca5daf.mp3",
+    "sha256": "f85ccd7ccd0a39ad676b4718a268534ca8c26ca0dbf9cb6ad4885dca3678d933",
+    "duration": 0.75
+  },
+  "word:去:qù": {
+    "text": "去",
+    "src": "/audio/word-cd7b6c0310dbe7a5.mp3",
+    "sha256": "bf19e0ce62be8711606b87539db9027515a92ec65b78c460dc14de302b3df091",
+    "duration": 0.75
+  },
+  "word:吃饭:chīfàn": {
+    "text": "吃饭",
+    "src": "/audio/word-2b87f7edde82c67f.mp3",
+    "sha256": "6bdd36856540e0b61ca4b293fa13669737c92b6f10f3a2e81eb32949bfb53bcb",
+    "duration": 1.15
+  },
+  "word:吗:ma": {
+    "text": "吗",
+    "src": "/audio/word-2f0663a290be89e3.mp3",
+    "sha256": "6fb3243ba7b22827a6e3b5998b8d32012aba250046b84a0c65d83b6eadfddc19",
+    "duration": 0.75
+  },
+  "word:啊:a": {
+    "text": "啊",
+    "src": "/audio/word-996e161903434f13.mp3",
+    "sha256": "a4670e00f8a04f8718657d573656544d86c29c54c58196d1466262ee88f8772f",
+    "duration": 0.775
+  },
+  "word:回:huí": {
+    "text": "回",
+    "src": "/audio/word-5582e9a0ffec3986.mp3",
+    "sha256": "750241bd1a702426d9aa4ddfcb1be6017d119b07d0e5f1f7ccc315b048586bc1",
+    "duration": 0.825
+  },
+  "word:在:zài": {
+    "text": "在",
+    "src": "/audio/word-9837a3349be81768.mp3",
+    "sha256": "a949935c006e0337ea918c728f62c2eae9b46a4ba7f350a9e71c6c430956a559",
+    "duration": 0.75
+  },
+  "word:好:hǎo": {
+    "text": "好",
+    "src": "/audio/word-1f3729d1c9291c98.mp3",
+    "sha256": "315ddf54ea0526dda6cf943f9fb501fdb1bc4b0f500b7204ae847f13a6f0e080",
+    "duration": 0.825
+  },
+  "word:安全:ānquán": {
+    "text": "安全",
+    "src": "/audio/word-6cc6d7fec65a223f.mp3",
+    "sha256": "a7c72b472f32d78c3621accc310e3e6ac7b6ae3c40c0a77b5d987e69e15ead08",
+    "duration": 1.1
+  },
+  "word:家:jiā": {
+    "text": "家",
+    "src": "/audio/word-c773da801d1d8f10.mp3",
+    "sha256": "43ee905fa44d354904131df9e902aa7f119f150bff4426cd6b4d77be9b5a2d28",
+    "duration": 0.8
+  },
+  "word:工作:gōngzuò": {
+    "text": "工作",
+    "src": "/audio/word-eec687697bb3ec13.mp3",
+    "sha256": "791b31cc985138c8e98941921acffddeb858423bea8237fe50ae1a9ae76da05e",
+    "duration": 1.05
+  },
+  "word:忙:máng": {
+    "text": "忙",
+    "src": "/audio/word-a5afc4bfa23fc739.mp3",
+    "sha256": "b365dde85ca85fe568c385dcf1b0a5e6728b93a7cd59951bfae18a48fe665736",
+    "duration": 0.775
+  },
+  "word:想:xiǎng": {
+    "text": "想",
+    "src": "/audio/word-a79a78020c36f10f.mp3",
+    "sha256": "87e640de5948d3ee7c1343c812e046aec03db3d8f14f51716a96cc7255732955",
+    "duration": 0.8
+  },
+  "word:懂:dǒng": {
+    "text": "懂",
+    "src": "/audio/word-7b0bb3c63c384c60.mp3",
+    "sha256": "f11dcb2f878df31eb69d74a205e128730ce5d1870fef5faf6411b6cc579d8b6b",
+    "duration": 0.7
+  },
+  "word:我:wǒ": {
+    "text": "我",
+    "src": "/audio/word-b59bf04b872e90ec.mp3",
+    "sha256": "0d0c6c12410cc9f698ad803ca15e217b6b66a54054bb6dadf6b73bb4d8a21062",
+    "duration": 0.775
+  },
+  "word:注意:zhùyì": {
+    "text": "注意",
+    "src": "/audio/word-9d2be6ea3d892c09.mp3",
+    "sha256": "f8489d79e37849d980d8e84eed385393957b9dc4152510878ab688a63d54ec53",
+    "duration": 1.05
+  },
+  "word:的:de": {
+    "text": "的",
+    "src": "/audio/word-f41c0234a021b0cf.mp3",
+    "sha256": "17058bd676e55921b9e7d8021d4e519941431abe7b78922787a729a566c16a18",
+    "duration": 0.775
+  },
+  "word:睡觉:shuìjiào": {
+    "text": "睡觉",
+    "src": "/audio/word-44debe00e6cc2fbf.mp3",
+    "sha256": "6c1154f69ed71c3a66479ca269432d1e6e3ed18e599af39fd058587b04f4a677",
+    "duration": 1.05
+  },
+  "word:累:lèi": {
+    "text": "累",
+    "src": "/audio/word-b33a05deb2d2eb8e.mp3",
+    "sha256": "17d7ba4e4a80966d395844de71377349818ce29903a8943278de382b0db9a739",
+    "duration": 0.75
+  },
+  "word:路上:lùshang": {
+    "text": "路上",
+    "src": "/audio/word-99a96f6870861206.mp3",
+    "sha256": "4439efc000e68bb5bce0903100bac74cf0558ad203a16fa688604ac8696a1cf0",
+    "duration": 1.05
+  },
+  "word:那:nà": {
+    "text": "那",
+    "src": "/audio/word-59d7371fa6482a1b.mp3",
+    "sha256": "c4386363503a2476d01b847faa5ef83530b54b1d5d528d8a7465bf1f52bedf41",
+    "duration": 0.725
+  },
+  "word:饿:è": {
+    "text": "饿",
+    "src": "/audio/word-512fbc144b693c4b.mp3",
+    "sha256": "4de64d0e842f2283c86b0be6eb1a8f3101106faede5a4e0385dff8499c4513be",
+    "duration": 0.725
   }
 }

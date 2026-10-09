@@ -6,10 +6,21 @@ import manifest from "@/lib/audio-manifest.json";
 import type { Phrase } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 
+// One active recording across sentence and vocabulary buttons.
+let currentAudio: HTMLAudioElement | null = null;
+
 export function SentenceAudio({ phrase }: { phrase: Phrase }) {
+  return <AudioButton audioId={phrase.id} text={phrase.hanzi} label="câu" />;
+}
+
+export function WordAudio({ word }: { word: Phrase["words"][number] }) {
+  return <AudioButton audioId={`word:${word.hanzi}:${word.pinyin}`} text={word.hanzi} label={`từ ${word.pinyin}`} />;
+}
+
+function AudioButton({ audioId, text, label }: { audioId: string; text: string; label: string }) {
   const recordings: Record<string, { text: string; src: string }> = manifest;
-  const recording = recordings[phrase.id];
-  const src = recording?.text === phrase.hanzi ? recording.src : undefined;
+  const recording = recordings[audioId];
+  const src = recording?.text === text ? recording.src : undefined;
   const audio = useRef<HTMLAudioElement>(null);
   const active = useRef(true);
   const [playing, setPlaying] = useState(false);
@@ -18,12 +29,18 @@ export function SentenceAudio({ phrase }: { phrase: Phrase }) {
   useEffect(() => {
     active.current = true;
     const element = audio.current;
-    return () => { active.current = false; element?.pause(); };
+    return () => {
+      active.current = false;
+      element?.pause();
+      if (currentAudio === element) currentAudio = null;
+    };
   }, []);
   async function toggle() {
     const element = audio.current;
     if (!element || !src) return;
     if (playing || loading) { element.pause(); setLoading(false); return; }
+    if (currentAudio && currentAudio !== element) currentAudio.pause();
+    currentAudio = element;
     setFailed(false);
     setLoading(true);
     try {
@@ -36,10 +53,10 @@ export function SentenceAudio({ phrase }: { phrase: Phrase }) {
   }
   return <div className="flex shrink-0 flex-col items-center gap-1">
     <Button type="button" variant="outline" size="icon" className="size-[44px] rounded-xl bg-white text-primary" disabled={!src}
-      aria-label={!src ? "Audio chưa sẵn sàng" : playing || loading ? "Dừng nghe" : "Nghe câu"} title="Giọng nam · Kokoro" onClick={toggle}>
+      aria-label={!src ? "Audio chưa sẵn sàng" : playing || loading ? `Dừng nghe ${label}` : `Nghe ${label}`} title="Giọng nam · Kokoro" onClick={toggle}>
       {loading ? <LoaderCircle aria-hidden="true" className="size-5 animate-spin" /> : playing ? <Square aria-hidden="true" className="size-4" /> : <Volume2 aria-hidden="true" className="size-5" />}
     </Button>
-    <audio ref={audio} src={src} preload="none" onPlaying={() => { setPlaying(true); setLoading(false); }} onPause={() => { setPlaying(false); setLoading(false); }} onEnded={() => setPlaying(false)} onError={() => { setPlaying(false); setLoading(false); setFailed(true); }} />
-    <span role="status" className="max-w-[70px] text-center text-xs text-destructive">{failed ? "Lỗi tải. Thử lại." : ""}</span>
+    <audio ref={audio} data-audio-id={audioId} src={src} preload="none" onPlaying={() => { setPlaying(true); setLoading(false); }} onPause={() => { setPlaying(false); setLoading(false); }} onEnded={() => setPlaying(false)} onError={() => { setPlaying(false); setLoading(false); setFailed(true); }} />
+    <span role="status" className="max-w-[44px] text-center text-xs text-destructive">{failed ? "Lỗi tải. Thử lại." : ""}</span>
   </div>;
 }
