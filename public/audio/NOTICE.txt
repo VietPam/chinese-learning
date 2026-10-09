@@ -1,0 +1,6 @@
+Synthesized speech: Kokoro-82M-v1.1-zh, voice zm_010 (male Mandarin).
+Model by hexgrad; Chinese training data credited by the model author to LongMaoData.
+Model source: https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh
+Revision: 01e7505bd6a7a2ac4975463114c3a7650a9f7218
+Model license: Apache-2.0 (see KOKORO-LICENSE.txt).
+Generated from this project's sentence corpus with Kokoro 0.9.4 / Misaki 0.9.4.

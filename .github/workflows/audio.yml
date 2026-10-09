@@ -1,0 +1,77 @@
+name: Generate study audio
+on:
+  workflow_dispatch:
+    inputs:
+      rebuild:
+        description: Regenerate all recordings on CPU
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - lib/content.ts
+      - scripts/generate-audio.py
+      - scripts/audio-requirements.txt
+      - .github/workflows/audio.yml
+permissions:
+  contents: write
+concurrency:
+  group: study-audio
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HF_HUB_DISABLE_XET: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check existing audio
+        id: existing
+        run: |
+          if [ "${{ inputs.rebuild }}" != "true" ] && python scripts/generate-audio.py --check; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/cache@v4
+        if: steps.existing.outputs.ready != 'true'
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface/hub
+          key: kokoro-zh-v1-${{ runner.os }}-${{ hashFiles('scripts/audio-requirements.txt', 'scripts/generate-audio.py') }}
+      - name: Install CPU tools
+        if: steps.existing.outputs.ready != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r scripts/audio-requirements.txt
+      - name: Generate changed sentences
+        if: steps.existing.outputs.ready != 'true'
+        env:
+          REBUILD: ${{ inputs.rebuild }}
+        run: |
+          if [ "$REBUILD" = "true" ]; then
+            python scripts/generate-audio.py --force
+          else
+            python scripts/generate-audio.py
+          fi
+      - name: Verify recordings
+        run: python scripts/generate-audio.py --check
+      - name: Commit recordings
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/audio lib/audio-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Generate Kokoro study audio'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

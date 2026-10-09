@@ -1,0 +1,30 @@
+# Audio miễn phí ở màn hình Học
+
+## Lựa chọn
+
+Người dùng chọn Kokoro-82M, giọng nam, chỉ phát ở Học. Dùng [bản chính thức v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh), giọng `zm_010`, tốc độ tổng hợp 0.9, 24 kHz mono, MP3 64 kbps. Model Apache-2.0; bản chuyên Trung được tác giả bổ sung dữ liệu 100 người nói từ LongMaoData. Đây không phải giọng `zm_yunxi` của v1.0; bảng đánh giá mức D ở v1.0 không áp dụng trực tiếp cho bản này.
+
+Không dùng API trả phí, không có khóa TTS. Chạy model bằng CPU khi tạo file; trình duyệt chỉ tải MP3 tĩnh. Repo hiện public, workflow dùng runner Ubuntu tiêu chuẩn của GitHub Actions; không đăng ký runner trả phí.
+
+## Trải nghiệm
+
+- Một nút loa 44px cạnh câu tiếng Việt; không tự phát, không tải audio trước khi bấm.
+- Bấm lần nữa để dừng; nghe lại phát từ đầu. Đổi câu hoặc mục dừng audio cũ.
+- Lỗi mạng có phản hồi ngắn và cho thử lại. Chỉ Học có audio, không thêm vào Quiz/Luyện gõ.
+- Nếu câu chưa được tạo audio hoặc chữ Hán đã sửa, nút bị vô hiệu hóa thay vì phát bản cũ.
+
+## Tạo và cập nhật
+
+`python scripts/generate-audio.py --check` kiểm tra đủ file, nội dung và SHA256, không cần cài model.
+
+Để tạo trên CPU: cài Python 3.12, ffmpeg; cài torch 2.6.0 từ index CPU, sau đó `pip install -r scripts/audio-requirements.txt` và chạy `python scripts/generate-audio.py`.
+
+Model/config/voice tải từ revision cố định `01e7505bd6a7a2ac4975463114c3a7650a9f7218`. Tên file có hash theo chữ Hán, voice, model, tốc độ và phiên bản công cụ. Chỉ tạo câu thiếu/thay đổi; `--force` để tạo lại tất cả. Manifest lưu trong `lib/audio-manifest.json`, MP3 trong `public/audio`.
+
+Workflow `.github/workflows/audio.yml` chạy khi main đổi nội dung/công cụ hoặc chạy tay. Nó kiểm tra trước, chỉ cài model khi cần; cache tải model, tổng hợp CPU, kiểm tra rồi commit file vào main để hệ thống Cloudflare hiện có triển khai. Commit chỉ audio/manifest không trùng bộ lọc kích hoạt. Không force-push; nếu main đổi gây xung đột thì workflow thất bại an toàn, có thể chạy lại. `workflow_dispatch` có tùy chọn `rebuild` để kiểm chứng tổng hợp trên runner.
+
+Bản nội dung mới có thể deploy trước commit audio; lúc đó câu chưa có recording sẽ tạm không nghe được, không phát sai câu. Nếu workflow thất bại, audio cũ của những câu không đổi vẫn dùng được.
+
+## Kiểm chứng và giới hạn
+
+Kiểm tra file không rỗng, có tín hiệu, thời lượng hợp lý; manifest đúng toàn bộ câu. E2E kiểm tra không autoplay, phát file thật, dừng khi đổi câu/mục, lỗi tải và thử lại, cùng luồng mobile/chữ lớn hiện có. Chưa coi đây là kiểm duyệt phát âm của giáo viên hoặc kiểm thử âm thanh trên iPhone thật. Người học có thể nghe thử câu 1, 21, 22 ngay trên web để đánh giá giọng.
