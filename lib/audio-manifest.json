@@ -2,133 +2,133 @@
   "p01": {
     "text": "你在忙吗？",
     "src": "/audio/p01-3355fa0dd310d0bf.mp3",
-    "sha256": "a691bec3d6993bfe4423a877ee735ae885b050e7cd7e2fd37f27a1b3a8d66fd3",
+    "sha256": "d673106d275fefc3b419c84dc4b627718b97a3acdf533ea295215893b3924c90",
     "duration": 2.05
   },
   "p02": {
     "text": "你在工作吗？",
     "src": "/audio/p02-06f6e96fcf40163d.mp3",
-    "sha256": "1be02e0916edbdff52b33921143ef8994378595c0bdee8319e34fe3d097071db",
+    "sha256": "ab76b1317c0c81998932d39698add53777e1154eb6923fb175cb97795b07825e",
     "duration": 2.225
   },
   "p03": {
     "text": "你在家吗？",
     "src": "/audio/p03-3b4d4b13c7d55f6a.mp3",
-    "sha256": "8e8d85830dcfece0d2166f071f6b24bbb3d6736875c8b3ef2e4d8ea2e62a20e0",
+    "sha256": "1baeb45288360730bacfdab6546acb8f52e79d5395a8f531572844afa9e3bf70",
     "duration": 2.0
   },
   "p04": {
     "text": "你在吃饭吗？",
     "src": "/audio/p04-5a5484b6e7b74907.mp3",
-    "sha256": "787b2bfd41a54a8cdedf9e84015d98d7f8f3c4c3baa6a8b6a333d1d2791381be",
+    "sha256": "5d1e200ef3303d2da4e0282f10234ef2299b54b1cb2291d9d1a5baf8368f8c0e",
     "duration": 2.275
   },
   "p05": {
     "text": "你吃饭了吗？",
     "src": "/audio/p05-e29238339c9fe7ec.mp3",
-    "sha256": "988c00dd168305badd4f0e0e54cf13326f531cc4cd65ddce9d33cbc03575e77b",
+    "sha256": "deaf7212bb717610d746c315e94951ca57204f7602b01196411b77770ba2ca57",
     "duration": 2.125
   },
   "p06": {
     "text": "你到家了吗？",
     "src": "/audio/p06-c54e2529536d7bec.mp3",
-    "sha256": "190b9fbcbf441d914a2a362a40ed93eb8083134543b3b7e5f87267324cb44519",
+    "sha256": "0f2db2e31720712d014f59c97b7109d4ca1860fe786d8ffeb1a6ea2b9679b089",
     "duration": 2.075
   },
   "p07": {
     "text": "你下班了吗？",
     "src": "/audio/p07-78b9b7095c90aaa0.mp3",
-    "sha256": "5a44d309659e318a05014efcf765dab971b5d4f0310179f0bb33eb38b94465ea",
+    "sha256": "cb2e252bab03864e5d0b46c296ead0aad36125d918735e761be013a18031f9e0",
     "duration": 2.125
   },
   "p08": {
     "text": "你累吗？",
     "src": "/audio/p08-8137eddda36d979b.mp3",
-    "sha256": "f9b69f1c5a42e41e0be82b16caaa262715b2a13120f0d957b70518a8d751fca8",
+    "sha256": "c1450e5025ee8ce4a5606e05bce40e6568067113e89aaf6a2e3e9bf9f37fded8",
     "duration": 1.7
   },
   "p09": {
     "text": "你饿吗？",
     "src": "/audio/p09-97dcee8a23f36c31.mp3",
-    "sha256": "b9bf75a61f5b344262bbb3f8a65103325246bbf64b21b876f0231513b3a3591f",
+    "sha256": "e86699a9c7ccdf8880ad57eb941c2bed308c49c421e06b9f738072452390fff5",
     "duration": 1.675
   },
   "p10": {
     "text": "你想我吗？",
     "src": "/audio/p10-c2ffd3f7203b9a9b.mp3",
-    "sha256": "a78b29c19d1c4f6194aa2755f363c09f98dcf1fafeed72da2d3be9a0685a0849",
+    "sha256": "14150dc2a0820beb5a93024ac4d52ab74912bd3284edd0466e94afd491cf602e",
     "duration": 2.075
   },
   "p11": {
     "text": "我在去上班的路上。",
     "src": "/audio/p11-ce5c093990cea11d.mp3",
-    "sha256": "924c808e29a4e380893605d2c62ce653999be802c343b05d9c280689a950f3f9",
+    "sha256": "3b65730af65c31fef36dae408a7ec98e8f104ebb40377bcb198483f34c3fdfd8",
     "duration": 3.025
   },
   "p12": {
     "text": "我在工作。",
     "src": "/audio/p12-2d092dd9a1089c7a.mp3",
-    "sha256": "5da70a0bb463adbe6abb1290191974ddc2df8ed95b94015eb81afbd32440a7d8",
+    "sha256": "e1a0f2be1e8ae9a1903ab28b8e465b6787c0c9c872488af705f53a948be099d0",
     "duration": 2.075
   },
   "p13": {
     "text": "我在回家的路上。",
     "src": "/audio/p13-10d44a3b12a9a64e.mp3",
-    "sha256": "375bd4abb2fd92a3efb670672f2b93f6efc9750f3cefdd9a52e54190f0626a8b",
+    "sha256": "fd8b4992298704ed14da9f81423debe075c151737bdb3280b843964b43931640",
     "duration": 2.7
   },
   "p14": {
     "text": "我在吃饭。",
     "src": "/audio/p14-bd9a2375346829bd.mp3",
-    "sha256": "25bae7b419eec55c4aa653be1d039f5972470a8dc0839771479252356e6f4f76",
+    "sha256": "b470c2265adf2580ad25ca12efc18b30f4a1c4128ca58bf7effe8de3f0fdfe1f",
     "duration": 2.075
   },
   "p15": {
     "text": "我在忙。",
     "src": "/audio/p15-9a4ba392bf56c902.mp3",
-    "sha256": "1d90e009e5a3e20f290b09332f9580b9d29e97704e1bd488a4dfe9133f5991f9",
+    "sha256": "09f9b652bc8583acaccb075071cf288a1001edae5f5198ac8679df605da29e15",
     "duration": 1.8
   },
   "p16": {
     "text": "我到家了。",
     "src": "/audio/p16-08bdd37abe828e41.mp3",
-    "sha256": "c3f9e7583754f1fb26a1013469697d12d1d069abbf6c96d524b21750caa0da22",
+    "sha256": "d6e8be6f610c108ee135ed6a59b004eb53d52a516eb31120aff0646318b89b2b",
     "duration": 2.05
   },
   "p17": {
     "text": "我下班了。",
     "src": "/audio/p17-e64e0b5a942890e1.mp3",
-    "sha256": "506a60c3c2291914495226a25c070c856206e0cc775d19831b95c2a7e765e8d6",
+    "sha256": "5713847658b4c675ef9ed38715014adbe84d37d181b760d88e63c90e7e967115",
     "duration": 2.025
   },
   "p18": {
     "text": "我吃饭了。",
     "src": "/audio/p18-0f3fae1273ea44a4.mp3",
-    "sha256": "930e535ad0ed39fb668a3ef336400453d98274a964c3dc98ac0541b2f7ccb232",
+    "sha256": "8ab8124b82412f3c83771fee6da1a225049d6e7fd6ac826ec0b112e13a000535",
     "duration": 2.075
   },
   "p19": {
     "text": "我想你。",
     "src": "/audio/p19-5c1295fc2a788958.mp3",
-    "sha256": "57b51d4e951cb1ebb08d4e09834b88cf4400b21a1f02fe738a0ad9487f11589e",
+    "sha256": "01551f8fb487153e2c5ba90f099c318ce9f49d3591a96b2536d2345b76f9ae23",
     "duration": 1.825
   },
   "p20": {
     "text": "我去睡觉了。",
     "src": "/audio/p20-da4f0e8cf3e69087.mp3",
-    "sha256": "afdc27e64844950b40f788bbf3757f976fb30492c4e11b1cc488b74ab0b310a1",
+    "sha256": "81fb94b18bb61989d74bf5b2f30fbaebf390fb4c9ab3b55e129cc2ca6c76b271",
     "duration": 2.275
   },
   "p21": {
     "text": "好啊，那你注意安全。",
     "src": "/audio/p21-1ddde67e2ecaf056.mp3",
-    "sha256": "3e9fc29abe8a3b75576c2419a5832a5004fc269e7a5cd55d1319280d0e1ed4e9",
+    "sha256": "8be42c7296060139b81fbf1985cbbb3c67128fe398337c37450fd7b90d5f8026",
     "duration": 3.0
   },
   "p22": {
     "text": "我不懂。",
     "src": "/audio/p22-4ce355a2d3fe012c.mp3",
-    "sha256": "0543d7f3d4f3825547a8eb33f81abce134ba98ccc8c8bb82d6d1315db1e91e8b",
+    "sha256": "104d2c36de98cf562c30f6e0577bc73bb2ee862b6c2bb31d8e1722766cdeb663",
     "duration": 1.7
   }
 }
