@@ -167,3 +167,35 @@ test("200% text, long study/typing sentences, keyboard and bottom navigation rem
 test("production hides design fixtures", async ({ request }) => {
   expect((await request.get("/design-preview")).status()).toBe(404);
 });
+
+test("study audio plays on demand, stops on navigation, and handles a failed download", async ({ page }) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+  await expect(page.locator("audio")).toHaveCount(0);
+  await mode(page, "Học").tap();
+  const recording = page.locator("audio");
+  expect(await recording.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  expect(await recording.evaluate(el => (el as HTMLAudioElement).readyState)).toBe(0); // preload=none
+  await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
+  await expect.poll(() => recording.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  const oldAudio = await recording.elementHandle();
+  await next(page).tap();
+  expect(await oldAudio!.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  expect(await recording.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
+  await expect.poll(() => recording.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  const secondAudio = await recording.elementHandle();
+  await mode(page, "Quiz").tap();
+  expect(await secondAudio!.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  await expect(page.locator("audio")).toHaveCount(0);
+  await mode(page, "Luyện gõ").tap();
+  await expect(page.locator("audio")).toHaveCount(0);
+  await mode(page, "Học").tap();
+  await next(page).tap();
+  await page.route("**/audio/*.mp3", route => route.abort());
+  await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
+  await expect(page.getByRole("status")).toContainText("Lỗi tải. Thử lại.");
+  await page.unroute("**/audio/*.mp3");
+  await page.getByRole("button", { name: "Nghe câu", exact: true }).tap();
+  await expect.poll(() => recording.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  await expect(page.getByRole("status")).toBeEmpty();
+});
