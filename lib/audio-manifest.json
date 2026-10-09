@@ -131,6 +131,12 @@
     "sha256": "104d2c36de98cf562c30f6e0577bc73bb2ee862b6c2bb31d8e1722766cdeb663",
     "duration": 1.7
   },
+  "p23": {
+    "text": "继续。",
+    "src": "/audio/p23-cd9b5cf9002d3480.mp3",
+    "sha256": "362bec5697bba4cf5b422f6592f928a1a5b5a976a1ced2264158c036eae1bce1",
+    "duration": 1.275
+  },
   "word:上班:shàngbān": {
     "text": "上班",
     "src": "/audio/word-45537b5556702524.mp3",
@@ -274,6 +280,12 @@
     "src": "/audio/word-b33a05deb2d2eb8e.mp3",
     "sha256": "17d7ba4e4a80966d395844de71377349818ce29903a8943278de382b0db9a739",
     "duration": 0.75
+  },
+  "word:继续:jìxù": {
+    "text": "继续",
+    "src": "/audio/word-4fe84101df123e06.mp3",
+    "sha256": "d1fb77697c7d789fed5ff7bbcad602474fe4273793f015e886c581fef852652d",
+    "duration": 1.025
   },
   "word:路上:lùshang": {
     "text": "路上",
