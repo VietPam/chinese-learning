@@ -1,4 +1,178 @@
 {
+  "hsk1:三个，爸爸、妈妈和我。": {
+    "text": "三个，爸爸、妈妈和我。",
+    "src": "/audio/hsk1-c78c9ddf1a53e40d.mp3",
+    "sha256": "1488e936781969bf9f548e59ed89438e4573e5d57a8968c7fdb3fa782a3b093d",
+    "duration": 3.075
+  },
+  "hsk1:今天下雨了。": {
+    "text": "今天下雨了。",
+    "src": "/audio/hsk1-7233f38e033a9794.mp3",
+    "sha256": "b1f51c1ae1a8fa80574ef779419e5413386d02a154eeab22609bdfc662e58792",
+    "duration": 2.425
+  },
+  "hsk1:他在睡觉呢。": {
+    "text": "他在睡觉呢。",
+    "src": "/audio/hsk1-9de7ffe12e8de130.mp3",
+    "sha256": "317ba7cc0617e87a67b33c362d7d5409cfd2e96237ab031a03419707c7e61eef",
+    "duration": 2.3
+  },
+  "hsk1:你什么时候去北京？": {
+    "text": "你什么时候去北京？",
+    "src": "/audio/hsk1-f72d50a8a1f5e665.mp3",
+    "sha256": "2456f1a92c33d4b5a905cc62a13e43f2adfd982fc307b006a253856b9b2f3b3c",
+    "duration": 2.9
+  },
+  "hsk1:你叫什么名字？": {
+    "text": "你叫什么名字？",
+    "src": "/audio/hsk1-af4fc5a46a6488dc.mp3",
+    "sha256": "16464f1fb619f523472e712227c7f061a60f3613511e711dc080857531e18733",
+    "duration": 2.4
+  },
+  "hsk1:你女儿多大了？": {
+    "text": "你女儿多大了？",
+    "src": "/audio/hsk1-1985d1d861b8fc29.mp3",
+    "sha256": "22d32fc6d88622a517f7b10c4ebd2abba7edc293f87db5965fa15de4d086fbf5",
+    "duration": 2.4
+  },
+  "hsk1:你家有几个人？": {
+    "text": "你家有几个人？",
+    "src": "/audio/hsk1-a0c0de8dd091a57c.mp3",
+    "sha256": "6c8ee683e12aef28cabb30c3482b7ff5ea543c17d677c73bc48c55a0bf868570",
+    "duration": 2.525
+  },
+  "hsk1:你的衣服很漂亮。": {
+    "text": "你的衣服很漂亮。",
+    "src": "/audio/hsk1-15ade104d7cae5a7.mp3",
+    "sha256": "095757cae7d517c9b422741babe7a95ce0241f4ddf1c36d88c2b13235b9ef72b",
+    "duration": 2.9
+  },
+  "hsk1:你认识那个人吗？": {
+    "text": "你认识那个人吗？",
+    "src": "/audio/hsk1-6571521fb775ddbd.mp3",
+    "sha256": "f24fbc16233911663d6d113dc4f5a5949bd27790bd62ddaa254647d3c19ff61a",
+    "duration": 2.625
+  },
+  "hsk1:医院": {
+    "text": "医院",
+    "src": "/audio/hsk1-d289e43b0cc198c2.mp3",
+    "sha256": "74b8ded0d10092e1a3ff7ab21637e97689d668606b60885bdd45589debcec5a4",
+    "duration": 1.075
+  },
+  "hsk1:喂，你在哪儿？": {
+    "text": "喂，你在哪儿？",
+    "src": "/audio/hsk1-5c5c7358d1ba6891.mp3",
+    "sha256": "a1df3c915716dd05b2dfca90853afe3a2cb4da6a499be02c0561d37b7d8deeec",
+    "duration": 2.225
+  },
+  "hsk1:她七岁了。": {
+    "text": "她七岁了。",
+    "src": "/audio/hsk1-e63fc3e48ceabf54.mp3",
+    "sha256": "6285495ee64a0847248992cb7feafb24a62940a4645e5b17b7cb612f45d382b7",
+    "duration": 2.075
+  },
+  "hsk1:对不起！": {
+    "text": "对不起！",
+    "src": "/audio/hsk1-24c540fe681528b8.mp3",
+    "sha256": "12397b1da3764f8559c9c4c0b697ebed6e5dd6ef6490a348f5bf4588f205fb9a",
+    "duration": 1.575
+  },
+  "hsk1:我们坐出租车去医院。": {
+    "text": "我们坐出租车去医院。",
+    "src": "/audio/hsk1-e8abbc6158918970.mp3",
+    "sha256": "29d77a0bac3f9221d0f79014082aff6ba1d2f07db94749e94a4185819c5b7700",
+    "duration": 3.175
+  },
+  "hsk1:我叫王月。": {
+    "text": "我叫王月。",
+    "src": "/audio/hsk1-5f39be9627f30c55.mp3",
+    "sha256": "c951728d6ee8accc89a811f717d1dcefc2b58bdaa8670a0ec6b2a51843fb9ebb",
+    "duration": 2.1
+  },
+  "hsk1:我想去商店买东西。": {
+    "text": "我想去商店买东西。",
+    "src": "/audio/hsk1-e1aeb67b42d481e9.mp3",
+    "sha256": "3a330d011206afb21ecd2937fcce1b5d1525a53360a56c4ef79c5ab5f8be2b65",
+    "duration": 3.125
+  },
+  "hsk1:我想喝茶。": {
+    "text": "我想喝茶。",
+    "src": "/audio/hsk1-a5ce2ce3b650c64e.mp3",
+    "sha256": "450236d8b97c50fc6c6184403c15d1d702ba9f91d1289e17eea1cad79fa8c418",
+    "duration": 2.2
+  },
+  "hsk1:明天上午。": {
+    "text": "明天上午。",
+    "src": "/audio/hsk1-409776164e3dbafb.mp3",
+    "sha256": "10aa0063bf4e041acd5c731a97d8e60ea411b928d8fa8cbd29c62c791da9e8c7",
+    "duration": 2.2
+  },
+  "hsk1:是我同学的。": {
+    "text": "是我同学的。",
+    "src": "/audio/hsk1-0165d2d31d908eab.mp3",
+    "sha256": "8db657be2468ba06f39381c9cebd57e75f553bccc55f984ed16aff1a2387c194",
+    "duration": 2.3
+  },
+  "hsk1:桌子": {
+    "text": "桌子",
+    "src": "/audio/hsk1-435d19ddf8897a44.mp3",
+    "sha256": "a16c679812f37b766addbbb179ca2b065cbbe4fe47d5272dbe5c51b73e648254",
+    "duration": 1.05
+  },
+  "hsk1:椅子": {
+    "text": "椅子",
+    "src": "/audio/hsk1-722d2b2dc7026692.mp3",
+    "sha256": "2e64a12eaf665f975bfeec513237f6eff6b45dea9d17d320beb9ddfb1dedc434",
+    "duration": 1.025
+  },
+  "hsk1:没关系。": {
+    "text": "没关系。",
+    "src": "/audio/hsk1-2aae87e845831127.mp3",
+    "sha256": "5d9422da8fdc3d5c2a6d7ccfabc4dc29b1e5c51e64ef8c98cb8dcfdbbab5639f",
+    "duration": 1.875
+  },
+  "hsk1:狗": {
+    "text": "狗",
+    "src": "/audio/hsk1-15d0d82da5cf7fcb.mp3",
+    "sha256": "5821fdc95a0cb0561c216d12120cebd4fe8dae4d7389ed9f748e2a28f7e4d551",
+    "duration": 0.75
+  },
+  "hsk1:猫": {
+    "text": "猫",
+    "src": "/audio/hsk1-094f9a174a8d659e.mp3",
+    "sha256": "8468070ec8e360d3ecdc7559e9d55ec9a0f4210c277fe6c1a2af7b50e5c9a008",
+    "duration": 0.75
+  },
+  "hsk1:电视": {
+    "text": "电视",
+    "src": "/audio/hsk1-9387c30a68cc4c7b.mp3",
+    "sha256": "30fbd379a885c8920e25faecb11581c4bc466408f9745e716384bb67140f205c",
+    "duration": 1.125
+  },
+  "hsk1:苹果": {
+    "text": "苹果",
+    "src": "/audio/hsk1-3f919b04d7e3f6de.mp3",
+    "sha256": "528c4a73355461b0dd852e581539e38e21e83efe701b27be3203d8712490dfe6",
+    "duration": 1.075
+  },
+  "hsk1:认识，她是我的汉语老师。": {
+    "text": "认识，她是我的汉语老师。",
+    "src": "/audio/hsk1-eab470c421215955.mp3",
+    "sha256": "b24f82aba2a506442cffec3535e8558d865e5489fc83abb69e38ca2bcde35a01",
+    "duration": 3.45
+  },
+  "hsk1:请坐，请喝茶。": {
+    "text": "请坐，请喝茶。",
+    "src": "/audio/hsk1-dae87d892541add3.mp3",
+    "sha256": "470f662439fee804acd6002772637c221d567662fcb757dc82a2450771222b80",
+    "duration": 2.525
+  },
+  "hsk1:这是谁的书？": {
+    "text": "这是谁的书？",
+    "src": "/audio/hsk1-dc5a088b8ed7f911.mp3",
+    "sha256": "e8a93fdccdb6cc5692e790549e857c0e514994a2460db16026ece2b3e7ea62f6",
+    "duration": 2.25
+  },
   "p01": {
     "text": "你在忙吗？",
     "src": "/audio/p01-3355fa0dd310d0bf.mp3",
@@ -137,6 +311,24 @@
     "sha256": "362bec5697bba4cf5b422f6592f928a1a5b5a976a1ced2264158c036eae1bce1",
     "duration": 1.275
   },
+  "word:七:qī": {
+    "text": "七",
+    "src": "/audio/word-56e782def4b31a35.mp3",
+    "sha256": "ac22463f8671c75ce2f37ef977b37cfa1c2625c95d973552b212c2a6cbb47a0e",
+    "duration": 0.775
+  },
+  "word:三:sān": {
+    "text": "三",
+    "src": "/audio/word-0c11c1fd033016da.mp3",
+    "sha256": "453554c49416e1712e5d0be73ccd52c933e28a8be6125730a29e4f79564cca4d",
+    "duration": 0.8
+  },
+  "word:上午:shàngwǔ": {
+    "text": "上午",
+    "src": "/audio/word-c08db9391c18435e.mp3",
+    "sha256": "a3b221d6ffcf6b27e038353237bb7e1576ae5922a96775aab32e976bf0e9fcd0",
+    "duration": 1.05
+  },
   "word:上班:shàngbān": {
     "text": "上班",
     "src": "/audio/word-45537b5556702524.mp3",
@@ -149,16 +341,70 @@
     "sha256": "9f4286106b75f3beb5079ba2a3c533eddd04f6c66a7f1bdb39bd5d7347463e17",
     "duration": 1.1
   },
+  "word:下雨:xià yǔ": {
+    "text": "下雨",
+    "src": "/audio/word-9b08282da5493a76.mp3",
+    "sha256": "896e728178ca395789d30147f13c50aa4818c9c85cb71f6e8c9595670ae8c5d1",
+    "duration": 1.1
+  },
   "word:不:bù": {
     "text": "不",
     "src": "/audio/word-2594c4e43d9ad390.mp3",
     "sha256": "41f498297bb662bb6da65e76c94a14d0b4225fd289d00aeb3929aa08893434ce",
     "duration": 0.75
   },
+  "word:东西:dōngxi": {
+    "text": "东西",
+    "src": "/audio/word-f5172e46b58b61fc.mp3",
+    "sha256": "d0bf50c3d54c92d4596dbff93ed94afdb1844b8fee042bca83a0428ef0e51645",
+    "duration": 1.0
+  },
+  "word:个:gè": {
+    "text": "个",
+    "src": "/audio/word-5a3c403dbf5c5c1f.mp3",
+    "sha256": "424f3ea0a5dfa48df712a5778e7145b144fc08b7f61fd6ad789c6ccb64e8bf1c",
+    "duration": 0.775
+  },
+  "word:书:shū": {
+    "text": "书",
+    "src": "/audio/word-1310f3da4378b21e.mp3",
+    "sha256": "33ce7235470d4bc142701858add98ba35ee0281ca90d87a8e8c95846d8d86764",
+    "duration": 0.75
+  },
+  "word:买:mǎi": {
+    "text": "买",
+    "src": "/audio/word-913be0394c261326.mp3",
+    "sha256": "6ef181805c10148d464e93b078713a8547d8fd05ee92180d439c910c50d0c3f4",
+    "duration": 0.8
+  },
   "word:了:le": {
     "text": "了",
     "src": "/audio/word-433904df07be127e.mp3",
     "sha256": "7b2b815f87152f0c5e631528a638942a886c87c97818578982a218e4bfdfd7c3",
+    "duration": 0.775
+  },
+  "word:人:rén": {
+    "text": "人",
+    "src": "/audio/word-7eefd96bcd5c6496.mp3",
+    "sha256": "ab848daebb6b5891020dadea9166034cf4bab11a31f6ad5ca929190758b2048b",
+    "duration": 0.75
+  },
+  "word:什么:shénme": {
+    "text": "什么",
+    "src": "/audio/word-c8140287d9b2d23b.mp3",
+    "sha256": "52538f630cb4621f253c02786520367747a3ae7fe797a71be1af73e608f6a94b",
+    "duration": 1.025
+  },
+  "word:今天:jīntiān": {
+    "text": "今天",
+    "src": "/audio/word-a4f26ca09829498c.mp3",
+    "sha256": "4245bc88828093927f15ab37cdb7e2dca85e7539f50ec01c196732f94a0f4e14",
+    "duration": 1.125
+  },
+  "word:他:tā": {
+    "text": "他",
+    "src": "/audio/word-82f77595999f19c9.mp3",
+    "sha256": "87efa3dca1b243c551ed6835a23dfe2a750cdecac15982a2b305b3f9d0922ef3",
     "duration": 0.775
   },
   "word:你:nǐ": {
@@ -167,11 +413,35 @@
     "sha256": "dd2105ce90e892d8b65fe6a7c35ddb711d9b158319310a0d500f3cc36bf659a4",
     "duration": 0.7
   },
+  "word:几:jǐ": {
+    "text": "几",
+    "src": "/audio/word-cc15ef70af043bdb.mp3",
+    "sha256": "62431b2014cf3d3784462762509507710b3d7ea676fe8a6cb7d0e2f291eb0f83",
+    "duration": 0.75
+  },
+  "word:出租车:chūzūchē": {
+    "text": "出租车",
+    "src": "/audio/word-27af6048d435bf6b.mp3",
+    "sha256": "c06ac30c4145f94fae7a7249f000507df6420c94634eb928261458f449362b6e",
+    "duration": 1.7
+  },
   "word:到:dào": {
     "text": "到",
     "src": "/audio/word-797c8b340aca5daf.mp3",
     "sha256": "f85ccd7ccd0a39ad676b4718a268534ca8c26ca0dbf9cb6ad4885dca3678d933",
     "duration": 0.75
+  },
+  "word:北京:Běijīng": {
+    "text": "北京",
+    "src": "/audio/word-fecb9c93eb4ded3e.mp3",
+    "sha256": "0a491c4f715c0772f866738c74c6acfd2b2b33ab18720b7541316bcafda62c32",
+    "duration": 1.025
+  },
+  "word:医院:yīyuàn": {
+    "text": "医院",
+    "src": "/audio/word-1b376d7916c064bc.mp3",
+    "sha256": "61fc4b59301414763b2ca4289a60c21c5ea9911bdc78d95797143eadfe48219c",
+    "duration": 1.075
   },
   "word:去:qù": {
     "text": "去",
@@ -179,11 +449,29 @@
     "sha256": "bf19e0ce62be8711606b87539db9027515a92ec65b78c460dc14de302b3df091",
     "duration": 0.75
   },
+  "word:叫:jiào": {
+    "text": "叫",
+    "src": "/audio/word-27d90a285807b37d.mp3",
+    "sha256": "dbe5276fbddce66dc5103fee3ce59f439b943ba05565367641e7b6ea8d63b2b3",
+    "duration": 0.775
+  },
   "word:吃饭:chīfàn": {
     "text": "吃饭",
     "src": "/audio/word-2b87f7edde82c67f.mp3",
     "sha256": "6bdd36856540e0b61ca4b293fa13669737c92b6f10f3a2e81eb32949bfb53bcb",
     "duration": 1.15
+  },
+  "word:同学:tóngxué": {
+    "text": "同学",
+    "src": "/audio/word-5a8aea5313bd63e1.mp3",
+    "sha256": "e646273c08c50f66bc25d0ae1b06c70c20311fd8afe07e42c3123ccc3fff0b0d",
+    "duration": 1.1
+  },
+  "word:名字:míngzi": {
+    "text": "名字",
+    "src": "/audio/word-8ebe39c88542c244.mp3",
+    "sha256": "a4f992143c66d1e4a79ce36ff3b09be334216516ad0afd1e6171e58d6e5bc24f",
+    "duration": 1.1
   },
   "word:吗:ma": {
     "text": "吗",
@@ -191,11 +479,47 @@
     "sha256": "6fb3243ba7b22827a6e3b5998b8d32012aba250046b84a0c65d83b6eadfddc19",
     "duration": 0.75
   },
+  "word:呢:ne": {
+    "text": "呢",
+    "src": "/audio/word-6e3f0875ee45b7f4.mp3",
+    "sha256": "e64c261fbc28dc963112e9cd79e22b097c6f244fd2b334cf66ca6cf72dc07885",
+    "duration": 0.775
+  },
+  "word:和:hé": {
+    "text": "和",
+    "src": "/audio/word-deabb6a0d20c1a42.mp3",
+    "sha256": "bc3639064df15f52dcc2a9abcddaea23676654cba926610ffae293c889782c3e",
+    "duration": 0.85
+  },
+  "word:哪儿:nǎr": {
+    "text": "哪儿",
+    "src": "/audio/word-31bb1794dce12d28.mp3",
+    "sha256": "65fc2e6a86b8609adc158fdd1efb1a1afc3c8e8fe40fcf2066e51fa0b53a8707",
+    "duration": 0.85
+  },
+  "word:商店:shāngdiàn": {
+    "text": "商店",
+    "src": "/audio/word-ba2ab8a588e1fc97.mp3",
+    "sha256": "4d74698e54b1f6d1542919a2e57547bac9a0c6fb6ec10a137e5eed72260efe0b",
+    "duration": 1.1
+  },
   "word:啊:a": {
     "text": "啊",
     "src": "/audio/word-996e161903434f13.mp3",
     "sha256": "a4670e00f8a04f8718657d573656544d86c29c54c58196d1466262ee88f8772f",
     "duration": 0.775
+  },
+  "word:喂:wèi": {
+    "text": "喂",
+    "src": "/audio/word-8da55b691f397b9e.mp3",
+    "sha256": "f271db73117d6fb0aa42dd6853ea4cdceff534dc9133b7d0d83c5b951c0d934d",
+    "duration": 0.8
+  },
+  "word:喝:hē": {
+    "text": "喝",
+    "src": "/audio/word-c9e7a0fd04aed01d.mp3",
+    "sha256": "d7a2251a4be940f20fa2f6726449e4c2ad04db7a8e2fa60a2699f19c2b3d5b92",
+    "duration": 0.85
   },
   "word:回:huí": {
     "text": "回",
@@ -209,11 +533,47 @@
     "sha256": "a949935c006e0337ea918c728f62c2eae9b46a4ba7f350a9e71c6c430956a559",
     "duration": 0.75
   },
+  "word:坐:zuò": {
+    "text": "坐",
+    "src": "/audio/word-a655f13ced1853fe.mp3",
+    "sha256": "f081fee7d7c154ba563dcb6dc0613cf1c7b6d81fb5d368195438e11d260c80d9",
+    "duration": 0.75
+  },
+  "word:多:duō": {
+    "text": "多",
+    "src": "/audio/word-e22b35a40c1dc166.mp3",
+    "sha256": "ce459da5efcdbdd9aa2f4aea78ac46990c150ff766e4d919685dc2b41263493a",
+    "duration": 0.75
+  },
+  "word:大:dà": {
+    "text": "大",
+    "src": "/audio/word-921ae14cf2529720.mp3",
+    "sha256": "0cd3e73526e0259ca8b2676b7a8a5d367996e0eb0ee8611b220cc702962327b2",
+    "duration": 0.75
+  },
+  "word:女儿:nǚ'ér": {
+    "text": "女儿",
+    "src": "/audio/word-8fefaef2c79ae322.mp3",
+    "sha256": "c0a45902526d6c66ff4e404caee20df515387303da48ad57366724566e7e2a90",
+    "duration": 0.975
+  },
+  "word:她:tā": {
+    "text": "她",
+    "src": "/audio/word-f245a17d9389eeeb.mp3",
+    "sha256": "5a907ea6502d3e73478fed2f50e4377981bf072d28505e03434681b77c529e2a",
+    "duration": 0.775
+  },
   "word:好:hǎo": {
     "text": "好",
     "src": "/audio/word-1f3729d1c9291c98.mp3",
     "sha256": "315ddf54ea0526dda6cf943f9fb501fdb1bc4b0f500b7204ae847f13a6f0e080",
     "duration": 0.825
+  },
+  "word:妈妈:māma": {
+    "text": "妈妈",
+    "src": "/audio/word-08bffcbad4dc7a93.mp3",
+    "sha256": "6a1e40e586a364576e6cd75d736efd326f4e3b53d22d0be9f1f15f7193fcd58a",
+    "duration": 1.05
   },
   "word:安全:ānquán": {
     "text": "安全",
@@ -227,11 +587,29 @@
     "sha256": "43ee905fa44d354904131df9e902aa7f119f150bff4426cd6b4d77be9b5a2d28",
     "duration": 0.8
   },
+  "word:对不起:duìbuqǐ": {
+    "text": "对不起",
+    "src": "/audio/word-20f9d8605a0ffc6a.mp3",
+    "sha256": "2b9bbec42e09581fda5213ab5c0ddd13e12f52a6364718738481134a38e777a1",
+    "duration": 1.375
+  },
+  "word:岁:suì": {
+    "text": "岁",
+    "src": "/audio/word-fced71fc88b24483.mp3",
+    "sha256": "a2ebb833e23ec80a0b98e3e61512641a2008ab19fa3001fe3e1a89f11c149ccf",
+    "duration": 0.8
+  },
   "word:工作:gōngzuò": {
     "text": "工作",
     "src": "/audio/word-eec687697bb3ec13.mp3",
     "sha256": "791b31cc985138c8e98941921acffddeb858423bea8237fe50ae1a9ae76da05e",
     "duration": 1.05
+  },
+  "word:很:hěn": {
+    "text": "很",
+    "src": "/audio/word-33f645a73bb59013.mp3",
+    "sha256": "f6996aff62765e1ebab10629ae1076e0f24f35c802af67b8ae9f5cf39dd96698",
+    "duration": 0.8
   },
   "word:忙:máng": {
     "text": "忙",
@@ -257,11 +635,101 @@
     "sha256": "0d0c6c12410cc9f698ad803ca15e217b6b66a54054bb6dadf6b73bb4d8a21062",
     "duration": 0.775
   },
+  "word:我们:wǒmen": {
+    "text": "我们",
+    "src": "/audio/word-0a359265b61058f0.mp3",
+    "sha256": "bd8490f9899577e41f7eab130536e179b578d4598bf570156c0124f6d65b3b03",
+    "duration": 0.875
+  },
+  "word:时候:shíhou": {
+    "text": "时候",
+    "src": "/audio/word-f4c0b375a4e349f8.mp3",
+    "sha256": "e043ff989b35043339a4d690e2d88e245cce70e67d0b42c8dd360ee586208ab0",
+    "duration": 0.95
+  },
+  "word:明天:míngtiān": {
+    "text": "明天",
+    "src": "/audio/word-7d505cb0ac986f6f.mp3",
+    "sha256": "956f04c8ae26050f571e6398397227fe0af6f79adda4e498646fe6acf00eeea0",
+    "duration": 1.125
+  },
+  "word:是:shì": {
+    "text": "是",
+    "src": "/audio/word-0878c782d7318328.mp3",
+    "sha256": "65e61f95c447d88db9fc2cec3eedafa992694a95d8c0bbcc15e497faea444ee3",
+    "duration": 0.775
+  },
+  "word:有:yǒu": {
+    "text": "有",
+    "src": "/audio/word-c507c522032feb32.mp3",
+    "sha256": "07179380b5adfea936f5e02515cfdbd25a3cd59a3ece6e6eba9cddfd9bf03f74",
+    "duration": 0.825
+  },
+  "word:桌子:zhuōzi": {
+    "text": "桌子",
+    "src": "/audio/word-3fc6c6a7ae52c422.mp3",
+    "sha256": "5df590d67be07cd70192e19799e7e412b1e03f2b97de143990f6f6b4c103d423",
+    "duration": 1.05
+  },
+  "word:椅子:yǐzi": {
+    "text": "椅子",
+    "src": "/audio/word-3e0f72be152e9f9c.mp3",
+    "sha256": "262f2f6ad39130366105d2991ae7398eb100de9236d9547c2abecda2c305ba49",
+    "duration": 1.025
+  },
+  "word:汉语:Hànyǔ": {
+    "text": "汉语",
+    "src": "/audio/word-99f92dca85e10070.mp3",
+    "sha256": "a846f8b31dbae9064e0df3596875850ca468f08a7c3a8174cafc50d268982fcc",
+    "duration": 1.075
+  },
+  "word:没关系:méi guānxi": {
+    "text": "没关系",
+    "src": "/audio/word-957166a7d6015578.mp3",
+    "sha256": "eef6a5ad6c1e50fef2261170461fa9d442e693117c0b4bc4360ea8989fe8c7a7",
+    "duration": 1.675
+  },
   "word:注意:zhùyì": {
     "text": "注意",
     "src": "/audio/word-9d2be6ea3d892c09.mp3",
     "sha256": "f8489d79e37849d980d8e84eed385393957b9dc4152510878ab688a63d54ec53",
     "duration": 1.05
+  },
+  "word:漂亮:piàoliang": {
+    "text": "漂亮",
+    "src": "/audio/word-dcefeb4b08eab4a5.mp3",
+    "sha256": "0841b862ea8bebb95c5358f031c21466b11fe3c76803cd14829e21d017ea2db6",
+    "duration": 1.175
+  },
+  "word:爸爸:bàba": {
+    "text": "爸爸",
+    "src": "/audio/word-082227e8652f810b.mp3",
+    "sha256": "39741d3a02593c995404c2eb4b82abf53524606f5ded5d812ee0a92e0f9cc5bb",
+    "duration": 1.025
+  },
+  "word:狗:gǒu": {
+    "text": "狗",
+    "src": "/audio/word-37d8fe817059abee.mp3",
+    "sha256": "11df6da4aab1df21c2078ab02a42daa08e8066e493205d88a6895c536ece3e19",
+    "duration": 0.75
+  },
+  "word:猫:māo": {
+    "text": "猫",
+    "src": "/audio/word-7d075da06599f532.mp3",
+    "sha256": "d42d38f039b8e81a4dbf71edb50c2001d1922e3c45e66712c1386d105ae555f8",
+    "duration": 0.75
+  },
+  "word:王月:Wáng Yuè": {
+    "text": "王月",
+    "src": "/audio/word-645941254ef762d4.mp3",
+    "sha256": "edbe6fa285d7b276edcc98ffc2b0a994c51d82df0c58b256c0f6bd2c0e30f641",
+    "duration": 1.175
+  },
+  "word:电视:diànshì": {
+    "text": "电视",
+    "src": "/audio/word-ce479eb5fb3c9a7d.mp3",
+    "sha256": "b8c260064f8dc3f9f93da091e74227fdd1d405aaa6e5453427ed1bab6e513039",
+    "duration": 1.125
   },
   "word:的:de": {
     "text": "的",
@@ -287,11 +755,59 @@
     "sha256": "d1fb77697c7d789fed5ff7bbcad602474fe4273793f015e886c581fef852652d",
     "duration": 1.025
   },
+  "word:老师:lǎoshī": {
+    "text": "老师",
+    "src": "/audio/word-09c57e43a651a6d5.mp3",
+    "sha256": "927a03b3d733aa6c3b82378c87d582cb858a4c354fe278e46c90fbaa6641df84",
+    "duration": 1.05
+  },
+  "word:苹果:píngguǒ": {
+    "text": "苹果",
+    "src": "/audio/word-5c086506d1b7096d.mp3",
+    "sha256": "0c90baea1de83459e36eaa61cf64ed96288d9d7baeae6ea65341f5560ecdd1f6",
+    "duration": 1.075
+  },
+  "word:茶:chá": {
+    "text": "茶",
+    "src": "/audio/word-ce58ad8c666fd05d.mp3",
+    "sha256": "abb4fd3c90baf6536f6062ad5b05f82c30ca40df5b5c62bf6b7551ef1651a2dc",
+    "duration": 0.8
+  },
+  "word:衣服:yīfu": {
+    "text": "衣服",
+    "src": "/audio/word-938853c6bd5a435d.mp3",
+    "sha256": "e91dfbffaa3af6f2830c59221b031ffe1f2c99c5d699e41bb861210784d28b3c",
+    "duration": 1.0
+  },
+  "word:认识:rènshi": {
+    "text": "认识",
+    "src": "/audio/word-625184adef4c3424.mp3",
+    "sha256": "35bc1bb36c047b8522f56208c0e43529b4b71c9340f4c04d61d8ff9d5f294ef3",
+    "duration": 0.975
+  },
+  "word:请:qǐng": {
+    "text": "请",
+    "src": "/audio/word-90de4640acd51001.mp3",
+    "sha256": "e177a93149c3a64c4fd849c0d6756d709b85c6b87a4149f5879a8cecf207e508",
+    "duration": 0.75
+  },
+  "word:谁:shéi": {
+    "text": "谁",
+    "src": "/audio/word-8bf4adef42c5f47a.mp3",
+    "sha256": "2be678181ce2ade37710570b81fcf9c57b724430eddd122aa031ab5f64cb3501",
+    "duration": 0.85
+  },
   "word:路上:lùshang": {
     "text": "路上",
     "src": "/audio/word-99a96f6870861206.mp3",
     "sha256": "4439efc000e68bb5bce0903100bac74cf0558ad203a16fa688604ac8696a1cf0",
     "duration": 1.05
+  },
+  "word:这:zhè": {
+    "text": "这",
+    "src": "/audio/word-10fd0e25951c3d80.mp3",
+    "sha256": "08e3fa257d9a7d3bfdd5e44c9dd8a45b130fd6785b032acb685e27aa782bcdbb",
+    "duration": 0.725
   },
   "word:那:nà": {
     "text": "那",

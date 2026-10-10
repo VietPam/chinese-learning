@@ -1,4 +1,4 @@
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type ElementHandle, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { availableAnswers, hsk1Questions, sectionOf, scoreHsk1, type Hsk1Answer } from "../../lib/hsk1-reading";
 
@@ -25,6 +25,7 @@ test("HSK 1 reading: start from home, answer with instant feedback, look up word
   await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
 
   const chosen: Record<string, Hsk1Answer> = {};
+  let playing: ElementHandle<HTMLElement | SVGElement> | null = null;
   for (let i = 0; i < hsk1Questions.length; i++) {
     const question = hsk1Questions[i];
     await expect(page.getByRole("banner")).toContainText(`Câu ${i + 1}/20`);
@@ -49,15 +50,34 @@ test("HSK 1 reading: start from home, answer with instant feedback, look up word
       // The blank is filled with the answer and words can be looked up.
       const feedback = page.getByTestId("answer-feedback");
       await expect(feedback).toContainText("（漂亮piàoliang）");
+      const lookup = feedback.getByTestId("word-lookup");
       await feedback.getByRole("button", { name: "Tra từ 衣服" }).tap();
-      await expect(feedback.getByRole("status")).toContainText("yīfu");
-      await expect(feedback.getByRole("status")).toContainText("quần áo");
+      await expect(lookup).toContainText("yīfu");
+      await expect(lookup).toContainText("quần áo");
+      // Recordings play on demand only, one at a time: the filled sentence, then the looked-up word.
+      const sentence = feedback.locator('audio[data-audio-id="hsk1:你的衣服很漂亮。"]');
+      const word = feedback.locator('audio[data-audio-id="word:衣服:yīfu"]');
+      expect(await sentence.evaluate(el => (el as HTMLAudioElement).readyState)).toBe(0);
+      await feedback.getByRole("button", { name: "Nghe 你的衣服很漂亮。" }).tap();
+      await expect.poll(() => sentence.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+      await feedback.getByRole("button", { name: "Nghe từ yīfu" }).tap();
+      await expect.poll(() => word.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+      expect(await sentence.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
       await feedback.getByRole("button", { name: "Tra từ 衣服" }).tap();
-      await expect(feedback.getByRole("status")).toBeEmpty();
+      await expect(lookup).toBeEmpty();
+      await expect(word).toHaveCount(0);
+      await feedback.getByRole("button", { name: "Nghe 你的衣服很漂亮。" }).tap();
+      await expect.poll(() => sentence.evaluate(el => (el as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+      playing = await sentence.elementHandle();
     }
     if (i < hsk1Questions.length - 1) {
       await continueButton(page).tap();
       await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+    }
+    if (playing) {
+      // Leaving the question stops its recording.
+      expect(await playing.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+      playing = null;
     }
   }
   await expect(page.getByText("Còn 1 câu chưa làm.")).toBeVisible();

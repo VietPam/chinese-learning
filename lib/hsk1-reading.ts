@@ -153,6 +153,41 @@ export function sectionOf(part: PartNumber): Hsk1Section {
 export function letterIndex(letter: Letter) {
   return LETTERS.indexOf(letter);
 }
+
+/** What a learner hears: no speaker label, the blank already filled. */
+export function spokenText(line: Hsk1Line, fill?: string) {
+  return line.text.split(" ").map(part => part === "__" ? fill ?? "" : part).join("");
+}
+export type ExplanationRow = { readonly label?: string; readonly line: Hsk1Line; readonly fill?: string };
+/** Chinese lines shown, with audio and word lookup, after a question is answered. */
+export function explanationRows(question: Hsk1Question): ExplanationRow[] {
+  if (question.part === 4) {
+    const fill = sectionOf(4).choices[letterIndex(question.answer as Letter)].line!.text;
+    return question.lines.map(line => ({ line, fill }));
+  }
+  const label = question.part === 1 ? "Từ" : question.part === 3 ? "Câu hỏi" : undefined;
+  return [
+    ...question.lines.map(line => label ? { label, line } : { line }),
+    ...question.pictureWord ? [{ label: "Tranh", line: { text: question.pictureWord, vi: question.picture!.label } }] : [],
+    ...question.part === 3 ? [{ label: `Đáp án ${question.answer}`, line: sectionOf(3).choices[letterIndex(question.answer as Letter)].line! }] : [],
+  ];
+}
+export const lineAudioId = (row: ExplanationRow) => `hsk1:${spokenText(row.line, row.fill)}`;
+/** Recordings the explanation screens need; read by scripts/generate-audio.py. */
+export function hsk1AudioItems() {
+  const sentences = new Map<string, string>();
+  const words = new Map<string, { hanzi: string; pinyin: string }>();
+  for (const row of hsk1Questions.flatMap(explanationRows)) {
+    sentences.set(lineAudioId(row), spokenText(row.line, row.fill));
+    for (const token of [...tokenize(row.line.text), ...row.fill ? tokenize(row.fill) : []]) {
+      if (token.kind === "word") words.set(`word:${token.text}:${token.pinyin}`, { hanzi: token.text, pinyin: token.pinyin });
+    }
+  }
+  return {
+    sentences: [...sentences].map(([id, text]) => ({ id, text })),
+    words: [...words.values()],
+  };
+}
 /** Choice letters a question may use: the example's choice is already taken. */
 export function availableAnswers(question: Pick<Hsk1Question, "part">): readonly Hsk1Answer[] {
   if (question.part === 1) return ["match", "mismatch"];

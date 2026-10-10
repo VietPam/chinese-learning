@@ -17,6 +17,7 @@ Yêu cầu chốt qua phỏng vấn ngày 10/10/2026. Tham khảo giao diện l�
 | Kết quả | Điểm thang 100 (5 điểm/câu), đạt từ 60, điểm từng phần, danh sách câu sai để xem lại |
 | Tra từ | Sau khi trả lời, chạm từ chữ Hán trong lời giải để xem Pinyin và nghĩa |
 | Lưu tiến độ | Không; tải lại bắt đầu mới |
+| Audio (bổ sung 10/10/2026) | Giọng nam Kokoro trong lời giải: nghe từng câu và từ đang tra; xem [audio](audio.md) |
 | Duyệt nội dung | Tự rà soát rồi phát hành; người dùng góp ý trên bản production |
 
 Mốc 60/100 chỉ để tham khảo: HSK 1 thật chấm Nghe + Đọc, đạt khi tổng từ 120/200.
@@ -50,4 +51,4 @@ Mỗi phần có ví dụ mẫu (mở bằng “Xem ví dụ”). Lựa chọn �
 
 ## Ngoài phạm vi
 
-Nghe, nhiều đề, tính giờ, chế độ thi thử, lưu tiến độ, tài khoản, bình luận. Đề do AI soạn theo cấu trúc HSK 2.0, không chép đề chính thức; chưa có giáo viên tiếng Trung duyệt.
+Phần thi Nghe, audio trước khi trả lời, nhiều đề, tính giờ, chế độ thi thử, lưu tiến độ, tài khoản, bình luận. Đề do AI soạn theo cấu trúc HSK 2.0, không chép đề chính thức; chưa có giáo viên tiếng Trung duyệt.

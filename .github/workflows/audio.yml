@@ -10,6 +10,9 @@ on:
     branches: [main]
     paths:
       - lib/content.ts
+      - lib/hsk1-reading.ts
+      - lib/hsk1-vocabulary.ts
+      - scripts/audio-items.ts
       - scripts/generate-audio.py
       - scripts/audio-requirements.txt
       - .github/workflows/audio.yml
@@ -31,6 +34,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      # scripts/audio-items.ts reads the HSK 1 content with Node type stripping.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Check existing audio
         id: existing
         run: |

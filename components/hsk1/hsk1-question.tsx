@@ -3,8 +3,9 @@
 import { useState, type ReactNode } from "react";
 import { ArrowRight, Check, Lightbulb, X } from "lucide-react";
 import {
-  LETTERS, letterIndex, sectionOf, type Hsk1Answer, type Hsk1Item, type Hsk1Line, type Hsk1Picture, type Hsk1Question, type Letter,
+  LETTERS, explanationRows, letterIndex, lineAudioId, sectionOf, spokenText, type Hsk1Answer, type Hsk1Item, type Hsk1Picture, type Hsk1Question, type Letter,
 } from "@/lib/hsk1-reading";
+import { LineAudio, WordAudio } from "@/components/sentence-audio";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -101,15 +102,6 @@ function Choices({ question, answer, onAnswer, titleId }: {
 
 function Explanation({ question, correct, onContinue }: { question: Hsk1Question; correct: boolean; onContinue?: () => void }) {
   const [lookup, setLookup] = useState<WordLookup | null>(null);
-  const section = sectionOf(question.part);
-  const answerChoice = question.part === 1 ? null : section.choices[letterIndex(question.answer as Letter)];
-  const rows: { label?: string; line: Hsk1Line; fill?: string }[] = question.part === 4 ?
-    question.lines.map(line => ({ line, fill: answerChoice!.line!.text })) :
-    [
-      ...question.lines.map(line => ({ line, label: question.part === 1 ? "Từ" : question.part === 3 ? "Câu hỏi" : undefined })),
-      ...question.pictureWord ? [{ label: "Tranh", line: { text: question.pictureWord, vi: question.picture!.label } }] : [],
-      ...question.part === 3 ? [{ label: `Đáp án ${question.answer}`, line: answerChoice!.line! }] : [],
-    ];
   return <div className="space-y-4" data-testid="answer-feedback">
     <div className={cn("flex items-start gap-2 rounded-[14px] p-3 text-sm leading-6 font-semibold", correct ? "bg-success-soft text-success" : "bg-error-soft text-destructive")}>
       {correct ? <Check className="mt-1 size-4 shrink-0" aria-hidden="true" /> : <Lightbulb className="mt-1 size-4 shrink-0" aria-hidden="true" />}
@@ -118,17 +110,23 @@ function Explanation({ question, correct, onContinue }: { question: Hsk1Question
     <p className="text-base leading-7">{question.explanation}</p>
     <section aria-label="Câu và nghĩa" className="space-y-3 rounded-[14px] border border-blue-100 bg-secondary/60 p-3">
       <p className="text-xs font-semibold text-primary">Chạm vào chữ Hán để xem Pinyin và nghĩa</p>
-      {rows.map((row, index) => <div key={index}>
-        {row.label && <p className="text-xs font-semibold text-slate-600">{row.label}</p>}
-        <HanziLine id={`explain-${index}`} line={row.line} fill={row.fill} lookup={lookup} onLookup={setLookup} className="text-2xl leading-[2.3]" />
-        <p className="text-sm leading-6 text-slate-600">{row.line.vi}</p>
+      {explanationRows(question).map((row, index) => <div key={index} className="flex items-start gap-2">
+        <div className="min-w-0 flex-1">
+          {row.label && <p className="text-xs font-semibold text-slate-600">{row.label}</p>}
+          <HanziLine id={`explain-${index}`} line={row.line} fill={row.fill} lookup={lookup} onLookup={setLookup} className="text-2xl leading-[2.3]" />
+          <p className="text-sm leading-6 text-slate-600">{row.line.vi}</p>
+        </div>
+        <div className="pt-4"><LineAudio audioId={lineAudioId(row)} text={spokenText(row.line, row.fill)} /></div>
       </div>)}
-      <div role="status" aria-live="polite" className="min-h-0">
-        {lookup && <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl border bg-white p-3">
-          <span lang="zh-Hans" className="hanzi text-2xl">{lookup.text}</span>
-          <span lang="zh-Latn" className="text-lg font-bold text-primary">{lookup.pinyin}</span>
-          <span className="text-base">{lookup.meaning}</span>
-        </p>}
+      <div className={cn("flex items-start gap-2", lookup && "rounded-xl border bg-white p-3")}>
+        <div role="status" aria-live="polite" data-testid="word-lookup" className="min-w-0 flex-1">
+          {lookup && <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span lang="zh-Hans" className="hanzi text-2xl">{lookup.text}</span>
+            <span lang="zh-Latn" className="text-lg font-bold text-primary">{lookup.pinyin}</span>
+            <span className="text-base">{lookup.meaning}</span>
+          </p>}
+        </div>
+        {lookup && <WordAudio key={lookup.key} word={{ hanzi: lookup.text, pinyin: lookup.pinyin }} />}
       </div>
     </section>
     {onContinue && <Button type="button" onClick={onContinue} className="h-auto min-h-12 w-full rounded-[14px] px-4 py-3 text-base font-bold whitespace-normal">
