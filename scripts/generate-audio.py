@@ -1,4 +1,4 @@
-"""Generate only missing/changed sentence recordings. --check needs Python stdlib only."""
+"""Generate only missing/changed sentence recordings. --check needs Python stdlib and Node.js only."""
 import argparse
 import hashlib
 import json
@@ -24,8 +24,14 @@ def main():
     args = parser.parse_args()
     content = (ROOT / "lib/content.ts").read_text()
     phrases = json.loads(content.split("export const phrases: readonly Phrase[] = ", 1)[1].strip().removesuffix(";"))
+    # HSK 1 reading explanations: sentence and word lists come from the TypeScript content.
+    hsk1 = json.loads(subprocess.run(["node", "--experimental-strip-types", "--no-warnings", str(ROOT / "scripts/audio-items.ts")],
+                                     check=True, capture_output=True, text=True).stdout)
     # Dedupe repeated vocabulary by both Hanzi and pronunciation.
     words = {f'word:{w["hanzi"]}:{w["pinyin"]}': w for phrase in phrases for w in phrase["words"]}
+    for word in hsk1["words"]:
+        words.setdefault(f'word:{word["hanzi"]}:{word["pinyin"]}', word)
+    phrases += [{"id": sentence["id"], "hanzi": sentence["text"]} for sentence in hsk1["sentences"]]
     phrases += [{"id": key, "hanzi": word["hanzi"], "pinyin": word["pinyin"]} for key, word in words.items()]
     old = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
     entries, pending = {}, []
@@ -34,7 +40,7 @@ def main():
         if "pinyin" in phrase and phrase["id"].startswith("word:"):
             identity += [phrase["pinyin"], "word-v1"]
         key = digest(json.dumps(identity, ensure_ascii=False).encode())[:16]
-        prefix = "word" if phrase["id"].startswith("word:") else phrase["id"]
+        prefix = phrase["id"].split(":", 1)[0]
         src = f'/audio/{prefix}-{key}.mp3'
         previous = old.get(phrase["id"], {})
         target = ROOT / "public" / src.lstrip("/")

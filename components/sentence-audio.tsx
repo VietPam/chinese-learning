@@ -13,8 +13,13 @@ export function SentenceAudio({ phrase }: { phrase: Phrase }) {
   return <AudioButton audioId={phrase.id} text={phrase.hanzi} label="câu" />;
 }
 
-export function WordAudio({ word }: { word: Phrase["words"][number] }) {
+export function WordAudio({ word }: { word: Pick<Phrase["words"][number], "hanzi" | "pinyin"> }) {
   return <AudioButton audioId={`word:${word.hanzi}:${word.pinyin}`} text={word.hanzi} label={`từ ${word.pinyin}`} />;
+}
+
+/** A recorded line of the HSK 1 reading explanations. */
+export function LineAudio({ audioId, text }: { audioId: string; text: string }) {
+  return <AudioButton audioId={audioId} text={text} label={text} />;
 }
 
 function AudioButton({ audioId, text, label }: { audioId: string; text: string; label: string }) {

@@ -2,8 +2,8 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
-  LETTERS, answerLabel, availableAnswers, hsk1Questions, hsk1Reducer, hsk1Sections, initialHsk1State, plainText, scoreHsk1, tokenize,
-  type Hsk1Answer, type Hsk1Item, type Hsk1State,
+  LETTERS, answerLabel, availableAnswers, explanationRows, hsk1AudioItems, hsk1Questions, hsk1Reducer, hsk1Sections, initialHsk1State,
+  lineAudioId, plainText, scoreHsk1, spokenText, tokenize, type Hsk1Answer, type Hsk1Item, type Hsk1State,
 } from "./hsk1-reading.ts";
 import { hsk1Vocabulary } from "./hsk1-vocabulary.ts";
 
@@ -128,4 +128,25 @@ test("score is out of 100 with a 60-point reference pass mark and per-part total
   const eleven = scoreHsk1(answerAll(index => index < 11 ? hsk1Questions[index].answer : wrongAnswer(index)).answers);
   assert.deepEqual([eleven.score, eleven.passed], [55, false]);
   assert.equal(scoreHsk1({}).score, 0);
+});
+
+test("audio items cover every explanation line with the blank filled and every word that can be looked up", () => {
+  const { sentences, words } = hsk1AudioItems();
+  assert.equal(new Set(sentences.map(s => s.id)).size, sentences.length);
+  assert.equal(new Set(words.map(w => `${w.hanzi}:${w.pinyin}`)).size, words.length);
+  const byId = new Map(sentences.map(s => [s.id, s.text]));
+  for (const question of hsk1Questions) {
+    for (const row of explanationRows(question)) {
+      const text = spokenText(row.line, row.fill);
+      assert.equal(byId.get(lineAudioId(row)), text);
+      assert.ok(text && !/[\s_]/.test(text), text);
+      for (const token of [...tokenize(row.line.text), ...row.fill ? tokenize(row.fill) : []]) {
+        if (token.kind === "word") assert.ok(words.some(w => w.hanzi === token.text && w.pinyin === token.pinyin), token.text);
+      }
+    }
+  }
+  assert.equal(spokenText(hsk1Questions[15].lines[0], "漂亮"), "你的衣服很漂亮。");
+  assert.deepEqual(explanationRows(hsk1Questions[18]).map(row => spokenText(row.line, row.fill)), ["你女儿多大了？", "她七岁了。"]);
+  assert.deepEqual(explanationRows(hsk1Questions[1]).map(row => row.label), ["Từ", "Tranh"]);
+  assert.deepEqual(explanationRows(hsk1Questions[10]).map(row => row.label), ["Câu hỏi", "Đáp án D"]);
 });

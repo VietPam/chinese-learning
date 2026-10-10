@@ -36,3 +36,14 @@ Theo ảnh feedback, thêm nút loa 44px ở cuối mỗi hàng từ vựng, ch�
 Nút từ có tên truy cập `Nghe từ …`; chỉ một recording được phát tại một thời điểm, bao gồm cả câu và từ. Đổi câu/mục dừng toàn bộ audio đang phát. Không preload hàng loạt file. Khi tải lỗi, từng nút có trạng thái thử lại riêng.
 
 Đã kiểm tra đầu ra frontend của các trợ từ 了/的/吗/啊 dùng thanh nhẹ và 路上 dùng shang thanh nhẹ theo nội dung; việc kiểm tra này không thay thế thẩm định âm thanh của người nói tiếng Trung.
+
+## Audio trang Đọc HSK 1 (10/10/2026)
+
+Người dùng yêu cầu thêm audio cho `/hsk1`. Dùng cùng Kokoro v1.1-zh / `zm_010`, tốc độ 0.9; cả hai vai trong hội thoại phần 4 dùng chung giọng nam.
+
+- Audio chỉ có trong lời giải, sau khi trả lời, để phần làm bài vẫn là đọc. Mỗi dòng chữ Hán trong lời giải có nút loa 44px: câu đề, từ của tranh ở phần 1, câu đáp đúng ở phần 3, câu phần 4 đã điền đáp án. Nút có tên truy cập `Nghe <câu chữ Hán>`.
+- Bảng tra từ có nút `Nghe từ <pinyin>`, dùng chung recording từ với màn Học khi trùng chữ Hán và Pinyin.
+- Danh sách câu/từ cần thu lấy từ `explanationRows()` trong `lib/hsk1-reading.ts` qua `scripts/audio-items.ts`; khóa manifest là `hsk1:<câu>` và `word:<chữ Hán>:<pinyin>`, file `hsk1-<hash>.mp3`. Generator gọi Node để đọc nội dung TypeScript, nên workflow cài Node 22 và theo dõi thêm `lib/hsk1-reading.ts`, `lib/hsk1-vocabulary.ts`, `scripts/audio-items.ts`.
+- Vẫn không tự phát, không preload, một recording tại một thời điểm; chuyển câu dừng audio.
+
+Lần đầu: 29 câu và 57 từ mới được tạo bằng CPU với cùng model/revision/giọng, phần còn lại tái sử dụng recording đã có.
