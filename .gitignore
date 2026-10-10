@@ -47,3 +47,6 @@ next-env.d.ts
 # Cloudflare build output
 /.open-next/
 /.wrangler/
+
+# Downloaded dictionary sources
+/.cache/

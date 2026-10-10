@@ -2,7 +2,7 @@
 
 Web cá nhân dành cho người Việt bắt đầu từ số 0, học nghĩa và Pinyin của 23 câu thường nhắn cho người yêu. Người học xưng “anh”, người nhận là “em”; mục tiêu là nhớ Pinyin để gõ bằng bàn phím tiếng Trung trên điện thoại và chọn chữ Hán phù hợp.
 
-Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 23 câu, lời giải, hoàn thành và học lại. Route `/hsk1` (mục “HSK 1” ở thanh dưới) là đề luyện Đọc HSK 1: 20 câu, 4 phần, chấm và giải thích ngay. Tài liệu cập nhật ngày 2026-10-10. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
+Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 23 câu, lời giải, hoàn thành và học lại. Route `/hsk1` (mục “HSK 1” ở thanh dưới) là đề luyện Đọc HSK 1: 20 câu, 4 phần, chấm và giải thích ngay. Route `/tu-dien` (mục “Từ điển”) tra 601 từ HSK 2.0 cấp 1–3 bằng chữ Hán, Pinyin hoặc tiếng Việt. Tài liệu cập nhật ngày 2026-10-10. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
 
 ## Đọc tài liệu
 
@@ -17,7 +17,8 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 | [Cải tiến mobile](docs/mobile-design-refinement.md) | Khảo sát thumbnail hai trang VSTEP và áp dụng feedback production |
 | [Thiết kế tham chiếu](docs/design-reference.md) | Quy luật VSTEPUP, theme, thành phần và mobile |
 | [Luyện Đọc HSK 1](docs/hsk1-reading-plan.md) | Quyết định phỏng vấn, cấu trúc đề HSK 2.0, luồng và kiểm thử trang `/hsk1` |
-| [Kế hoạch từ điển sơ cấp](docs/dictionary-plan.md) | Chưa triển khai: 595 từ HSK 2.0 cấp 1–3, nguồn dữ liệu, tìm kiếm, audio, kiểm thử |
+| [Từ điển sơ cấp](docs/dictionary-plan.md) | 601 từ HSK 2.0 cấp 1–3 tại `/tu-dien`: nguồn, giấy phép CC BY-SA 4.0 của dữ liệu, tìm kiếm, audio |
+| [Từ điển: mục cần xem lại](docs/dictionary-review.md) | Âm Hán Việt lệch Unihan, Pinyin khác bộ dữ liệu, biến điệu 一/不 |
 | [Nội dung đề Đọc HSK 1](docs/hsk1-reading-content.md) | 20 câu, lựa chọn, đáp án, giải thích và bản dịch |
 | [Nội dung 23 câu](docs/content.md) | Tiếng Việt, Pinyin, cách gõ, chữ Hán, nghĩa từ và đáp án nhiễu |
 | [Định hướng kỹ thuật](docs/technical-plan.md) | Next.js, shadcn/ui, dữ liệu và quản lý trạng thái |
@@ -30,7 +31,7 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 - Next.js và shadcn/ui; VSTEPUP là chuẩn tham chiếu về style.
 - Một câu tiếng Việt, ba đáp án Pinyin, chấm ngay khi chạm.
 - Sau khi trả lời: Pinyin đúng, cách gõ không dấu, chữ Hán và giải nghĩa ngắn.
-- Không đăng nhập hoặc luyện phát âm bằng microphone. Học và lời giải HSK 1 có audio giọng nam Kokoro. Phần mở rộng hỗ trợ học từ theo câu, quiz xáo câu và luyện gõ chữ Hán.
+- Không đăng nhập hoặc luyện phát âm bằng microphone. Học, lời giải HSK 1 và từ điển có audio giọng nam Kokoro. Phần mở rộng hỗ trợ học từ theo câu, quiz xáo câu và luyện gõ chữ Hán.
 
 Tài liệu yêu cầu sản phẩm là nguồn chính về phạm vi. Tài liệu thiết kế phân biệt rõ điều đã quan sát trên VSTEPUP và điều đề xuất cho MVP. Các quyết định kỹ thuật là phương án triển khai, không phải toàn bộ đều do người dùng chỉ định.
 

@@ -47,3 +47,9 @@ Người dùng yêu cầu thêm audio cho `/hsk1`. Dùng cùng Kokoro v1.1-zh / 
 - Vẫn không tự phát, không preload, một recording tại một thời điểm; chuyển câu dừng audio.
 
 Lần đầu: 29 câu và 57 từ mới được tạo bằng CPU với cùng model/revision/giọng, phần còn lại tái sử dụng recording đã có.
+
+## Audio từ điển (10/10/2026)
+
+Mỗi từ trong `/tu-dien` có nút `Nghe từ <pinyin>`, dùng chung khóa `word:<chữ Hán>:<pinyin>`. `scripts/audio-items.ts` thêm toàn bộ `lib/dictionary.json`; 522 recording mới, phần còn lại dùng lại của Học/HSK 1. Workflow theo dõi thêm `lib/dictionary.json`, timeout nâng lên 45 phút cho lần phải tạo lại nhiều.
+
+Đã so tông của đầu ra G2P Kokoro với Pinyin từng từ. Ba từ bị đọc sai khi đứng riêng (长 zhǎng, 教 jiào, 照片 zhàopiān) được tổng hợp từ phiên âm chỉ định trong `PHONEMES` của generator; khóa file gồm cả phiên âm này. Các khác biệt còn lại là biến điệu thanh 3 (可以 kéyǐ) hoặc thanh nhẹ, đúng với cách nói.

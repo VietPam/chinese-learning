@@ -1,0 +1,148 @@
+# hanzi | pinyin | Hán Việt | nghĩa
+就 | jiù | tựu | thì, liền; ngay; chính là
+要 | yào | yếu | muốn; cần; sắp (要…了)
+也 | yě | dã | cũng
+到 | dào | đáo | đến, tới
+还 | hái | hoàn | vẫn, còn; còn nữa
+着 | zhe | trứ | đang (trợ từ chỉ trạng thái kéo dài)
+给 | gěi | cấp | cho, đưa; cho (ai)
+让 | ràng | nhượng | để, bảo (ai làm gì); nhường
+吧 | ba | ba | nhé, đi (trợ từ đề nghị, đoán)
+得 | de | đắc | trợ từ nối bổ ngữ (跑得快: chạy nhanh)
+可以 | kěyǐ | khả dĩ | có thể; được
+为 | wèi | vị | vì; cho
+从 | cóng | tòng | từ (từ… đến…)
+真 | zhēn | chân | thật; thật là
+两 | liǎng | lưỡng | hai (dùng trước lượng từ)
+出 | chū | xuất | ra, đi ra
+已经 | yǐjīng | dĩ kinh | đã
+最 | zuì | tối | nhất
+因为 | yīnwèi | nhân vị | bởi vì
+再 | zài | tái | lại, nữa; rồi mới
+次 | cì | thứ | lần
+知道 | zhīdào | tri đạo | biết
+问题 | wèntí | vấn đề | câu hỏi; vấn đề
+走 | zǒu | tẩu | đi bộ, đi; rời đi
+它 | tā | tha | nó (chỉ vật, con vật)
+但是 | dànshì | đãn thị | nhưng
+可能 | kěnéng | khả năng | có thể, có lẽ; khả năng
+时间 | shíjiān | thời gian | thời gian
+开始 | kāishǐ | khai thủy | bắt đầu
+新 | xīn | tân | mới
+找 | zhǎo | trảo | tìm; trả lại (tiền thừa)
+快 | kuài | khoái | nhanh; sắp
+比 | bǐ | tỉ | so với, hơn
+所以 | suǒyǐ | sở dĩ | cho nên, vì vậy
+觉得 | juéde | giác đắc | cảm thấy, thấy rằng
+向 | xiàng | hướng | về phía, hướng về
+一起 | yìqǐ | nhất khởi | cùng nhau
+希望 | xīwàng | hi vọng | hi vọng, mong
+大家 | dàjiā | đại gia | mọi người
+非常 | fēicháng | phi thường | rất, vô cùng
+孩子 | háizi | hài tử | trẻ con; con cái
+别 | bié | biệt | đừng; khác
+公司 | gōngsī | công ti | công ty
+第一 | dìyī | đệ nhất | thứ nhất, đầu tiên
+问 | wèn | vấn | hỏi
+长 | cháng | trường | dài
+告诉 | gàosu | cáo tố | nói cho biết, bảo
+事情 | shìqing | sự tình | việc, sự việc
+号 | | hiệu |
+高 | gāo | cao | cao
+件 | jiàn | kiện | cái, chiếc (lượng từ cho áo, việc)
+张 | zhāng | trương | tờ, cái (lượng từ cho vật phẳng: giấy, bàn, vé)
+准备 | zhǔnbèi | chuẩn bị | chuẩn bị; định
+进 | jìn | tiến | vào
+每 | měi | mỗi | mỗi
+您 | nín | nâm | ông, bà, ngài (cách gọi kính trọng của 你)
+送 | sòng | tống | tặng; tiễn; đưa
+笑 | xiào | tiếu | cười
+女人 | nǚrén | nữ nhân | phụ nữ
+小时 | xiǎoshí | tiểu thời | giờ, tiếng đồng hồ
+完 | wán | hoàn | xong, hết
+路 | lù | lộ | đường
+男人 | nánrén | nam nhân | đàn ông
+玩 | wán | ngoạn | chơi
+正在 | zhèngzài | chính tại | đang
+门 | mén | môn | cửa
+穿 | chuān | xuyên | mặc; đi (giày)
+外 | wài | ngoại | ngoài, bên ngoài
+帮助 | bāngzhù | bang trợ | giúp đỡ
+晚上 | wǎnshang | vãn thượng | buổi tối
+错 | cuò | thác | sai
+卖 | mài | mại | bán
+远 | yuǎn | viễn | xa
+快乐 | kuàilè | khoái lạc | vui vẻ (生日快乐: chúc mừng sinh nhật)
+懂 | dǒng | đổng | hiểu
+药 | yào | dược | thuốc
+黑 | hēi | hắc | đen
+身体 | shēntǐ | thân thể | cơ thể; sức khỏe
+元 | yuán | nguyên | đồng (đơn vị tiền tệ)
+介绍 | jièshào | giới thiệu | giới thiệu
+红 | hóng | hồng | đỏ
+欢迎 | huānyíng | hoan nghênh | chào mừng, hoan nghênh
+眼睛 | yǎnjing | nhãn tình | mắt
+近 | jìn | cận | gần
+手机 | shǒujī | thủ cơ | điện thoại di động
+忙 | máng | mang | bận
+离 | lí | ly | cách (xa, gần)
+白 | bái | bạch | trắng
+去年 | qùnián | khứ niên | năm ngoái
+票 | piào | phiếu | vé
+意思 | yìsi | ý tư | ý nghĩa; ý
+早上 | zǎoshang | tảo thượng | buổi sáng (sớm)
+回答 | huídá | hồi đáp | trả lời
+运动 | yùndòng | vận động | thể thao; vận động
+妻子 | qīzi | thê tử | vợ
+鱼 | yú | ngư | cá
+累 | lèi | lụy | mệt
+休息 | xiūxi | hưu tức | nghỉ ngơi
+洗 | xǐ | tẩy | rửa, giặt, tắm
+船 | chuán | thuyền | thuyền, tàu
+房间 | fángjiān | phòng gian | phòng (trong nhà)
+丈夫 | zhàngfu | trượng phu | chồng
+上班 | shàngbān | thượng ban | đi làm
+生日 | shēngrì | sinh nhật | sinh nhật
+姐姐 | jiějie | thư thư | chị gái
+课 | kè | khóa | bài học, tiết học
+哥哥 | gēge | ca ca | anh trai
+咖啡 | kāfēi | ca phê | cà phê
+考试 | kǎoshì | khảo thí | thi; kỳ thi
+千 | qiān | thiên | nghìn
+慢 | màn | mạn | chậm
+旁边 | pángbiān | bàng biên | bên cạnh
+颜色 | yánsè | nhan sắc | màu sắc
+雪 | xuě | tuyết | tuyết
+妹妹 | mèimei | muội muội | em gái
+报纸 | bàozhǐ | báo chỉ | báo (giấy)
+贵 | guì | quý | đắt
+机场 | jīchǎng | cơ trường | sân bay
+踢 | tī | thích | đá (踢足球: đá bóng)
+弟弟 | dìdi | đệ đệ | em trai
+百 | bǎi | bách | trăm
+好吃 | hǎochī | hảo ngật | ngon
+旅游 | lǚyóu | lữ du | du lịch
+起床 | qǐchuáng | khởi sàng | thức dậy, ngủ dậy
+题 | tí | đề | câu hỏi, đề bài
+便宜 | piányi | tiện nghi | rẻ
+唱歌 | chànggē | xướng ca | hát
+右边 | yòubian | hữu biên | bên phải
+牛奶 | niúnǎi | ngưu nãi | sữa bò
+自行车 | zìxíngchē | tự hành xa | xe đạp
+鸡蛋 | jīdàn | kê đản | trứng gà
+姓 | xìng | tính | họ; mang họ
+游泳 | yóuyǒng | du vịnh | bơi
+跳舞 | tiàowǔ | khiêu vũ | nhảy múa
+阴 | yīn | âm | âm u, nhiều mây
+生病 | shēngbìng | sinh bệnh | bị ốm
+左边 | zuǒbian | tả biên | bên trái
+公斤 | gōngjīn | công cân | kilôgam
+教室 | jiàoshì | giáo thất | phòng học
+服务员 | fúwùyuán | phục vụ viên | nhân viên phục vụ
+手表 | shǒubiǎo | thủ biểu | đồng hồ đeo tay
+跑步 | pǎobù | bào bộ | chạy bộ
+西瓜 | xīguā | tây qua | dưa hấu
+晴 | qíng | tình | trời nắng, quang đãng
+羊肉 | yángròu | dương nhục | thịt cừu, thịt dê
+公共汽车 | gōnggòng qìchē | công cộng khí xa | xe buýt
+打篮球 | dǎ lánqiú | đả lam cầu | chơi bóng rổ

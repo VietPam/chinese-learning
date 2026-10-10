@@ -1,12 +1,21 @@
-# Kế hoạch: Từ điển sơ cấp
+# Từ điển sơ cấp
 
-Lập ngày 10/10/2026 theo yêu cầu “màn hình từ điển tiếng Trung sơ cấp có thật nhiều từ thông dụng”. Chưa triển khai.
+Lập ngày 10/10/2026 theo yêu cầu “màn hình từ điển tiếng Trung sơ cấp có thật nhiều từ thông dụng”; triển khai cùng ngày tại `/tu-dien`.
+
+## Khác với kế hoạch ban đầu
+
+- 601 từ thay vì 595: bộ dữ liệu không xếp 6 từ của đề HSK 1 trên web (饭店, 没有, 说, 哪儿, 那儿, 这儿) vào cấp 1–3 (nó dùng 饭馆, 没, 说话…), nên bổ sung chúng vào cấp 1.
+- 156 từ cấp 1 dùng lại Pinyin và nghĩa của `lib/hsk1-vocabulary.ts` để thống nhất với đề HSK 1; chỉ thêm âm Hán Việt.
+- Biên tập nằm trong `scripts/dictionary/curated-*.txt` (`chữ Hán | pinyin | Hán Việt | nghĩa`), `scripts/build-dictionary.ts` ghép với nguồn đã ghim commit rồi ghi `lib/dictionary.json` và [danh sách cần xem lại](dictionary-review.md). Script dừng khi thiếu từ, trùng từ, Pinyin không khớp chữ cái của bộ dữ liệu, hoặc số âm Hán Việt khác số chữ.
+- Đã rà 133 âm Hán Việt lệch Unihan: gần như toàn bộ do Unihan ghi âm Nôm/âm hiếm (子 “tí”, 吃 “khật”); sửa 爬 thành “bà”. Chọn dǎsuàn cho 打算 theo sách HSK.
+- Kokoro đọc sai khi đứng riêng 长 (zhǎng), 教 (jiào), 照片 (zhàopiān); generator tổng hợp ba từ này từ phiên âm lấy của 长城, 教书, 照片 để đúng cách đọc trong từ điển. Các khác biệt còn lại là biến điệu thanh 3 hoặc thanh nhẹ.
+- Chip lọc hiện số từ dưới nhãn; ô tìm và header dính trên cùng, chip cuộn theo nội dung.
 
 ## Quyết định đã chốt
 
 | Câu hỏi | Chốt |
 | --- | --- |
-| Bộ từ | HSK 2.0 cấp 1–3: 595 từ (150 + 147 + 298), khớp chuẩn của đề HSK 1 đang có |
+| Bộ từ | HSK 2.0 cấp 1–3: 601 từ (156 + 147 + 298), khớp chuẩn của đề HSK 1 đang có |
 | Mỗi từ | Chữ Hán, Pinyin, nghĩa tiếng Việt, cấp HSK, **âm Hán Việt**, **audio** |
 | Tìm kiếm | Một ô tìm: chữ Hán, Pinyin có/không dấu, tiếng Việt có/không dấu, âm Hán Việt |
 | Duyệt | Lọc theo cấp: Tất cả · HSK 1 · HSK 2 · HSK 3 |
@@ -55,7 +64,7 @@ Quy trình tạo, có thể chạy lại:
 ## Màn hình `/tu-dien`
 
 - Header như trang HSK 1: nút X về trang học, tiêu đề “Từ điển”.
-- Thanh dính trên cùng: ô tìm (có nút xóa) và chip lọc cấp kèm số từ. Dòng đếm “595 từ” được đọc cho trình đọc màn hình (`aria-live`).
+- Thanh dính trên cùng: ô tìm (có nút xóa); chip lọc cấp kèm số từ nằm ngay dưới. Dòng đếm “601 từ” được đọc cho trình đọc màn hình (`aria-live`).
 - Mỗi dòng: chữ Hán lớn, Pinyin, âm Hán Việt, nghĩa, nhãn HSK n, nút loa 44px.
 - Thứ tự mặc định: theo cấp rồi Pinyin A–Z. Khi có từ khóa thì xếp theo độ khớp:
   1. đúng chữ Hán;
@@ -75,14 +84,14 @@ Quy trình tạo, có thể chạy lại:
 ## Audio
 
 - Dùng chung pipeline Kokoro v1.1-zh / `zm_010`. `scripts/audio-items.ts` thêm danh sách từ của từ điển, khóa vẫn là `word:<chữ Hán>:<pinyin>`.
-- 78 từ đã có recording nhưng chỉ dùng lại được khi Pinyin viết giống hệt. Ước tính cần khoảng 520 file mới, khoảng 4 MB.
+- 78 từ đã có recording nhưng chỉ dùng lại được khi Pinyin viết giống hệt. Thực tế tạo 522 file mới.
 - Tạo trên CPU trong máy làm việc như lần làm audio HSK 1, kiểm tra G2P các từ đa âm, rồi commit. Workflow vẫn tự bù khi nội dung đổi; nâng timeout từ 20 lên 40 phút cho trường hợp phải tạo lại nhiều.
 - Không tự phát, không tải trước, mỗi lúc chỉ phát một file.
 
 ## Kiểm thử
 
 - Unit:
-  - dữ liệu đủ 595 từ, không trùng, cấp 1–3 đúng số lượng;
+  - dữ liệu đủ 601 từ, không trùng, cấp 1–3 đúng số lượng;
   - Pinyin có dấu thanh; Hán Việt và nghĩa không rỗng;
   - 150 từ HSK 1 khớp Pinyin của `lib/hsk1-vocabulary.ts`;
   - chuẩn hóa và xếp hạng tìm kiếm;
@@ -99,7 +108,7 @@ Quy trình tạo, có thể chạy lại:
 1. Script ghép nguồn → biên tập AI → đối chiếu → rà danh sách cần xem lại → `lib/dictionary.json`.
 2. Thư viện tìm kiếm và unit test.
 3. Màn `/tu-dien` và mục thứ 5 ở thanh dưới.
-4. Tạo khoảng 520 file audio, kiểm tra G2P.
+4. Tạo 522 file audio, kiểm tra G2P.
 5. E2E, build Cloudflare, merge `main`, kiểm tra production.
 
 ## Rủi ro

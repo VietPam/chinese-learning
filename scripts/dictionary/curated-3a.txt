@@ -1,0 +1,150 @@
+# hanzi | pinyin | Hán Việt | nghĩa
+啊 | a | a | à, nhé, nhỉ (trợ từ cuối câu); a (thán từ)
+把 | bǎ | bả | đem, lấy (đưa tân ngữ lên trước động từ); cái (lượng từ cho vật có cán)
+被 | bèi | bị | bị, được (câu bị động)
+自己 | zìjǐ | tự kỷ | tự mình, bản thân
+用 | yòng | dụng | dùng, sử dụng
+如果 | rúguǒ | như quả | nếu
+又 | yòu | hựu | lại (lần nữa); vừa… vừa…
+只 | zhǐ | chỉ | chỉ
+更 | gèng | cánh | càng, hơn nữa
+需要 | xūyào | nhu yếu | cần; nhu cầu
+地 | de | địa | trợ từ đứng trước động từ (慢慢地走: đi chầm chậm)
+才 | cái | tài | mới (muộn hơn dự kiến; chỉ mới)
+跟 | gēn | căn | với, cùng; đi theo
+像 | xiàng | tượng | giống, như
+还是 | háishi | hoàn thị | hay là (trong câu hỏi lựa chọn); vẫn
+认为 | rènwéi | nhận vi | cho rằng
+应该 | yīnggāi | ưng cai | nên, cần phải
+带 | dài | đới | mang theo; dẫn
+位 | wèi | vị | vị (lượng từ lịch sự cho người)
+种 | zhǒng | chủng | loại, kiểu
+发现 | fāxiàn | phát hiện | phát hiện, nhận ra
+一定 | yídìng | nhất định | nhất định, chắc chắn
+一直 | yìzhí | nhất trực | luôn luôn, suốt; thẳng (đi thẳng)
+为了 | wèile | vị liễu | để, nhằm
+一样 | yíyàng | nhất dạng | giống nhau
+世界 | shìjiè | thế giới | thế giới
+而且 | érqiě | nhi thả | mà còn, hơn nữa
+重要 | zhòngyào | trọng yếu | quan trọng
+必须 | bìxū | tất tu | phải, bắt buộc
+地方 | dìfang | địa phương | nơi, chỗ
+老 | lǎo | lão | già, cũ
+其他 | qítā | kỳ tha | khác, cái khác
+比赛 | bǐsài | tỉ tái | trận đấu, cuộc thi
+然后 | ránhòu | nhiên hậu | sau đó
+担心 | dānxīn | đảm tâm | lo lắng
+条 | tiáo | điều | lượng từ cho vật dài (con cá, cái quần, con đường)
+放 | fàng | phóng | đặt, để
+拿 | ná | nã | cầm, lấy
+为什么 | wèi shénme | vị thập ma | tại sao
+先 | xiān | tiên | trước (làm gì trước)
+关系 | guānxi | quan hệ | quan hệ
+出现 | chūxiàn | xuất hiện | xuất hiện
+了解 | liǎojiě | liễu giải | hiểu rõ, tìm hiểu
+过去 | guòqù | quá khứ | trước đây, quá khứ; đi qua
+参加 | cānjiā | tham gia | tham gia, tham dự
+国家 | guójiā | quốc gia | đất nước, quốc gia
+决定 | juédìng | quyết định | quyết định
+分 | fēn | phân | phút; điểm (số điểm); chia
+选择 | xuǎnzé | tuyển trạch | lựa chọn
+或者 | huòzhě | hoặc giả | hoặc (trong câu trần thuật)
+机会 | jīhuì | cơ hội | cơ hội
+别人 | biéren | biệt nhân | người khác
+站 | zhàn | trạm | đứng; bến, trạm
+使 | shǐ | sử | khiến, làm cho
+其实 | qíshí | kỳ thực | thật ra
+以后 | yǐhòu | dĩ hậu | sau này, sau khi
+要求 | yāoqiú | yêu cầu | yêu cầu
+信 | xìn | tín | thư; tin
+当然 | dāngrán | đương nhiên | đương nhiên
+接 | jiē | tiếp | đón; nhận, nghe (điện thoại)
+相信 | xiāngxìn | tương tín | tin, tin tưởng
+花 | huā | hoa | hoa; tiêu (tiền, thời gian)
+虽然 | suīrán | tuy nhiên | tuy, mặc dù
+解决 | jiějué | giải quyết | giải quyết
+关于 | guānyú | quan vu | về (vấn đề gì)
+完成 | wánchéng | hoàn thành | hoàn thành
+结束 | jiéshù | kết thúc | kết thúc
+努力 | nǔlì | nỗ lực | cố gắng, nỗ lực
+以前 | yǐqián | dĩ tiền | trước đây, trước khi
+办法 | bànfǎ | biện pháp | cách, biện pháp
+特别 | tèbié | đặc biệt | đặc biệt
+难 | nán | nan | khó
+注意 | zhùyì | chú ý | chú ý
+讲 | jiǎng | giảng | nói; giảng, kể
+离开 | líkāi | ly khai | rời khỏi
+万 | wàn | vạn | mười nghìn, vạn
+以为 | yǐwéi | dĩ vi | tưởng rằng (nhưng thật ra không phải)
+越 | yuè | việt | càng (越来越: càng ngày càng)
+城市 | chéngshì | thành thị | thành phố
+影响 | yǐngxiǎng | ảnh hưởng | ảnh hưởng
+游戏 | yóuxì | du hí | trò chơi
+马 | mǎ | mã | ngựa
+比较 | bǐjiào | tỉ giảo | khá, tương đối; so sánh
+最近 | zuìjìn | tối cận | gần đây
+换 | huàn | hoán | đổi, thay
+终于 | zhōngyú | chung vu | cuối cùng thì
+脸 | liǎn | kiểm | mặt, khuôn mặt
+口 | kǒu | khẩu | miệng; người (lượng từ khi đếm người trong nhà)
+除了 | chúle | trừ liễu | ngoài… ra
+总是 | zǒngshì | tổng thị | luôn luôn
+双 | shuāng | song | đôi (lượng từ: một đôi giày)
+突然 | tūrán | đột nhiên | đột nhiên
+段 | duàn | đoạn | đoạn, khoảng (thời gian, đường)
+检查 | jiǎnchá | kiểm tra | kiểm tra
+米 | mǐ | mễ | gạo; mét
+容易 | róngyì | dung dị | dễ
+明白 | míngbai | minh bạch | hiểu; rõ ràng
+根据 | gēnjù | căn cứ | căn cứ vào, dựa theo
+记得 | jìde | ký đắc | nhớ
+辆 | liàng | lượng | chiếc (lượng từ cho xe)
+简单 | jiǎndān | giản đơn | đơn giản
+半 | bàn | bán | rưỡi, một nửa
+愿意 | yuànyì | nguyện ý | sẵn lòng, muốn
+音乐 | yīnyuè | âm nhạc | âm nhạc
+包 | bāo | bao | túi, cặp; gói
+楼 | lóu | lâu | tòa nhà; tầng
+清楚 | qīngchu | thanh sở | rõ ràng
+照片 | zhàopiàn | chiếu phiến | ảnh, bức ảnh
+银行 | yínháng | ngân hàng | ngân hàng
+故事 | gùshi | cố sự | câu chuyện
+一般 | yìbān | nhất ban | thông thường; bình thường
+可爱 | kě'ài | khả ái | đáng yêu
+新闻 | xīnwén | tân văn | tin tức
+声音 | shēngyīn | thanh âm | âm thanh, tiếng
+马上 | mǎshàng | mã thượng | ngay lập tức
+表示 | biǎoshì | biểu thị | bày tỏ, cho thấy
+经过 | jīngguò | kinh quá | đi qua; trải qua
+历史 | lìshǐ | lịch sử | lịch sử
+哭 | kū | khốc | khóc
+敢 | gǎn | cảm | dám
+会议 | huìyì | hội nghị | cuộc họp
+经常 | jīngcháng | kinh thường | thường xuyên
+低 | dī | đê | thấp
+节目 | jiémù | tiết mục | chương trình, tiết mục
+健康 | jiànkāng | kiện khang | khỏe mạnh; sức khỏe
+作用 | zuòyòng | tác dụng | tác dụng
+西 | xī | tây | phía tây
+差 | chà | sai | kém; thiếu
+结婚 | jiéhūn | kết hôn | kết hôn
+短 | duǎn | đoản | ngắn
+同意 | tóngyì | đồng ý | đồng ý
+教 | jiāo | giáo | dạy
+几乎 | jīhū | kỷ hồ | hầu như
+附近 | fùjìn | phụ cận | gần đây, vùng lân cận
+认真 | rènzhēn | nhận chân | chăm chỉ, nghiêm túc
+脚 | jiǎo | cước | bàn chân
+主要 | zhǔyào | chủ yếu | chủ yếu, chính
+遇到 | yùdào | ngộ đáo | gặp phải, tình cờ gặp
+年轻 | niánqīng | niên khinh | trẻ
+久 | jiǔ | cửu | lâu
+画 | huà | họa | vẽ; bức tranh
+表演 | biǎoyǎn | biểu diễn | biểu diễn
+关 | guān | quan | đóng, tắt
+刚才 | gāngcái | cương tài | vừa nãy
+办公室 | bàngōngshì | biện công thất | văn phòng
+环境 | huánjìng | hoàn cảnh | môi trường
+关心 | guānxīn | quan tâm | quan tâm
+祝 | zhù | chúc | chúc
+层 | céng | tầng | tầng, lớp

@@ -1,0 +1,150 @@
+# hanzi | pinyin | Hán Việt | nghĩa
+腿 | tuǐ | thối | chân, cẳng chân
+班 | bān | ban | lớp; ca (làm việc)
+坏 | huài | hoại | hỏng; xấu
+一边 | yìbiān | nhất biên | vừa… vừa… (一边…一边…); một bên
+鞋 | xié | hài | giày
+习惯 | xíguàn | tập quán | thói quen; quen với
+变化 | biànhuà | biến hóa | thay đổi
+周末 | zhōumò | chu mạt | cuối tuần
+忘记 | wàngjì | vong ký | quên
+打算 | dǎsuàn | đả toán | định, dự định
+极 | jí | cực | cực kỳ (好极了: tốt cực kỳ)
+小心 | xiǎoxīn | tiểu tâm | cẩn thận
+举行 | jǔxíng | cử hành | tổ chức (cuộc họp, buổi lễ)
+动物 | dòngwù | động vật | động vật
+饿 | è | ngạ | đói
+树 | shù | thụ | cây
+水平 | shuǐpíng | thủy bình | trình độ
+借 | jiè | tá | mượn; cho mượn
+东 | dōng | đông | phía đông
+头发 | tóufa | đầu phát | tóc
+害怕 | hàipà | hại phạ | sợ
+鸟 | niǎo | điểu | chim
+蓝 | lán | lam | xanh lam, xanh da trời
+照顾 | zhàogù | chiếu cố | chăm sóc
+文化 | wénhuà | văn hóa | văn hóa
+疼 | téng | đông | đau
+奇怪 | qíguài | kỳ quái | lạ, kỳ lạ
+礼物 | lǐwù | lễ vật | quà
+南 | nán | nam | phía nam
+提高 | tígāo | đề cao | nâng cao
+满意 | mǎnyì | mãn ý | hài lòng
+旧 | jiù | cựu | cũ
+司机 | sījī | ti cơ | tài xế
+黄 | huáng | hoàng | vàng (màu)
+经理 | jīnglǐ | kinh lý | giám đốc, quản lý
+兴趣 | xìngqù | hứng thú | hứng thú, sở thích
+帮忙 | bāngmáng | bang mang | giúp, giúp đỡ
+电子 | diànzǐ | điện tử | điện tử
+见面 | jiànmiàn | kiến diện | gặp mặt
+成绩 | chéngjì | thành tích | kết quả, điểm (học tập)
+中间 | zhōngjiān | trung gian | ở giữa
+聪明 | cōngming | thông minh | thông minh
+多么 | duōme | đa ma | biết bao, thật là
+灯 | dēng | đăng | đèn
+太阳 | tàiyáng | thái dương | mặt trời
+方便 | fāngbiàn | phương tiện | tiện, thuận tiện
+糖 | táng | đường | đường; kẹo
+相同 | xiāngtóng | tương đồng | giống nhau
+生气 | shēngqì | sinh khí | tức giận
+公园 | gōngyuán | công viên | công viên
+热情 | rèqíng | nhiệt tình | nhiệt tình
+一会儿 | yíhuìr | nhất hội nhi | một lát
+骑 | qí | kỵ | cưỡi, đi (xe đạp, xe máy, ngựa)
+河 | hé | hà | sông
+搬 | bān | ban | chuyển, dọn (nhà); khiêng
+同事 | tóngshì | đồng sự | đồng nghiệp
+舒服 | shūfu | thư phục | dễ chịu, thoải mái
+体育 | tǐyù | thể dục | thể thao
+角 | jiǎo | giác | hào (1/10 đồng); góc
+胖 | pàng | bàn | béo, mập
+干净 | gānjìng | can tịnh | sạch sẽ
+放心 | fàngxīn | phóng tâm | yên tâm
+草 | cǎo | thảo | cỏ
+甜 | tián | điềm | ngọt
+安静 | ānjìng | an tĩnh | yên tĩnh
+作业 | zuòyè | tác nghiệp | bài tập về nhà
+瘦 | shòu | sấu | gầy
+绿 | lǜ | lục | xanh lá cây
+啤酒 | píjiǔ | bì tửu | bia
+蛋糕 | dàngāo | đản cao | bánh ngọt, bánh gato
+新鲜 | xīnxiān | tân tiên | tươi
+难过 | nánguò | nan quá | buồn
+客人 | kèrén | khách nhân | khách
+奶奶 | nǎinai | nãi nãi | bà nội
+碗 | wǎn | oản | bát, chén
+数学 | shùxué | số học | toán học
+地铁 | dìtiě | địa thiết | tàu điện ngầm
+刷 | shuā | xoát | chải, đánh (răng); quẹt (thẻ)
+厨房 | chúfáng | trù phòng | nhà bếp
+练习 | liànxí | luyện tập | luyện tập; bài tập
+爷爷 | yéye | gia gia | ông nội
+云 | yún | vân | mây
+邻居 | línjū | lân cư | hàng xóm
+校长 | xiàozhǎng | hiệu trưởng | hiệu trưởng
+花园 | huāyuán | hoa viên | vườn hoa
+耳朵 | ěrduo | nhĩ đóa | tai
+节日 | jiérì | tiết nhật | ngày lễ, ngày tết
+鼻子 | bízi | tị tử | mũi
+叔叔 | shūshu | thúc thúc | chú
+洗澡 | xǐzǎo | tẩy tảo | tắm
+地图 | dìtú | địa đồ | bản đồ
+帽子 | màozi | mạo tử | mũ, nón
+街道 | jiēdào | nhai đạo | đường phố
+感冒 | gǎnmào | cảm mạo | bị cảm
+迟到 | chídào | trì đáo | đến muộn
+刻 | kè | khắc | khắc (15 phút)
+锻炼 | duànliàn | đoán luyện | rèn luyện (thân thể), tập thể dục
+裤子 | kùzi | khố tử | quần
+夏 | xià | hạ | mùa hè
+图书馆 | túshūguǎn | đồ thư quán | thư viện
+电梯 | diàntī | điện thê | thang máy
+刮 | guā | quát | thổi (gió); cạo
+矮 | ǎi | ải | thấp, lùn
+眼镜 | yǎnjìng | nhãn kính | kính mắt
+上网 | shàngwǎng | thượng võng | lên mạng
+春 | chūn | xuân | mùa xuân
+面包 | miànbāo | diện bao | bánh mì
+冰箱 | bīngxiāng | băng tương | tủ lạnh
+阿姨 | āyí | a di | cô, dì; cô giúp việc
+超市 | chāoshì | siêu thị | siêu thị
+着急 | zháojí | trứ cấp | sốt ruột, lo lắng
+季节 | jìjié | quý tiết | mùa
+饱 | bǎo | bão | no
+空调 | kōngtiáo | không điều | điều hòa
+一共 | yígòng | nhất cộng | tổng cộng
+月亮 | yuèliang | nguyệt lượng | mặt trăng
+北方 | běifāng | bắc phương | phía bắc, miền bắc
+爱好 | àihào | ái hảo | sở thích; yêu thích
+衬衫 | chènshān | sấn sam | áo sơ mi
+宾馆 | bīnguǎn | tân quán | khách sạn
+冬 | dōng | đông | mùa đông
+裙子 | qúnzi | quần tử | váy
+香蕉 | xiāngjiāo | hương tiêu | chuối
+秋 | qiū | thu | mùa thu
+发烧 | fāshāo | phát thiêu | sốt
+伞 | sǎn | tản | ô, dù
+有名 | yǒumíng | hữu danh | nổi tiếng
+打扫 | dǎsǎo | đả tảo | quét dọn
+葡萄 | pútao | bồ đào | nho
+复习 | fùxí | phục tập | ôn tập
+熊猫 | xióngmāo | hùng miêu | gấu trúc
+护照 | hùzhào | hộ chiếu | hộ chiếu
+菜单 | càidān | thái đơn | thực đơn
+年级 | niánjí | niên cấp | lớp, năm học (一年级: lớp một)
+果汁 | guǒzhī | quả trấp | nước ép hoa quả
+面条 | miàntiáo | diện điều | mì sợi
+盘子 | pánzi | bàn tử | đĩa
+铅笔 | qiānbǐ | duyên bút | bút chì
+渴 | kě | khát | khát
+洗手间 | xǐshǒujiān | tẩy thủ gian | nhà vệ sinh
+词语 | cíyǔ | từ ngữ | từ ngữ
+句子 | jùzi | cú tử | câu
+照相机 | zhàoxiàngjī | chiếu tướng cơ | máy ảnh
+筷子 | kuàizi | khoái tử | đũa
+字典 | zìdiǎn | tự điển | từ điển (tra chữ)
+普通话 | pǔtōnghuà | phổ thông thoại | tiếng phổ thông
+爬山 | páshān | bà sơn | leo núi
+黑板 | hēibǎn | hắc bản | bảng đen
+行李箱 | xínglixiāng | hành lý tương | va li

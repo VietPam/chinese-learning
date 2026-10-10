@@ -1,0 +1,158 @@
+# hanzi | pinyin (trống = tự lấy) | Hán Việt | nghĩa (trống = lấy từ lib/hsk1-vocabulary.ts)
+的 | | đích |
+了 | | liễu |
+我 | | ngã |
+是 | | thị |
+你 | | nhĩ |
+在 | | tại |
+不 | | bất |
+有 | | hữu |
+他 | | tha |
+这 | | giá |
+个 | | cá |
+和 | | hòa |
+人 | | nhân |
+我们 | | ngã môn |
+好 | | hảo |
+一 | | nhất |
+会 | | hội |
+都 | | đô |
+上 | | thượng |
+来 | | lai |
+很 | | ngận |
+去 | | khứ |
+她 | | tha |
+想 | | tưởng |
+能 | | năng |
+那 | | na |
+看 | | khán |
+做 | | tố |
+什么 | | thập ma |
+点 | | điểm |
+没 | méi | một | không, chưa (phủ định)
+大 | | đại |
+下 | | hạ |
+里 | | lý |
+现在 | | hiện tại |
+年 | | niên |
+多 | | đa |
+吗 | | ma |
+太 | | thái |
+呢 | | ni |
+小 | | tiểu |
+时候 | | thời hậu |
+工作 | | công tác |
+家 | | gia |
+怎么 | | chẩm ma |
+爱 | | ái |
+喜欢 | | hỉ hoan |
+吃 | | ngật |
+谁 | | thùy |
+今天 | | kim thiên |
+月 | | nguyệt |
+几 | | kỷ |
+听 | | thính |
+开 | | khai |
+叫 | | khiếu |
+请 | | thỉnh |
+钱 | | tiền |
+本 | | bản |
+回 | | hồi |
+东西 | | đông tây |
+三 | | tam |
+买 | | mãi |
+岁 | | tuế |
+朋友 | | bằng hữu |
+住 | | trú |
+水 | | thủy |
+写 | | tả |
+日 | rì | nhật | ngày; mặt trời
+喝 | | hát |
+学校 | | học hiệu |
+坐 | | tọa |
+认识 | | nhận thức |
+分钟 | | phân chung |
+明天 | | minh thiên |
+四 | | tứ |
+块 | | khối |
+谢谢 | | tạ tạ |
+多少 | | đa thiểu |
+妈妈 | | ma ma |
+少 | | thiểu |
+电影 | | điện ảnh |
+哪 | | na |
+昨天 | | tạc thiên |
+书 | | thư |
+五 | | ngũ |
+先生 | | tiên sinh |
+医院 | | y viện |
+些 | | ta |
+狗 | | cẩu |
+学生 | | học sinh |
+二 | | nhị |
+儿子 | | nhi tử |
+中国 | | Trung Quốc |
+电视 | | điện thị |
+下午 | | hạ ngọ |
+学习 | | học tập |
+老师 | | lão sư |
+六 | | lục |
+医生 | | y sinh |
+名字 | | danh tự |
+十 | | thập |
+看见 | | khán kiến |
+女儿 | | nữ nhi |
+说话 | | thuyết thoại | nói chuyện, nói
+爸爸 | | bá bá |
+字 | | tự |
+漂亮 | | phiêu lượng |
+高兴 | | cao hứng |
+热 | | nhiệt |
+睡觉 | | thụy giác |
+电脑 | | điện não |
+读 | | độc |
+冷 | | lãnh |
+飞机 | | phi cơ |
+猫 | | miêu |
+打电话 | | đả điện thoại |
+后面 | | hậu diện |
+喂 | | uy |
+八 | | bát |
+怎么样 | | chẩm ma dạng |
+七 | | thất |
+菜 | | thái |
+衣服 | | y phục |
+小姐 | | tiểu thư |
+对不起 | | đối bất khởi |
+天气 | | thiên khí |
+前面 | | tiền diện |
+同学 | | đồng học |
+茶 | | trà |
+星期 | | tinh kỳ |
+九 | | cửu |
+上午 | | thượng ngọ |
+再见 | | tái kiến |
+苹果 | | bình quả |
+中午 | | trung ngọ |
+出租车 | | xuất tô xa |
+水果 | | thủy quả |
+商店 | | thương điếm |
+没关系 | | một quan hệ |
+零 | | linh | số không
+桌子 | | trác tử |
+椅子 | | ỷ tử |
+北京 | | Bắc Kinh |
+下雨 | | hạ vũ |
+杯子 | | bôi tử |
+火车站 | | hỏa xa trạm |
+米饭 | | mễ phạn |
+汉语 | | Hán ngữ |
+饭馆 | | phạn quán | quán ăn, nhà hàng
+不客气 | | bất khách khí |
+# Có trong đề HSK 1 của web nhưng bộ dữ liệu không xếp vào cấp 1–3
+饭店 | | phạn điếm |
+没有 | | một hữu |
+说 | | thuyết |
+哪儿 | | na nhi |
+那儿 | | na nhi |
+这儿 | | giá nhi |

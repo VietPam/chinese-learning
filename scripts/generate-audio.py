@@ -13,6 +13,9 @@ VOICE = "zm_010"
 SPEED = 0.9
 RATE = 24000
 MANIFEST = ROOT / "lib/audio-manifest.json"
+# Single characters Kokoro reads with another pronunciation (长 zhǎng, 教 jiào, 照片 zhàopiān):
+# synthesize the dictionary reading from phonemes taken from Kokoro's own output for 长城, 教书 and 照片.
+PHONEMES = {"word:长:cháng": "ㄔㄤ2", "word:教:jiāo": "ㄐ要1", "word:照片:zhàopiàn": "ㄓㄠ4ㄆ言4"}
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
@@ -39,6 +42,8 @@ def main():
         identity = [phrase["hanzi"], REPO, REVISION, VOICE, SPEED, (ROOT / "scripts/audio-requirements.txt").read_text(), 1]
         if "pinyin" in phrase and phrase["id"].startswith("word:"):
             identity += [phrase["pinyin"], "word-v1"]
+        if phrase["id"] in PHONEMES:
+            identity += [PHONEMES[phrase["id"]]]
         key = digest(json.dumps(identity, ensure_ascii=False).encode())[:16]
         prefix = phrase["id"].split(":", 1)[0]
         src = f'/audio/{prefix}-{key}.mp3'
@@ -67,7 +72,8 @@ def main():
         pipeline = KPipeline(lang_code="z", repo_id=REPO, model=model)
         voice = torch.load(download(f"voices/{VOICE}.pt"), map_location="cpu", weights_only=True)
         for phrase, src, target in pending:
-            chunks = [result.audio.numpy() for result in pipeline(phrase["hanzi"], voice=voice, speed=SPEED)]
+            results = pipeline.generate_from_tokens(PHONEMES[phrase["id"]], voice=voice, speed=SPEED) if phrase["id"] in PHONEMES else pipeline(phrase["hanzi"], voice=voice, speed=SPEED)
+            chunks = [result.audio.numpy() for result in results]
             if not chunks:
                 raise RuntimeError(f'No audio for {phrase["id"]}')
             waveform = np.concatenate(chunks)

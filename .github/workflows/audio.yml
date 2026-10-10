@@ -12,6 +12,7 @@ on:
       - lib/content.ts
       - lib/hsk1-reading.ts
       - lib/hsk1-vocabulary.ts
+      - lib/dictionary.json
       - scripts/audio-items.ts
       - scripts/generate-audio.py
       - scripts/audio-requirements.txt
@@ -24,7 +25,7 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     env:
       HF_HUB_DISABLE_XET: '1'
     steps:
