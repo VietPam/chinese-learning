@@ -17,6 +17,7 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 | [Cải tiến mobile](docs/mobile-design-refinement.md) | Khảo sát thumbnail hai trang VSTEP và áp dụng feedback production |
 | [Thiết kế tham chiếu](docs/design-reference.md) | Quy luật VSTEPUP, theme, thành phần và mobile |
 | [Luyện Đọc HSK 1](docs/hsk1-reading-plan.md) | Quyết định phỏng vấn, cấu trúc đề HSK 2.0, luồng và kiểm thử trang `/hsk1` |
+| [Kế hoạch từ điển sơ cấp](docs/dictionary-plan.md) | Chưa triển khai: 595 từ HSK 2.0 cấp 1–3, nguồn dữ liệu, tìm kiếm, audio, kiểm thử |
 | [Nội dung đề Đọc HSK 1](docs/hsk1-reading-content.md) | 20 câu, lựa chọn, đáp án, giải thích và bản dịch |
 | [Nội dung 23 câu](docs/content.md) | Tiếng Việt, Pinyin, cách gõ, chữ Hán, nghĩa từ và đáp án nhiễu |
 | [Định hướng kỹ thuật](docs/technical-plan.md) | Next.js, shadcn/ui, dữ liệu và quản lý trạng thái |
