@@ -55,6 +55,11 @@
 }
 
 .hanzi { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
+.emoji { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+/* Pinyin above each word, as on HSK 1 papers. */
+.hanzi-ruby ruby { ruby-position: over; ruby-align: center; margin-inline: 0.06em; }
+.hanzi-ruby rt { font-family: var(--font-sans); font-size: max(0.5em, 12px); font-weight: 600; color: #475569; letter-spacing: 0; }
+.hanzi-token { touch-action: manipulation; }
 .safe-bottom { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

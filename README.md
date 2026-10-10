@@ -2,7 +2,7 @@
 
 Web cá nhân dành cho người Việt bắt đầu từ số 0, học nghĩa và Pinyin của 23 câu thường nhắn cho người yêu. Người học xưng “anh”, người nhận là “em”; mục tiêu là nhớ Pinyin để gõ bằng bàn phím tiếng Trung trên điện thoại và chọn chữ Hán phù hợp.
 
-Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 23 câu, lời giải, hoàn thành và học lại. Tài liệu cập nhật ngày 2026-10-07. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
+Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietpq.com). Route `/` chạy đầy đủ lượt học 23 câu, lời giải, hoàn thành và học lại. Route `/hsk1` (mục “HSK 1” ở thanh dưới) là đề luyện Đọc HSK 1: 20 câu, 4 phần, chấm và giải thích ngay. Tài liệu cập nhật ngày 2026-10-10. Tên dự án hiển thị tạm thời, chưa chốt thương hiệu.
 
 ## Đọc tài liệu
 
@@ -16,6 +16,8 @@ Trạng thái: MVP đã phát hành tại [china.vietpq.com](https://china.vietp
 | [Luồng và use case](docs/user-flows.md) | Trạng thái câu hỏi, đúng/sai, tiếp tục và hoàn thành |
 | [Cải tiến mobile](docs/mobile-design-refinement.md) | Khảo sát thumbnail hai trang VSTEP và áp dụng feedback production |
 | [Thiết kế tham chiếu](docs/design-reference.md) | Quy luật VSTEPUP, theme, thành phần và mobile |
+| [Luyện Đọc HSK 1](docs/hsk1-reading-plan.md) | Quyết định phỏng vấn, cấu trúc đề HSK 2.0, luồng và kiểm thử trang `/hsk1` |
+| [Nội dung đề Đọc HSK 1](docs/hsk1-reading-content.md) | 20 câu, lựa chọn, đáp án, giải thích và bản dịch |
 | [Nội dung 23 câu](docs/content.md) | Tiếng Việt, Pinyin, cách gõ, chữ Hán, nghĩa từ và đáp án nhiễu |
 | [Định hướng kỹ thuật](docs/technical-plan.md) | Next.js, shadcn/ui, dữ liệu và quản lý trạng thái |
 | [Nghiệm thu mobile](docs/acceptance.md) | Checklist chức năng, nội dung và giao diện |
